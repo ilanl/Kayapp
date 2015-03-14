@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="pl3-GP-aY4">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="Iam-vT-WOy" customClass="SettingsViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Rn-r1-bey"/>
+                        <viewControllerLayoutGuide type="bottom" id="FTJ-BB-fw4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RaK-1q-CqO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-1P-HFP" userLabel="btnExit">
+                                <rect key="frame" x="319" y="28" width="40" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="40" constant="40" id="hHs-hW-1NL"/>
+                                    <constraint firstAttribute="width" constant="40" id="kRS-y4-tzc"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="close_grey">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressExit:" destination="Iam-vT-WOy" eventType="touchUpInside" id="AFO-Vv-nnW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UhF-1P-HFP" firstAttribute="trailing" secondItem="RaK-1q-CqO" secondAttribute="trailingMargin" id="qww-s4-WvL"/>
+                            <constraint firstItem="UhF-1P-HFP" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="8" symbolic="YES" id="sK7-hH-gp4"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="exitButton" destination="UhF-1P-HFP" id="gFI-eC-XBH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywH-eb-mKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="404"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close_grey" width="22" height="22"/>
+    </resources>
+</document>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Days View Controller-->
+        <scene sceneID="0S2-Fu-fJJ">
+            <objects>
+                <viewController storyboardIdentifier="DaysViewController" id="Vg6-F2-1pf" customClass="DaysViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rMV-GG-24W"/>
+                        <viewControllerLayoutGuide type="bottom" id="EO2-HA-8PD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sea-I0-Uc4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-WB-yYz" userLabel="btnExit">
+                                <rect key="frame" x="319" y="20" width="40" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1lP-gY-r34"/>
+                                    <constraint firstAttribute="height" priority="40" constant="40" id="nWJ-II-yPZ"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="close_grey">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressExit:" destination="Vg6-F2-1pf" eventType="touchUpInside" id="LOe-TI-7EE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ljk-WB-yYz" firstAttribute="trailing" secondItem="Sea-I0-Uc4" secondAttribute="trailingMargin" id="O1d-i1-nEt"/>
+                            <constraint firstItem="Ljk-WB-yYz" firstAttribute="top" secondItem="rMV-GG-24W" secondAttribute="bottom" id="l4V-MV-u2F"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="exitButton" destination="Ljk-WB-yYz" id="w0k-7Y-oBc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xN-kQ-m18" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close_grey" width="22" height="22"/>
+    </resources>
+</document>
