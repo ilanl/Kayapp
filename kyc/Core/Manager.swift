@@ -12,20 +12,16 @@ class Manager:NSObject {
         return ManagerSharedInstance
     }
     
-    var userName:String?
-    var passWord:String?
+    var user:User?
     
     var isAuthenticated: Bool{
         get{
-            return userName != nil
+            return user != nil
         }
     }
     
-    func authenticate(user: String, pwd: String, completion: ((LoginResponse) -> Void)?)
+    func authenticate(user: User, completion: ((LoginResponse) -> Void)?)
     {
-        self.userName = user
-        self.passWord = pwd
-        
         if let callback = completion?{
             Logger.log("authenticate callback")
             callback(LoginResponse())

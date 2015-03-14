@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
+		D2BD50E11AB4CF3D0025E03F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50E01AB4CF3D0025E03F /* UserRepository.swift */; };
+		D2BD50E41AB4D29F0025E03F /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */; };
+		D2BD50FB1AB4DAAC0025E03F /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* Booking.swift */; };
+		D2BD50FD1AB4DAAD0025E03F /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* Boat.swift */; };
+		D2BD50FF1AB4DAAD0025E03F /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FE1AB4DAAD0025E03F /* Setting.swift */; };
+		D2BD51011AB4DAAD0025E03F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51001AB4DAAD0025E03F /* User.swift */; };
+		D2BD51031AB4DAAD0025E03F /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51021AB4DAAD0025E03F /* Forecast.swift */; };
+		D2BD51051AB4DAAD0025E03F /* BoatPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51041AB4DAAD0025E03F /* BoatPref.swift */; };
+		D2BD51071AB4DAAE0025E03F /* DayPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51061AB4DAAE0025E03F /* DayPref.swift */; };
 		D2BEEC021AB4C1D100C6CA08 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BEEC011AB4C1D100C6CA08 /* SettingsViewController.swift */; };
 		D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */; };
 		D2F5CD561AB49A0C0035B91A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD541AB49A0C0035B91A /* Main.storyboard */; };
@@ -46,6 +56,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D2BD50E01AB4CF3D0025E03F /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		D2BD50FA1AB4DAAC0025E03F /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
+		D2BD50FC1AB4DAAD0025E03F /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
+		D2BD50FE1AB4DAAD0025E03F /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		D2BD51001AB4DAAD0025E03F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D2BD51021AB4DAAD0025E03F /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		D2BD51041AB4DAAD0025E03F /* BoatPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatPref.swift; sourceTree = "<group>"; };
+		D2BD51061AB4DAAE0025E03F /* DayPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPref.swift; sourceTree = "<group>"; };
 		D2BEEC011AB4C1D100C6CA08 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D2F5CD4B1AB49A0C0035B91A /* kyc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F5CD4F1AB49A0C0035B91A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +116,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2BD50F91AB4DA8A0025E03F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D2BD51061AB4DAAE0025E03F /* DayPref.swift */,
+				D2BD51041AB4DAAD0025E03F /* BoatPref.swift */,
+				D2BD51021AB4DAAD0025E03F /* Forecast.swift */,
+				D2BD51001AB4DAAD0025E03F /* User.swift */,
+				D2BD50FE1AB4DAAD0025E03F /* Setting.swift */,
+				D2BD50FC1AB4DAAD0025E03F /* Boat.swift */,
+				D2BD50FA1AB4DAAC0025E03F /* Booking.swift */,
+			);
+			name = Repository;
+			sourceTree = "<group>";
+		};
 		D2F5CD421AB49A0C0035B91A = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +212,7 @@
 		D2F5CD721AB49DF50035B91A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D2BD50E01AB4CF3D0025E03F /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -185,6 +220,9 @@
 		D2F5CD731AB49DF50035B91A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2BD50F91AB4DA8A0025E03F /* Repository */,
+				D2BD50D81AB4C9100025E03F /* Day.swift */,
+				D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -395,17 +433,27 @@
 				D2F5CD991AB4ABA30035B91A /* BoatsViewController.swift in Sources */,
 				D2F5CD841AB4A10D0035B91A /* CenterViewController.swift in Sources */,
 				D2F5CD8D1AB4A4000035B91A /* LoginResponse.swift in Sources */,
+				D2BD51071AB4DAAE0025E03F /* DayPref.swift in Sources */,
+				D2BD51051AB4DAAD0025E03F /* BoatPref.swift in Sources */,
 				D2F5CD971AB4AB900035B91A /* BookingsViewController.swift in Sources */,
 				D2F5CD951AB4AB520035B91A /* DaysViewController.swift in Sources */,
 				D2F5CD851AB4A10D0035B91A /* ContainerViewController.swift in Sources */,
+				D2BD50FB1AB4DAAC0025E03F /* Booking.swift in Sources */,
 				D2F5CD8A1AB4A1660035B91A /* Manager.swift in Sources */,
 				D2BEEC021AB4C1D100C6CA08 /* SettingsViewController.swift in Sources */,
+				D2BD51011AB4DAAD0025E03F /* User.swift in Sources */,
 				D2F5CD8F1AB4A61C0035B91A /* Logger.swift in Sources */,
+				D2BD50FF1AB4DAAD0025E03F /* Setting.swift in Sources */,
+				D2BD51031AB4DAAD0025E03F /* Forecast.swift in Sources */,
 				D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */,
 				D2F5CD881AB4A10D0035B91A /* SidePanelViewController.swift in Sources */,
 				D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */,
 				D2F5CD7E1AB49FF60035B91A /* ViewControllersFactory.swift in Sources */,
+				D2BD50E41AB4D29F0025E03F /* Data.xcdatamodeld in Sources */,
+				D2BD50E11AB4CF3D0025E03F /* UserRepository.swift in Sources */,
+				D2BD50D91AB4C9100025E03F /* Day.swift in Sources */,
 				D2F5CD931AB4A8810035B91A /* MainViewController.swift in Sources */,
+				D2BD50FD1AB4DAAD0025E03F /* Boat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +658,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */,
+			);
+			currentVersion = D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D2F5CD431AB49A0C0035B91A /* Project object */;
 }
