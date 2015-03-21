@@ -2,50 +2,105 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Boats View Controller-->
-        <scene sceneID="aLo-l0-yl4">
+        <!--Surf Boats View Controller-->
+        <scene sceneID="2b8-MT-9Fl">
             <objects>
-                <viewController storyboardIdentifier="BoatsViewController" id="Ds3-CS-vOt" customClass="BoatsViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SurfBoatsViewController" id="ClT-pB-6Ml" customClass="SurfBoatsViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="k2m-a1-1Fx"/>
-                        <viewControllerLayoutGuide type="bottom" id="W2C-Pv-w37"/>
+                        <viewControllerLayoutGuide type="top" id="cQW-uO-73K"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3v-yu-jgQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="E4a-7c-lLx">
+                    <view key="view" contentMode="scaleToFill" id="sPW-5R-BmU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCD-Pu-uM6" userLabel="btnExit">
-                                <rect key="frame" x="319" y="28" width="40" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="Umc-8p-lbc"/>
-                                    <constraint firstAttribute="height" priority="40" constant="40" id="UpH-qt-Xp7"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuP-bc-PRt">
+                                <rect key="frame" x="323" y="28" width="42" height="42"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="close_grey">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressExit:" destination="Ds3-CS-vOt" eventType="touchUpInside" id="uOo-Kz-nlL"/>
+                                    <action selector="didPressClose:" destination="ClT-pB-6Ml" eventType="touchUpInside" id="6Vy-hm-wAp"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jCD-Pu-uM6" firstAttribute="trailing" secondItem="E4a-7c-lLx" secondAttribute="trailingMargin" id="M7T-LW-H8E"/>
-                            <constraint firstItem="jCD-Pu-uM6" firstAttribute="top" secondItem="k2m-a1-1Fx" secondAttribute="bottom" constant="8" symbolic="YES" id="amz-8m-pjK"/>
+                            <constraint firstAttribute="trailing" secondItem="GuP-bc-PRt" secondAttribute="trailing" constant="10" id="D5a-kS-Pux"/>
+                            <constraint firstItem="GuP-bc-PRt" firstAttribute="top" secondItem="cQW-uO-73K" secondAttribute="bottom" constant="8" symbolic="YES" id="f81-tT-t1T"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="" systemItem="bookmarks" id="r1X-8V-gXC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="exitButton" destination="jCD-Pu-uM6" id="272-8h-FhC"/>
+                        <outlet property="closeButton" destination="GuP-bc-PRt" id="PcH-0d-5Pl"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4NL-L5-urc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwH-Lz-zuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="247"/>
+            <point key="canvasLocation" x="-89" y="322"/>
+        </scene>
+        <!--Kayak Boats View Controller-->
+        <scene sceneID="KMG-d7-kN3">
+            <objects>
+                <viewController id="MfW-sm-Pr9" customClass="KayakBoatsViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VTv-u5-ZOi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sfe-Kc-gQC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qbF-s6-CgL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-Gb-gDf">
+                                <rect key="frame" x="313" y="28" width="42" height="42"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="close_grey">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressClose:" destination="MfW-sm-Pr9" eventType="touchUpInside" id="930-Io-IcP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tMy-Gb-gDf" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" constant="8" symbolic="YES" id="ecZ-rs-9wz"/>
+                            <constraint firstAttribute="trailing" secondItem="tMy-Gb-gDf" secondAttribute="trailing" constant="20" symbolic="YES" id="i0x-Lc-7XM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="DIe-Yr-kR4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="closeButton" destination="tMy-Gb-gDf" id="Yd6-ao-3a7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXg-Fp-oYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-89.5" y="-408.5"/>
+        </scene>
+        <!--Boats Tab View Controller-->
+        <scene sceneID="2Rg-n4-vu4">
+            <objects>
+                <tabBarController storyboardIdentifier="BoatsTabViewController" id="ztO-PJ-5ll" customClass="BoatsTabViewController" customModule="kyc" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="M4W-hK-smP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MfW-sm-Pr9" kind="relationship" relationship="viewControllers" id="K9i-2Y-yFn"/>
+                        <segue destination="ClT-pB-6Ml" kind="relationship" relationship="viewControllers" id="1YZ-8D-qJj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKC-CS-lbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="-9"/>
         </scene>
     </scenes>
     <resources>

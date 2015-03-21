@@ -19,7 +19,7 @@ class ViewControllersFactory: NSObject {
             case NSStringFromClass(DaysViewController.self):
                 storyBoardName = kDaysStoryBoardName
             
-            case  NSStringFromClass(BoatsViewController.self):
+            case  NSStringFromClass(BoatsTabViewController.self):
                 storyBoardName = kBoatsStoryBoardName
             
             case  NSStringFromClass(BookingsViewController.self):

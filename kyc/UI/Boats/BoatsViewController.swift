@@ -1,9 +1,8 @@
 import UIKit
 
-class BoatsViewController: UIViewController {
+class RankingBoatsViewController: UIViewController {
 
-    @IBOutlet weak var exitButton: UIButton!
-    @IBAction func didPressExit(sender: UIButton) {
+    func didPressCloseButton(button:UIButton){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

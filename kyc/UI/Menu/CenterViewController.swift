@@ -48,7 +48,7 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
             case "days":
                 typeClass = DaysViewController.self
             case "boats":
-                typeClass = BoatsViewController.self
+                typeClass = BoatsTabViewController.self
             case "bookings":
                 typeClass = BookingsViewController.self
             case "settings":
