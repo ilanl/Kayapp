@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -15,7 +16,101 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dVm-8l-TY3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="0.91958041958041958" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="sectionIndexBackgroundColor" red="0.32156863810000003" green="0.98823535439999999" blue="0.011764707040000001" alpha="1" colorSpace="deviceRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="forecastWithBookingCell" rowHeight="100" id="7SR-CC-39E" customClass="ForecastWithBookingCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7SR-CC-39E" id="FzZ-Rv-QA6">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{TEMP_LABEL}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA3-9t-6iY" userLabel="tempLabel">
+                                                    <rect key="frame" x="22" y="8" width="100" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="jeA-1e-aZi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{WATER}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-GA-cJg" userLabel="waterTempLabel">
+                                                    <rect key="frame" x="200" y="8" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{KAYAK}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-H9-N2s" userLabel="kayalNameLabel">
+                                                    <rect key="frame" x="22" y="46" width="200" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="L2d-wk-daQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KdM-GA-cJg" secondAttribute="trailing" constant="67" id="5TG-nw-6er"/>
+                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="baseline" secondItem="lA3-9t-6iY" secondAttribute="baseline" id="CuS-dZ-Im0"/>
+                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="leading" secondItem="lA3-9t-6iY" secondAttribute="trailing" constant="78" id="KKX-Kg-0eW"/>
+                                                <constraint firstItem="lA3-9t-6iY" firstAttribute="leading" secondItem="FzZ-Rv-QA6" secondAttribute="leadingMargin" constant="14" id="OgY-Zx-L2o"/>
+                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="top" secondItem="FzZ-Rv-QA6" secondAttribute="topMargin" id="V0Q-tw-ekh"/>
+                                                <constraint firstItem="lA3-9t-6iY" firstAttribute="leading" secondItem="s2a-H9-N2s" secondAttribute="leading" id="dBH-U9-vIP"/>
+                                                <constraint firstItem="s2a-H9-N2s" firstAttribute="top" secondItem="lA3-9t-6iY" secondAttribute="bottom" constant="17" id="wgl-Oc-Mal"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="kayakNameLabel" destination="s2a-H9-N2s" id="JX1-yt-ayV"/>
+                                            <outlet property="tempLabel" destination="lA3-9t-6iY" id="SGz-6U-PbW"/>
+                                            <outlet property="waterTemp" destination="KdM-GA-cJg" id="cty-TJ-Exi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="forecastNoBookingCell" rowHeight="50" id="8Xd-xI-nfB" customClass="ForecastWithNoBookingCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Xd-xI-nfB" id="7vT-EM-QkV">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{WAVE_HEIGHT}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-87-OGq" userLabel="waveHeightLabel">
+                                                    <rect key="frame" x="123" y="14" width="130" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wYZ-87-OGq" firstAttribute="centerX" secondItem="7vT-EM-QkV" secondAttribute="centerX" id="e0F-SF-KhV"/>
+                                                <constraint firstItem="wYZ-87-OGq" firstAttribute="centerY" secondItem="7vT-EM-QkV" secondAttribute="centerY" id="mQd-gc-f3e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.99607849120000003" green="0.1176470667" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <outlet property="waveHeightLabel" destination="wYZ-87-OGq" id="61N-AK-IHI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="rrF-kx-9GM"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="lm9-Lg-xsq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dVm-8l-TY3" secondAttribute="bottom" id="HWr-ab-3vN"/>
+                            <constraint firstAttribute="trailing" secondItem="dVm-8l-TY3" secondAttribute="trailing" id="Hjy-1a-Pl2"/>
+                            <constraint firstItem="dVm-8l-TY3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="LBW-db-lpN"/>
+                            <constraint firstItem="dVm-8l-TY3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="X15-ZG-Vvz"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wUP-uU-Lni">
@@ -32,6 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="209.5" y="272.5"/>
         </scene>
     </scenes>
     <resources>

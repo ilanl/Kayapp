@@ -1,4 +1,6 @@
 import Foundation
+import UIKit
+import CoreData
 
 let SyncData = "com.breezback.kyc.syncData"
 let NewBooking = "com.breezback.kyc.newBooking"
@@ -9,6 +11,7 @@ private let ManagerSharedInstance = Manager()
 class Manager:NSObject {
 
     class var sharedInstance: Manager {
+        
         return ManagerSharedInstance
     }
     

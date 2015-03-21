@@ -34,9 +34,7 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
     addChildViewController(centerNavigationController)
 
     centerNavigationController.didMoveToParentViewController(self)
-
-    let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
-    centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
+    
   }
 
   // MARK: CenterViewController delegate methods
@@ -134,51 +132,6 @@ class ContainerViewController: UIViewController, CenterViewControllerDelegate, U
       centerNavigationController.view.layer.shadowOpacity = 0.8
     } else {
       centerNavigationController.view.layer.shadowOpacity = 0.0
-    }
-  }
-
-  // MARK: Gesture recognizer
-
-  func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-    // we can determine whether the user is revealing the left or right
-    // panel by looking at the velocity of the gesture
-    let gestureIsDraggingFromLeftToRight = (recognizer.velocityInView(view).x > 0)
-    let gestureIsDraggingFromRightToLeft = (recognizer.velocityInView(view).x < 0)
-    if (gestureIsDraggingFromRightToLeft) {
-        return
-    }
-    
-    switch(recognizer.state) {
-    case .Began:
-      if (currentState == .BothCollapsed) {
-        // If the user starts panning, and neither panel is visible
-        // then show the correct panel based on the pan direction
-
-        if (gestureIsDraggingFromLeftToRight) {
-          addLeftPanelViewController()
-        } else {
-          addRightPanelViewController()
-        }
-
-        showShadowForCenterViewController(true)
-      }
-    case .Changed:
-      // If the user is already panning, translate the center view controller's
-      // view by the amount that the user has panned
-      recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
-      recognizer.setTranslation(CGPointZero, inView: view)
-    case .Ended:
-      // When the pan ends, check whether the left or right view controller is visible
-      if (leftViewController != nil) {
-        // animate the side panel open or closed based on whether the view has moved more or less than halfway
-        let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
-        animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
-      } else if (rightViewController != nil) {
-        let hasMovedGreaterThanHalfway = recognizer.view!.center.x < 0
-        animateRightPanel(shouldExpand: hasMovedGreaterThanHalfway)
-      }
-    default:
-      break
     }
   }
 }

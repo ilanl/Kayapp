@@ -14,5 +14,5 @@ class Booking: NSManagedObject {
     @NSManaged var datetime: NSDate
     @NSManaged var name: String
     @NSManaged var state: NSNumber
-
+    
 }

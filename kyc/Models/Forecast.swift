@@ -16,5 +16,7 @@ class Forecast: NSManagedObject {
     @NSManaged var waterTemp: NSNumber
     @NSManaged var temp: NSNumber
     @NSManaged var waveHeight: NSNumber
+    
+    var booking: Booking?
 
 }
