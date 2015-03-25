@@ -10,8 +10,16 @@ public class CoreComponents: TyphoonAssembly {
 //        }
 //    }
     
-    public dynamic func forecastRepository() -> AnyObject {
+    public dynamic func forecastRepositoryFactory() -> AnyObject {
         return TyphoonDefinition.withClass(ForecastRepository.self)
+    }
+    
+    public dynamic func boatsRepositoryFactory() -> AnyObject {
+        return TyphoonDefinition.withClass(BoatsRepository.self)
+    }
+    
+    public dynamic func bookingRepositoryFactory() -> AnyObject {
+        return TyphoonDefinition.withClass(BookingRepository.self)
     }
     
 //    public dynamic func forecastService() -> AnyObject {

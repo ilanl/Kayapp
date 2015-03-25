@@ -1,6 +1,6 @@
 import Foundation
 
-class SettingDao: NSObject {
+public class SettingDao: NSObject {
 
     var mode: NSNumber?
     var reminder: NSNumber?

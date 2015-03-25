@@ -1,9 +1,27 @@
 import Foundation
 
-class DayPrefDao : NSObject{
+public class DayPrefDao : NSObject,NSCoding{
 
-    var day: NSNumber?
-    var time: NSNumber?
-    var boatType: NSNumber?
-
+    var day: Int
+    var time: Int
+    var type: Int
+    
+    public init(day:Int,time:Int,type:Int) {
+        self.day = day
+        self.time = time
+        self.type = type
+    }
+    
+    public required init(coder: NSCoder) {
+        self.day = coder.decodeObjectForKey("day") as Int
+        self.time = coder.decodeObjectForKey("time") as Int
+        self.type = coder.decodeObjectForKey("type") as Int
+        super.init()
+    }
+    
+    public func encodeWithCoder(coder: NSCoder) {
+        coder.encodeObject(self.day, forKey: "day")
+        coder.encodeObject(self.time, forKey: "time")
+        coder.encodeObject(self.type, forKey: "type")
+    }
 }

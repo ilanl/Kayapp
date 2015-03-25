@@ -1,6 +1,6 @@
 import Foundation
 
-class Day: NSObject{
+public class Day: NSObject{
 
     var name:String
     var tag:Int

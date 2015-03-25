@@ -8,14 +8,10 @@ import Foundation
     func save(forecasts: [ForecastDao])->Bool
 }
 
-public class ForecastRepository:ForecastRepositoryProtocol{
+public class ForecastRepository:NSObject,ForecastRepositoryProtocol{
     
     let repository = Repository<ForecastDao>(plist: "Forecasts")
-    
-    public init(){
         
-    }
-    
     public func reset()->Bool{
         self.repository.reset()
         return true

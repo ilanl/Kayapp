@@ -3,3 +3,4 @@
 //
 
 #import "Typhoon.h"
+#import "TyphoonTestUtils.h"

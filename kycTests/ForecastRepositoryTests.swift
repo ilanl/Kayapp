@@ -2,14 +2,14 @@ import Foundation
 import XCTest
 import kyc
 
-public class ForecastDaoTests : XCTestCase {
+public class ForecastRepositoryTests : XCTestCase {
     
     var target : ForecastRepository!
     
     public override func setUp() {
         
-        //let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = ForecastRepository() //factory.componentForKey("forecastRepository") as? ForecastRepository
+        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+        self.target = factory.componentForKey("forecastRepositoryFactory") as? ForecastRepository
         self.target.reset()
     }
     
