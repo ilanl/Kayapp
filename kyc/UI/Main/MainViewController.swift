@@ -2,7 +2,7 @@ import UIKit
 
 class MainViewController: CenterViewController,UITableViewDataSource, UITableViewDelegate {
 
-    var forecastArray:[Forecast]?
+    var forecastArray:[ForecastDao]?
     var sectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
     
     let dateFormatter = NSDateFormatter()
@@ -15,46 +15,46 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
         
         super.viewDidLoad()
         
-        let forecastService = ForecastService()
-        forecastService.get({ forecasts in
-            
-                let bookingService = BookingService()
-                bookingService.get({ bookings in
-                    
-                    self.dateFormatter.dateFormat = "dd MMM"
-                    
-                    for forecast in forecasts{
-                        
-                        Logger.log("forecast: \(forecast.datetime)")
-                        
-                        //Add header
-                        let strForecastDay = self.dateFormatter.stringFromDate(forecast.datetime)
-                        let sectionTuple = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:1)
-                        
-                        if (self.sectionArray.last?.title != sectionTuple.title){
-                            self.sectionArray.append(sectionTuple)
-                        }
-                        else{
-                            var counter:Int = self.sectionArray.last!.totalRows
-                            var tuple = self.sectionArray.last!
-                            self.sectionArray[self.sectionArray.count-1] = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:++counter)
-                            
-                        }
-                        
-                        for booking in bookings{
-                            if (self.checkIfForecastMatchBookingTime(forecast,booking:booking) == true){
-                                
-                                Logger.log("booking: \(booking.datetime)")
-                                forecast.booking = booking
-                                break
-                            }
-                        }
-                    }
-                    
-                })
-                self.forecastArray = forecasts
-            
-            })
+//        let forecastService = ForecastService()
+//        forecastService.get({ forecasts in
+//            
+//                let bookingService = BookingService()
+//                bookingService.get({ bookings in
+//                    
+//                    self.dateFormatter.dateFormat = "dd MMM"
+//                    
+//                    for forecast in forecasts{
+//                        
+//                        Logger.log("forecast: \(forecast.datetime)")
+//                        
+//                        //Add header
+//                        let strForecastDay = self.dateFormatter.stringFromDate(forecast.datetime)
+//                        let sectionTuple = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:1)
+//                        
+//                        if (self.sectionArray.last?.title != sectionTuple.title){
+//                            self.sectionArray.append(sectionTuple)
+//                        }
+//                        else{
+//                            var counter:Int = self.sectionArray.last!.totalRows
+//                            var tuple = self.sectionArray.last!
+//                            self.sectionArray[self.sectionArray.count-1] = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:++counter)
+//                            
+//                        }
+//                        
+//                        for booking in bookings{
+//                            if (self.checkIfForecastMatchBookingTime(forecast,booking:booking) == true){
+//                                
+//                                Logger.log("booking: \(booking.datetime)")
+//                                forecast.booking = booking
+//                                break
+//                            }
+//                        }
+//                    }
+//                    
+//                })
+//                self.forecastArray = forecasts
+//            
+//            })
     }
     
     //MARK: Table methods
@@ -78,32 +78,32 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let forecast = forecastArray![indexPath.row] as Forecast
+        let forecast = forecastArray![indexPath.row] as ForecastDao
         return forecast.booking != nil ? 120 : 60
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let forecast = forecastArray![indexPath.row] as Forecast
+        let forecast = forecastArray![indexPath.row] as ForecastDao
         
         if (forecast.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as ForecastWithBookingCell
             
             let tempLabel = cell.tempLabel
-            tempLabel.text = "\(forecast.temp)"
+            //tempLabel.text = "\(forecast.temp)"
             
             let tempWaterLabel = cell.waterTemp
-            tempWaterLabel.text = "\(forecast.waterTemp)"
+            //tempWaterLabel.text = "\(forecast.waterTemp)"
             
             let kayakNameLabel = cell.kayakNameLabel
-            kayakNameLabel.text = "\(forecast.booking!.name)"
+            //kayakNameLabel.text = "\(forecast.booking!.name)"
             return cell
         }
         else{
             let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as ForecastWithNoBookingCell
             
             let waveHeightLabel = cell.waveHeightLabel
-            waveHeightLabel.text = "\(forecast.waveHeight) cm"
+            //waveHeightLabel.text = "\(forecast.waveHeight) cm"
             
             return cell
         }
@@ -156,9 +156,9 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     
     //MARK: Private methods
-    private func checkIfForecastMatchBookingTime(forecast:Forecast,booking:Booking) -> Bool{
+    private func checkIfForecastMatchBookingTime(forecast:ForecastDao,booking:BookingDao) -> Bool{
         let bookingTime = booking.datetime
-        let interval = booking.datetime.minutesFrom(forecast.datetime)
+        let interval =  0 //booking.datetime!.minutesFrom(forecast.datetime!)
         if (interval == 0){
             return true
         }

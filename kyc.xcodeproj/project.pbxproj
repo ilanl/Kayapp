@@ -7,22 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85A5BD4ACB18D01DE6513EF3 /* libPods-kycTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 481C4A8826D91774AD82E4DA /* libPods-kycTests.a */; };
+		D209DFD41AC23F5500648137 /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFD21AC23F5500648137 /* ForecastRepository.swift */; };
+		D209DFD51AC23F5500648137 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFD31AC23F5500648137 /* Repository.swift */; };
 		D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A4F1ABD813B0008EFCB /* ForecastService.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
-		D2985A901ABDB50F0008EFCB /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A8F1ABDB50F0008EFCB /* BookingService.swift */; };
 		D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A911ABDC4D30008EFCB /* DateExt.swift */; };
 		D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */; };
 		D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */; };
 		D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */; };
+		D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */; };
+		D2A784001AC0CE5F00AA2777 /* ForecastServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */; };
+		D2A7840B1AC1FBC700AA2777 /* ForecastRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */; };
 		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
-		D2BD50E41AB4D29F0025E03F /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */; };
-		D2BD50FB1AB4DAAC0025E03F /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* Booking.swift */; };
-		D2BD50FD1AB4DAAD0025E03F /* Boat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* Boat.swift */; };
-		D2BD50FF1AB4DAAD0025E03F /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FE1AB4DAAD0025E03F /* Setting.swift */; };
-		D2BD51011AB4DAAD0025E03F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51001AB4DAAD0025E03F /* User.swift */; };
-		D2BD51031AB4DAAD0025E03F /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51021AB4DAAD0025E03F /* Forecast.swift */; };
-		D2BD51051AB4DAAD0025E03F /* BoatPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51041AB4DAAD0025E03F /* BoatPref.swift */; };
-		D2BD51071AB4DAAE0025E03F /* DayPref.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51061AB4DAAE0025E03F /* DayPref.swift */; };
+		D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */; };
+		D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */; };
+		D2BD50FF1AB4DAAD0025E03F /* SettingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FE1AB4DAAD0025E03F /* SettingDao.swift */; };
+		D2BD51011AB4DAAD0025E03F /* UserDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51001AB4DAAD0025E03F /* UserDao.swift */; };
+		D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51021AB4DAAD0025E03F /* ForecastDao.swift */; };
+		D2BD51051AB4DAAD0025E03F /* BoatPrefDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51041AB4DAAD0025E03F /* BoatPrefDao.swift */; };
+		D2BD51071AB4DAAE0025E03F /* DayPrefDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD51061AB4DAAE0025E03F /* DayPrefDao.swift */; };
 		D2BD510B1AB4E2860025E03F /* Weather.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BD510A1AB4E2860025E03F /* Weather.xcassets */; };
 		D2BD510D1AB4E2B50025E03F /* Boats.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2BD510C1AB4E2B50025E03F /* Boats.xcassets */; };
 		D2BD51101AB4E3E30025E03F /* KayakBoatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD510E1AB4E3E30025E03F /* KayakBoatsViewController.swift */; };
@@ -33,15 +37,12 @@
 		D2F5CD561AB49A0C0035B91A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD541AB49A0C0035B91A /* Main.storyboard */; };
 		D2F5CD581AB49A0C0035B91A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD571AB49A0C0035B91A /* Images.xcassets */; };
 		D2F5CD5B1AB49A0C0035B91A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD591AB49A0C0035B91A /* LaunchScreen.xib */; };
-		D2F5CD671AB49A0C0035B91A /* kycTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD661AB49A0C0035B91A /* kycTests.swift */; };
 		D2F5CD7E1AB49FF60035B91A /* ViewControllersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD7D1AB49FF60035B91A /* ViewControllersFactory.swift */; };
 		D2F5CD841AB4A10D0035B91A /* CenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD7F1AB4A10D0035B91A /* CenterViewController.swift */; };
 		D2F5CD851AB4A10D0035B91A /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD801AB4A10D0035B91A /* ContainerViewController.swift */; };
 		D2F5CD861AB4A10D0035B91A /* Menu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD811AB4A10D0035B91A /* Menu.xcassets */; };
 		D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD821AB4A10D0035B91A /* MenuItem.swift */; };
 		D2F5CD881AB4A10D0035B91A /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD831AB4A10D0035B91A /* SidePanelViewController.swift */; };
-		D2F5CD8A1AB4A1660035B91A /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD891AB4A1660035B91A /* Manager.swift */; };
-		D2F5CD8D1AB4A4000035B91A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD8C1AB4A4000035B91A /* BaseResponse.swift */; };
 		D2F5CD8F1AB4A61C0035B91A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD8E1AB4A61C0035B91A /* Logger.swift */; };
 		D2F5CD911AB4A7AA0035B91A /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD901AB4A7AA0035B91A /* Menu.storyboard */; };
 		D2F5CD931AB4A8810035B91A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD921AB4A8810035B91A /* MainViewController.swift */; };
@@ -54,6 +55,7 @@
 		D2F5CDA31AB4B9DF0035B91A /* Bookings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA21AB4B9DF0035B91A /* Bookings.storyboard */; };
 		D2F5CDA51AB4BCB80035B91A /* Global.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA41AB4BCB80035B91A /* Global.xcassets */; };
 		D2F5CDA71AB4C0BA0035B91A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA61AB4C0BA0035B91A /* Settings.storyboard */; };
+		D38B3E9555A11CB7C040ADE3 /* libPods-kyc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 483DDD11EFC66F30E4A129CF /* libPods-kyc.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,22 +69,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		481C4A8826D91774AD82E4DA /* libPods-kycTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kycTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		483DDD11EFC66F30E4A129CF /* libPods-kyc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kyc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4C6C2AB49E1DE2DB5F86DF /* Pods-kyc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kyc/Pods-kyc.debug.xcconfig"; sourceTree = "<group>"; };
+		AB8388E5FD0776B2A735517F /* Pods-kyc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kyc.release.xcconfig"; path = "Pods/Target Support Files/Pods-kyc/Pods-kyc.release.xcconfig"; sourceTree = "<group>"; };
+		BF036E30571F0E5D14DCCDFC /* Pods-kycTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kycTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kycTests/Pods-kycTests.release.xcconfig"; sourceTree = "<group>"; };
+		D209DFD21AC23F5500648137 /* ForecastRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
+		D209DFD31AC23F5500648137 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		D2985A4F1ABD813B0008EFCB /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		D2985A8F1ABDB50F0008EFCB /* BookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		D2985A911ABDC4D30008EFCB /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithBookingCell.swift; sourceTree = "<group>"; };
 		D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithNoBookingCell.swift; sourceTree = "<group>"; };
 		D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
+		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
+		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastServiceProtocol.swift; sourceTree = "<group>"; };
+		D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepositoryTests.swift; sourceTree = "<group>"; };
+		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
-		D2BD50FA1AB4DAAC0025E03F /* Booking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
-		D2BD50FC1AB4DAAD0025E03F /* Boat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boat.swift; sourceTree = "<group>"; };
-		D2BD50FE1AB4DAAD0025E03F /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		D2BD51001AB4DAAD0025E03F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D2BD51021AB4DAAD0025E03F /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		D2BD51041AB4DAAD0025E03F /* BoatPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatPref.swift; sourceTree = "<group>"; };
-		D2BD51061AB4DAAE0025E03F /* DayPref.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPref.swift; sourceTree = "<group>"; };
+		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
+		D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatDao.swift; sourceTree = "<group>"; };
+		D2BD50FE1AB4DAAD0025E03F /* SettingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingDao.swift; sourceTree = "<group>"; };
+		D2BD51001AB4DAAD0025E03F /* UserDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDao.swift; sourceTree = "<group>"; };
+		D2BD51021AB4DAAD0025E03F /* ForecastDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDao.swift; sourceTree = "<group>"; };
+		D2BD51041AB4DAAD0025E03F /* BoatPrefDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatPrefDao.swift; sourceTree = "<group>"; };
+		D2BD51061AB4DAAE0025E03F /* DayPrefDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPrefDao.swift; sourceTree = "<group>"; };
 		D2BD510A1AB4E2860025E03F /* Weather.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Weather.xcassets; path = ../Weather.xcassets; sourceTree = "<group>"; };
 		D2BD510C1AB4E2B50025E03F /* Boats.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Boats.xcassets; path = ../Boats.xcassets; sourceTree = "<group>"; };
 		D2BD510E1AB4E3E30025E03F /* KayakBoatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KayakBoatsViewController.swift; sourceTree = "<group>"; };
@@ -97,15 +109,12 @@
 		D2F5CD5A1AB49A0C0035B91A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D2F5CD601AB49A0C0035B91A /* kycTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kycTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F5CD651AB49A0C0035B91A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2F5CD661AB49A0C0035B91A /* kycTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kycTests.swift; sourceTree = "<group>"; };
 		D2F5CD7D1AB49FF60035B91A /* ViewControllersFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllersFactory.swift; sourceTree = "<group>"; };
 		D2F5CD7F1AB4A10D0035B91A /* CenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterViewController.swift; sourceTree = "<group>"; };
 		D2F5CD801AB4A10D0035B91A /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D2F5CD811AB4A10D0035B91A /* Menu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Menu.xcassets; path = ../UI/Menu/Menu.xcassets; sourceTree = "<group>"; };
 		D2F5CD821AB4A10D0035B91A /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		D2F5CD831AB4A10D0035B91A /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
-		D2F5CD891AB4A1660035B91A /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		D2F5CD8C1AB4A4000035B91A /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		D2F5CD8E1AB4A61C0035B91A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D2F5CD901AB4A7AA0035B91A /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		D2F5CD921AB4A8810035B91A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +127,7 @@
 		D2F5CDA21AB4B9DF0035B91A /* Bookings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookings.storyboard; sourceTree = "<group>"; };
 		D2F5CDA41AB4BCB80035B91A /* Global.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Global.xcassets; path = ../Global.xcassets; sourceTree = "<group>"; };
 		D2F5CDA61AB4C0BA0035B91A /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		F385E8AF0743AF52C2A71D2D /* Pods-kycTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kycTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kycTests/Pods-kycTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38B3E9555A11CB7C040ADE3 /* libPods-kyc.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,17 +143,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A5BD4ACB18D01DE6513EF3 /* libPods-kycTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127935CB10579C24E1DE3D7D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A4C6C2AB49E1DE2DB5F86DF /* Pods-kyc.debug.xcconfig */,
+				AB8388E5FD0776B2A735517F /* Pods-kyc.release.xcconfig */,
+				F385E8AF0743AF52C2A71D2D /* Pods-kycTests.debug.xcconfig */,
+				BF036E30571F0E5D14DCCDFC /* Pods-kycTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		535C2EDC80FFE59FB29388A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				483DDD11EFC66F30E4A129CF /* libPods-kyc.a */,
+				481C4A8826D91774AD82E4DA /* libPods-kycTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D209DFD11AC23F5500648137 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D209DFD21AC23F5500648137 /* ForecastRepository.swift */,
+				D209DFD31AC23F5500648137 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		D2985A4B1ABD65C70008EFCB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D2A783FE1AC0CE4100AA2777 /* Protocols */,
 				D2985A4F1ABD813B0008EFCB /* ForecastService.swift */,
-				D2985A8F1ABDB50F0008EFCB /* BookingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -178,18 +219,34 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		D2BD50F91AB4DA8A0025E03F /* Repository */ = {
+		D2A783EA1AC0C7EE00AA2777 /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				D2BD51061AB4DAAE0025E03F /* DayPref.swift */,
-				D2BD51041AB4DAAD0025E03F /* BoatPref.swift */,
-				D2BD51021AB4DAAD0025E03F /* Forecast.swift */,
-				D2BD51001AB4DAAD0025E03F /* User.swift */,
-				D2BD50FE1AB4DAAD0025E03F /* Setting.swift */,
-				D2BD50FC1AB4DAAD0025E03F /* Boat.swift */,
-				D2BD50FA1AB4DAAC0025E03F /* Booking.swift */,
+				D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */,
 			);
-			name = Repository;
+			path = Container;
+			sourceTree = "<group>";
+		};
+		D2A783FE1AC0CE4100AA2777 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2BD50F91AB4DA8A0025E03F /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				D2BD51061AB4DAAE0025E03F /* DayPrefDao.swift */,
+				D2BD51041AB4DAAD0025E03F /* BoatPrefDao.swift */,
+				D2BD51021AB4DAAD0025E03F /* ForecastDao.swift */,
+				D2BD51001AB4DAAD0025E03F /* UserDao.swift */,
+				D2BD50FE1AB4DAAD0025E03F /* SettingDao.swift */,
+				D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */,
+				D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */,
+			);
+			name = Dao;
 			sourceTree = "<group>";
 		};
 		D2F5CD421AB49A0C0035B91A = {
@@ -198,6 +255,9 @@
 				D2F5CD4D1AB49A0C0035B91A /* kyc */,
 				D2F5CD631AB49A0C0035B91A /* kycTests */,
 				D2F5CD4C1AB49A0C0035B91A /* Products */,
+				127935CB10579C24E1DE3D7D /* Pods */,
+				535C2EDC80FFE59FB29388A8 /* Frameworks */,
+				D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,8 +296,9 @@
 		D2F5CD631AB49A0C0035B91A /* kycTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2F5CD661AB49A0C0035B91A /* kycTests.swift */,
 				D2F5CD641AB49A0C0035B91A /* Supporting Files */,
+				D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */,
+				D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */,
 			);
 			path = kycTests;
 			sourceTree = "<group>";
@@ -253,30 +314,21 @@
 		D2F5CD701AB49DF50035B91A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D209DFD11AC23F5500648137 /* Repository */,
 				D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */,
+				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D2985A511ABD8AA20008EFCB /* Utilities */,
 				D2985A4B1ABD65C70008EFCB /* Services */,
-				D2F5CD891AB4A1660035B91A /* Manager.swift */,
-				D2F5CD8B1AB4A3BE0035B91A /* Contracts */,
-				D2F5CD711AB49DF50035B91A /* Json */,
 				D2F5CD8E1AB4A61C0035B91A /* Logger.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		D2F5CD711AB49DF50035B91A /* Json */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Json;
-			sourceTree = "<group>";
-		};
 		D2F5CD731AB49DF50035B91A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D2BD50F91AB4DA8A0025E03F /* Repository */,
+				D2BD50F91AB4DA8A0025E03F /* Dao */,
 				D2BD50D81AB4C9100025E03F /* Day.swift */,
-				D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -371,14 +423,6 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		D2F5CD8B1AB4A3BE0035B91A /* Contracts */ = {
-			isa = PBXGroup;
-			children = (
-				D2F5CD8C1AB4A4000035B91A /* BaseResponse.swift */,
-			);
-			path = Contracts;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,9 +430,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2F5CD6A1AB49A0C0035B91A /* Build configuration list for PBXNativeTarget "kyc" */;
 			buildPhases = (
+				8AB093AE9C18345CD2EAF4AB /* Check Pods Manifest.lock */,
 				D2F5CD471AB49A0C0035B91A /* Sources */,
 				D2F5CD481AB49A0C0035B91A /* Frameworks */,
 				D2F5CD491AB49A0C0035B91A /* Resources */,
+				E55B114A49C402BAF390606C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -403,9 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2F5CD6D1AB49A0C0035B91A /* Build configuration list for PBXNativeTarget "kycTests" */;
 			buildPhases = (
+				A2B9B159942D1EE83AB42030 /* Check Pods Manifest.lock */,
 				D2F5CD5C1AB49A0C0035B91A /* Sources */,
 				D2F5CD5D1AB49A0C0035B91A /* Frameworks */,
 				D2F5CD5E1AB49A0C0035B91A /* Resources */,
+				AB61B6CCB1BB87D63DA203B2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -483,6 +531,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8AB093AE9C18345CD2EAF4AB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B9B159942D1EE83AB42030 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB61B6CCB1BB87D63DA203B2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kycTests/Pods-kycTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E55B114A49C402BAF390606C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kyc/Pods-kyc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2F5CD471AB49A0C0035B91A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -492,36 +603,36 @@
 				D2BD51111AB4E3E30025E03F /* SurfBoatsViewController.swift in Sources */,
 				D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */,
 				D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */,
+				D2A784001AC0CE5F00AA2777 /* ForecastServiceProtocol.swift in Sources */,
 				D2F5CD991AB4ABA30035B91A /* BoatsViewController.swift in Sources */,
 				D2F5CD841AB4A10D0035B91A /* CenterViewController.swift in Sources */,
-				D2F5CD8D1AB4A4000035B91A /* BaseResponse.swift in Sources */,
-				D2BD51071AB4DAAE0025E03F /* DayPref.swift in Sources */,
-				D2BD51051AB4DAAD0025E03F /* BoatPref.swift in Sources */,
+				D2BD51071AB4DAAE0025E03F /* DayPrefDao.swift in Sources */,
+				D2BD51051AB4DAAD0025E03F /* BoatPrefDao.swift in Sources */,
 				D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */,
 				D2F5CD971AB4AB900035B91A /* BookingsViewController.swift in Sources */,
 				D2F5CD951AB4AB520035B91A /* DaysViewController.swift in Sources */,
 				D2F5CD851AB4A10D0035B91A /* ContainerViewController.swift in Sources */,
-				D2BD50FB1AB4DAAC0025E03F /* Booking.swift in Sources */,
-				D2F5CD8A1AB4A1660035B91A /* Manager.swift in Sources */,
+				D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */,
+				D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */,
 				D2BEEC021AB4C1D100C6CA08 /* SettingsViewController.swift in Sources */,
 				D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */,
-				D2BD51011AB4DAAD0025E03F /* User.swift in Sources */,
+				D2BD51011AB4DAAD0025E03F /* UserDao.swift in Sources */,
+				D209DFD41AC23F5500648137 /* ForecastRepository.swift in Sources */,
 				D2BD51131AB4E6350025E03F /* BoatsTabViewController.swift in Sources */,
 				D2F5CD8F1AB4A61C0035B91A /* Logger.swift in Sources */,
-				D2BD50FF1AB4DAAD0025E03F /* Setting.swift in Sources */,
+				D2BD50FF1AB4DAAD0025E03F /* SettingDao.swift in Sources */,
 				D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */,
-				D2BD51031AB4DAAD0025E03F /* Forecast.swift in Sources */,
+				D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */,
 				D2BD51101AB4E3E30025E03F /* KayakBoatsViewController.swift in Sources */,
-				D2985A901ABDB50F0008EFCB /* BookingService.swift in Sources */,
 				D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */,
 				D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */,
 				D2F5CD881AB4A10D0035B91A /* SidePanelViewController.swift in Sources */,
 				D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */,
+				D209DFD51AC23F5500648137 /* Repository.swift in Sources */,
 				D2F5CD7E1AB49FF60035B91A /* ViewControllersFactory.swift in Sources */,
-				D2BD50E41AB4D29F0025E03F /* Data.xcdatamodeld in Sources */,
 				D2BD50D91AB4C9100025E03F /* Day.swift in Sources */,
 				D2F5CD931AB4A8810035B91A /* MainViewController.swift in Sources */,
-				D2BD50FD1AB4DAAD0025E03F /* Boat.swift in Sources */,
+				D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +640,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F5CD671AB49A0C0035B91A /* kycTests.swift in Sources */,
+				D2A7840B1AC1FBC700AA2777 /* ForecastRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,28 +754,37 @@
 		};
 		D2F5CD6B1AB49A0C0035B91A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A4C6C2AB49E1DE2DB5F86DF /* Pods-kyc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kyc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D2F5CD6C1AB49A0C0035B91A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB8388E5FD0776B2A735517F /* Pods-kyc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kyc-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		D2F5CD6E1AB49A0C0035B91A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F385E8AF0743AF52C2A71D2D /* Pods-kycTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -676,14 +796,18 @@
 				INFOPLIST_FILE = kycTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kycTests/kycTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kyc.app/kyc";
 			};
 			name = Debug;
 		};
 		D2F5CD6F1AB49A0C0035B91A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF036E30571F0E5D14DCCDFC /* Pods-kycTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -691,6 +815,7 @@
 				INFOPLIST_FILE = kycTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "kycTests/kycTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kyc.app/kyc";
 			};
 			name = Release;
@@ -726,19 +851,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D2BD50E21AB4D29F0025E03F /* Data.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */,
-			);
-			currentVersion = D2BD50E31AB4D29F0025E03F /* Data.xcdatamodel */;
-			path = Data.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D2F5CD431AB49A0C0035B91A /* Project object */;
 }
