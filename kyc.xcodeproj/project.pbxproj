@@ -11,9 +11,19 @@
 		D209DFD41AC23F5500648137 /* ForecastRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFD21AC23F5500648137 /* ForecastRepository.swift */; };
 		D209DFD51AC23F5500648137 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFD31AC23F5500648137 /* Repository.swift */; };
 		D209DFD71AC3414F00648137 /* BookingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFD61AC3414F00648137 /* BookingRepository.swift */; };
-		D209DFDB1AC3532C00648137 /* BookingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFDA1AC3532C00648137 /* BookingRepositoryTests.swift */; };
 		D209DFDD1AC35FAF00648137 /* BoatsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFDC1AC35FAF00648137 /* BoatsRepository.swift */; };
-		D209DFDF1AC3617A00648137 /* BoatsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFDE1AC3617A00648137 /* BoatsRepositoryTests.swift */; };
+		D209DFE31AC4A6CD00648137 /* DayPrefsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFE21AC4A6CD00648137 /* DayPrefsRepository.swift */; };
+		D209DFE71AC4AB1100648137 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFE61AC4AB1100648137 /* Time.swift */; };
+		D209DFE91AC4AFE300648137 /* BoatPrefsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFE81AC4AFE300648137 /* BoatPrefsRepository.swift */; };
+		D209DFED1AC4B64B00648137 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFEC1AC4B64B00648137 /* UserRepository.swift */; };
+		D209DFF11AC4B96700648137 /* SettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209DFF01AC4B96700648137 /* SettingRepository.swift */; };
+		D24E6B4C1AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B451AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift */; };
+		D24E6B4D1AC4BE130035FBBF /* BoatsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B461AC4BE130035FBBF /* BoatsRepositoryTests.swift */; };
+		D24E6B4E1AC4BE130035FBBF /* BookingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B471AC4BE130035FBBF /* BookingRepositoryTests.swift */; };
+		D24E6B4F1AC4BE130035FBBF /* DayPrefsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B481AC4BE130035FBBF /* DayPrefsRepositoryTests.swift */; };
+		D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B491AC4BE130035FBBF /* ForecastRepositoryTests.swift */; };
+		D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B4A1AC4BE130035FBBF /* SettingRepositoryTests.swift */; };
+		D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B4B1AC4BE130035FBBF /* UserRepositoryTests.swift */; };
 		D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A4F1ABD813B0008EFCB /* ForecastService.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
 		D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A911ABDC4D30008EFCB /* DateExt.swift */; };
@@ -22,7 +32,6 @@
 		D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */; };
 		D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */; };
 		D2A784001AC0CE5F00AA2777 /* ForecastServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */; };
-		D2A7840B1AC1FBC700AA2777 /* ForecastRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */; };
 		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
 		D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */; };
 		D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */; };
@@ -81,9 +90,19 @@
 		D209DFD21AC23F5500648137 /* ForecastRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepository.swift; sourceTree = "<group>"; };
 		D209DFD31AC23F5500648137 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		D209DFD61AC3414F00648137 /* BookingRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingRepository.swift; sourceTree = "<group>"; };
-		D209DFDA1AC3532C00648137 /* BookingRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingRepositoryTests.swift; sourceTree = "<group>"; };
 		D209DFDC1AC35FAF00648137 /* BoatsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatsRepository.swift; sourceTree = "<group>"; };
-		D209DFDE1AC3617A00648137 /* BoatsRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatsRepositoryTests.swift; sourceTree = "<group>"; };
+		D209DFE21AC4A6CD00648137 /* DayPrefsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPrefsRepository.swift; sourceTree = "<group>"; };
+		D209DFE61AC4AB1100648137 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		D209DFE81AC4AFE300648137 /* BoatPrefsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatPrefsRepository.swift; sourceTree = "<group>"; };
+		D209DFEC1AC4B64B00648137 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		D209DFF01AC4B96700648137 /* SettingRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingRepository.swift; sourceTree = "<group>"; };
+		D24E6B451AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatPrefsRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B461AC4BE130035FBBF /* BoatsRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatsRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B471AC4BE130035FBBF /* BookingRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B481AC4BE130035FBBF /* DayPrefsRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPrefsRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B491AC4BE130035FBBF /* ForecastRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B4A1AC4BE130035FBBF /* SettingRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingRepositoryTests.swift; sourceTree = "<group>"; };
+		D24E6B4B1AC4BE130035FBBF /* UserRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		D2985A4F1ABD813B0008EFCB /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D2985A911ABDC4D30008EFCB /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
@@ -93,7 +112,6 @@
 		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
 		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastServiceProtocol.swift; sourceTree = "<group>"; };
-		D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepositoryTests.swift; sourceTree = "<group>"; };
 		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
@@ -181,10 +199,28 @@
 		D209DFD11AC23F5500648137 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D209DFE21AC4A6CD00648137 /* DayPrefsRepository.swift */,
 				D209DFDC1AC35FAF00648137 /* BoatsRepository.swift */,
 				D209DFD21AC23F5500648137 /* ForecastRepository.swift */,
 				D209DFD61AC3414F00648137 /* BookingRepository.swift */,
+				D209DFE81AC4AFE300648137 /* BoatPrefsRepository.swift */,
 				D209DFD31AC23F5500648137 /* Repository.swift */,
+				D209DFEC1AC4B64B00648137 /* UserRepository.swift */,
+				D209DFF01AC4B96700648137 /* SettingRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D24E6B441AC4BE130035FBBF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D24E6B451AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift */,
+				D24E6B461AC4BE130035FBBF /* BoatsRepositoryTests.swift */,
+				D24E6B471AC4BE130035FBBF /* BookingRepositoryTests.swift */,
+				D24E6B481AC4BE130035FBBF /* DayPrefsRepositoryTests.swift */,
+				D24E6B491AC4BE130035FBBF /* ForecastRepositoryTests.swift */,
+				D24E6B4A1AC4BE130035FBBF /* SettingRepositoryTests.swift */,
+				D24E6B4B1AC4BE130035FBBF /* UserRepositoryTests.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -306,10 +342,8 @@
 		D2F5CD631AB49A0C0035B91A /* kycTests */ = {
 			isa = PBXGroup;
 			children = (
+				D24E6B441AC4BE130035FBBF /* Repository */,
 				D2F5CD641AB49A0C0035B91A /* Supporting Files */,
-				D2A7840A1AC1FBC700AA2777 /* ForecastRepositoryTests.swift */,
-				D209DFDE1AC3617A00648137 /* BoatsRepositoryTests.swift */,
-				D209DFDA1AC3532C00648137 /* BookingRepositoryTests.swift */,
 				D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */,
 			);
 			path = kycTests;
@@ -341,6 +375,7 @@
 			children = (
 				D2BD50F91AB4DA8A0025E03F /* Dao */,
 				D2BD50D81AB4C9100025E03F /* Day.swift */,
+				D209DFE61AC4AB1100648137 /* Time.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -626,14 +661,18 @@
 				D2F5CD951AB4AB520035B91A /* DaysViewController.swift in Sources */,
 				D2F5CD851AB4A10D0035B91A /* ContainerViewController.swift in Sources */,
 				D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */,
+				D209DFE91AC4AFE300648137 /* BoatPrefsRepository.swift in Sources */,
+				D209DFF11AC4B96700648137 /* SettingRepository.swift in Sources */,
 				D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */,
 				D2BEEC021AB4C1D100C6CA08 /* SettingsViewController.swift in Sources */,
 				D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */,
 				D2BD51011AB4DAAD0025E03F /* UserDao.swift in Sources */,
 				D209DFD41AC23F5500648137 /* ForecastRepository.swift in Sources */,
+				D209DFE71AC4AB1100648137 /* Time.swift in Sources */,
 				D2BD51131AB4E6350025E03F /* BoatsTabViewController.swift in Sources */,
 				D2F5CD8F1AB4A61C0035B91A /* Logger.swift in Sources */,
 				D2BD50FF1AB4DAAD0025E03F /* SettingDao.swift in Sources */,
+				D209DFE31AC4A6CD00648137 /* DayPrefsRepository.swift in Sources */,
 				D209DFD71AC3414F00648137 /* BookingRepository.swift in Sources */,
 				D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */,
 				D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */,
@@ -646,6 +685,7 @@
 				D2F5CD7E1AB49FF60035B91A /* ViewControllersFactory.swift in Sources */,
 				D2BD50D91AB4C9100025E03F /* Day.swift in Sources */,
 				D2F5CD931AB4A8810035B91A /* MainViewController.swift in Sources */,
+				D209DFED1AC4B64B00648137 /* UserRepository.swift in Sources */,
 				D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,9 +694,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D209DFDF1AC3617A00648137 /* BoatsRepositoryTests.swift in Sources */,
-				D2A7840B1AC1FBC700AA2777 /* ForecastRepositoryTests.swift in Sources */,
-				D209DFDB1AC3532C00648137 /* BookingRepositoryTests.swift in Sources */,
+				D24E6B4C1AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift in Sources */,
+				D24E6B4F1AC4BE130035FBBF /* DayPrefsRepositoryTests.swift in Sources */,
+				D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */,
+				D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */,
+				D24E6B4D1AC4BE130035FBBF /* BoatsRepositoryTests.swift in Sources */,
+				D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */,
+				D24E6B4E1AC4BE130035FBBF /* BookingRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

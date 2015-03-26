@@ -2,9 +2,9 @@ import Foundation
 
 public class DayPrefDao : NSObject,NSCoding{
 
-    var day: Int
-    var time: Int
-    var type: Int
+    public private(set) var day: Int
+    public private(set) var time: Int
+    public private(set) var type: Int
     
     public init(day:Int,time:Int,type:Int) {
         self.day = day
