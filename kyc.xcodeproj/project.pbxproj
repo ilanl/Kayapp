@@ -24,14 +24,14 @@
 		D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B491AC4BE130035FBBF /* ForecastRepositoryTests.swift */; };
 		D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B4A1AC4BE130035FBBF /* SettingRepositoryTests.swift */; };
 		D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B4B1AC4BE130035FBBF /* UserRepositoryTests.swift */; };
-		D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A4F1ABD813B0008EFCB /* ForecastService.swift */; };
+		D24E6B5B1AC4C4370035FBBF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */; };
+		D24E6B5E1AC4C7520035FBBF /* ForecastServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B5D1AC4C7520035FBBF /* ForecastServiceTests.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
 		D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A911ABDC4D30008EFCB /* DateExt.swift */; };
 		D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */; };
 		D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */; };
 		D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */; };
 		D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */; };
-		D2A784001AC0CE5F00AA2777 /* ForecastServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */; };
 		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
 		D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */; };
 		D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */; };
@@ -103,7 +103,8 @@
 		D24E6B491AC4BE130035FBBF /* ForecastRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastRepositoryTests.swift; sourceTree = "<group>"; };
 		D24E6B4A1AC4BE130035FBBF /* SettingRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingRepositoryTests.swift; sourceTree = "<group>"; };
 		D24E6B4B1AC4BE130035FBBF /* UserRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
-		D2985A4F1ABD813B0008EFCB /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
+		D24E6B5D1AC4C7520035FBBF /* ForecastServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastServiceTests.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D2985A911ABDC4D30008EFCB /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithBookingCell.swift; sourceTree = "<group>"; };
@@ -111,7 +112,6 @@
 		D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
 		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
 		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
-		D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastServiceProtocol.swift; sourceTree = "<group>"; };
 		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
@@ -225,11 +225,18 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		D2985A4B1ABD65C70008EFCB /* Services */ = {
+		D24E6B591AC4C4250035FBBF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D2A783FE1AC0CE4100AA2777 /* Protocols */,
-				D2985A4F1ABD813B0008EFCB /* ForecastService.swift */,
+				D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D24E6B5C1AC4C73B0035FBBF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D24E6B5D1AC4C7520035FBBF /* ForecastServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -271,14 +278,6 @@
 				D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */,
 			);
 			path = Container;
-			sourceTree = "<group>";
-		};
-		D2A783FE1AC0CE4100AA2777 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				D2A783FF1AC0CE5F00AA2777 /* ForecastServiceProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D2BD50F91AB4DA8A0025E03F /* Dao */ = {
@@ -342,6 +341,7 @@
 		D2F5CD631AB49A0C0035B91A /* kycTests */ = {
 			isa = PBXGroup;
 			children = (
+				D24E6B5C1AC4C73B0035FBBF /* Services */,
 				D24E6B441AC4BE130035FBBF /* Repository */,
 				D2F5CD641AB49A0C0035B91A /* Supporting Files */,
 				D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */,
@@ -360,11 +360,11 @@
 		D2F5CD701AB49DF50035B91A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D24E6B591AC4C4250035FBBF /* Services */,
 				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D209DFD11AC23F5500648137 /* Repository */,
 				D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */,
 				D2985A511ABD8AA20008EFCB /* Utilities */,
-				D2985A4B1ABD65C70008EFCB /* Services */,
 				D2F5CD8E1AB4A61C0035B91A /* Logger.swift */,
 			);
 			path = Core;
@@ -651,10 +651,10 @@
 				D2BD51111AB4E3E30025E03F /* SurfBoatsViewController.swift in Sources */,
 				D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */,
 				D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */,
-				D2A784001AC0CE5F00AA2777 /* ForecastServiceProtocol.swift in Sources */,
 				D2F5CD991AB4ABA30035B91A /* BoatsViewController.swift in Sources */,
 				D2F5CD841AB4A10D0035B91A /* CenterViewController.swift in Sources */,
 				D2BD51071AB4DAAE0025E03F /* DayPrefDao.swift in Sources */,
+				D24E6B5B1AC4C4370035FBBF /* ForecastService.swift in Sources */,
 				D2BD51051AB4DAAD0025E03F /* BoatPrefDao.swift in Sources */,
 				D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */,
 				D2F5CD971AB4AB900035B91A /* BookingsViewController.swift in Sources */,
@@ -665,7 +665,6 @@
 				D209DFF11AC4B96700648137 /* SettingRepository.swift in Sources */,
 				D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */,
 				D2BEEC021AB4C1D100C6CA08 /* SettingsViewController.swift in Sources */,
-				D2985A501ABD813B0008EFCB /* ForecastService.swift in Sources */,
 				D2BD51011AB4DAAD0025E03F /* UserDao.swift in Sources */,
 				D209DFD41AC23F5500648137 /* ForecastRepository.swift in Sources */,
 				D209DFE71AC4AB1100648137 /* Time.swift in Sources */,
@@ -694,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D24E6B5E1AC4C7520035FBBF /* ForecastServiceTests.swift in Sources */,
 				D24E6B4C1AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift in Sources */,
 				D24E6B4F1AC4BE130035FBBF /* DayPrefsRepositoryTests.swift in Sources */,
 				D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */,

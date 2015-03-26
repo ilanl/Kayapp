@@ -10,6 +10,14 @@ public class CoreComponents: TyphoonAssembly {
 //        }
 //    }
     
+    //MARK: - Services
+    public dynamic func forecastServiceFactory() -> AnyObject {
+        return TyphoonDefinition.withClass(ForecastService.self){
+            (definition) in
+            definition.injectProperty("forecastRepository", with: self.forecastRepositoryFactory())
+        }
+    }
+    
     //MARK: - Repositories
     
     public dynamic func settingRepositoryFactory() -> AnyObject {
@@ -39,17 +47,4 @@ public class CoreComponents: TyphoonAssembly {
     public dynamic func bookingRepositoryFactory() -> AnyObject {
         return TyphoonDefinition.withClass(BookingRepository.self)
     }
-    
-//    public dynamic func forecastService() -> AnyObject {
-//        
-//        return TyphoonDefinition.withClass(ForecastService.self) {
-//            (definition) in
-//            
-//            definition.useInitializer("initWithDefaults:") {
-//                (initializer) in
-//                
-//                initializer.injectParameterWith(NSUserDefaults.standardUserDefaults())
-//            }
-//        }
-//    }
 }
