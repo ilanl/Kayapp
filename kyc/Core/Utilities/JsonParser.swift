@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol Serializable {
     init(dictionary: [NSObject: AnyObject])
 }

@@ -118,7 +118,7 @@
 		D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithNoBookingCell.swift; sourceTree = "<group>"; };
 		D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
 		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
-		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
@@ -328,7 +328,6 @@
 				D2F5CD4C1AB49A0C0035B91A /* Products */,
 				127935CB10579C24E1DE3D7D /* Pods */,
 				535C2EDC80FFE59FB29388A8 /* Frameworks */,
-				D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,6 +343,7 @@
 		D2F5CD4D1AB49A0C0035B91A /* kyc */ = {
 			isa = PBXGroup;
 			children = (
+				D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */,
 				D2985A4E1ABD66A50008EFCB /* Assets */,
 				D2F5CD7D1AB49FF60035B91A /* ViewControllersFactory.swift */,
 				D2F5CD701AB49DF50035B91A /* Core */,
@@ -853,7 +853,7 @@
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kyc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -867,7 +867,7 @@
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kyc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -888,7 +888,7 @@
 				INFOPLIST_FILE = kycTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kycTests/kycTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kycTests/kycTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kyc.app/kyc";
 			};
@@ -907,7 +907,7 @@
 				INFOPLIST_FILE = kycTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "kycTests/kycTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kycTests/kycTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kyc.app/kyc";
 			};
 			name = Release;

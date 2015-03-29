@@ -1,9 +1,10 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '6.0'
+
+platform :ios, '6.0'
 
 target 'kyc' do
 
-    pod 'Typhoon', :head
+    pod 'Typhoon'
 end
 
 target 'kycTests' do
