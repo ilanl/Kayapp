@@ -17,7 +17,7 @@ public class ForecastService: NSObject, ForecastServiceProtocol {
     {
         let url:NSURL = NSURL(string: "http://breezback.com/IKayak/forecasts.ashx")!
         
-        JsonClient.fetchData(url){ (data:NSData) -> Void in
+        JsonClient.get(url){ (data:NSData) -> Void in
             
             let forecasts = ForecastParser.parseJson(data, attribute: "Forecasts")
             

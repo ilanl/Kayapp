@@ -27,6 +27,8 @@
 		D24E6B5B1AC4C4370035FBBF /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */; };
 		D24E6B5E1AC4C7520035FBBF /* ForecastServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E6B5D1AC4C7520035FBBF /* ForecastServiceTests.swift */; };
 		D24E6B601AC4D2B80035FBBF /* weatherData.json in Resources */ = {isa = PBXBuildFile; fileRef = D24E6B5F1AC4D2B80035FBBF /* weatherData.json */; };
+		D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2616B681ACF3954009D62FC /* PreferenceService.swift */; };
+		D2616B6B1ACF3E92009D62FC /* PreferenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */; };
 		D280BD661ACEB5AB0011D4E6 /* preferenceData.json in Resources */ = {isa = PBXBuildFile; fileRef = D280BD651ACEB5AB0011D4E6 /* preferenceData.json */; };
 		D280BD681ACEB5FB0011D4E6 /* PreferenceJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD671ACEB5FB0011D4E6 /* PreferenceJson.swift */; };
 		D280BD6B1ACEC5430011D4E6 /* ForecastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */; };
@@ -116,6 +118,8 @@
 		D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
 		D24E6B5D1AC4C7520035FBBF /* ForecastServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastServiceTests.swift; sourceTree = "<group>"; };
 		D24E6B5F1AC4D2B80035FBBF /* weatherData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weatherData.json; sourceTree = "<group>"; };
+		D2616B681ACF3954009D62FC /* PreferenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
+		D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceServiceTests.swift; sourceTree = "<group>"; };
 		D280BD651ACEB5AB0011D4E6 /* preferenceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preferenceData.json; sourceTree = "<group>"; };
 		D280BD671ACEB5FB0011D4E6 /* PreferenceJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceJson.swift; sourceTree = "<group>"; };
 		D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParser.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 				D280BD691ACEC5290011D4E6 /* Parsers */,
 				D2C0D0301AC5700600A5BC42 /* Contracts */,
 				D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */,
+				D2616B681ACF3954009D62FC /* PreferenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				D24E6B5F1AC4D2B80035FBBF /* weatherData.json */,
 				D2C0D0391AC57E7100A5BC42 /* ForecastParserTests.swift */,
 				D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */,
+				D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -728,6 +734,7 @@
 				D209DFD71AC3414F00648137 /* BookingRepository.swift in Sources */,
 				D280BD681ACEB5FB0011D4E6 /* PreferenceJson.swift in Sources */,
 				D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */,
+				D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */,
 				D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */,
 				D2BD51101AB4E3E30025E03F /* KayakBoatsViewController.swift in Sources */,
 				D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */,
@@ -754,6 +761,7 @@
 				D24E6B4F1AC4BE130035FBBF /* DayPrefsRepositoryTests.swift in Sources */,
 				D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */,
 				D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */,
+				D2616B6B1ACF3E92009D62FC /* PreferenceServiceTests.swift in Sources */,
 				D24E6B4D1AC4BE130035FBBF /* BoatsRepositoryTests.swift in Sources */,
 				D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */,
 				D24E6B4E1AC4BE130035FBBF /* BookingRepositoryTests.swift in Sources */,

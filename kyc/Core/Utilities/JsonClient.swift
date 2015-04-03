@@ -1,6 +1,6 @@
 public class JsonClient:NSObject{
 
-    class func fetchData(url: NSURL,success:(NSData->Void)) {
+    class func get(url: NSURL,success:(NSData->Void)) {
         let request = NSURLRequest(URL: url)
         let urlSession = NSURLSession.sharedSession()
         let dataTask = urlSession.dataTaskWithRequest(request) {
@@ -12,5 +12,28 @@ public class JsonClient:NSObject{
             }
         }
         dataTask.resume()
+    }
+    
+    class func post(params : Dictionary<String, String>, url : String,success:(NSData->Void)) {
+        
+        var request = NSMutableURLRequest(URL: NSURL(string:url)!)
+        var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        var err: NSError?
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            println("Response: \(response)")
+            if (error == nil) {
+                success(data)
+            } else {
+                fatalError("could not fetch data")
+            }
+        })
+        
+        task.resume()
     }
 }
