@@ -1,21 +1,14 @@
-class JsonClient:NSObject{
+public class JsonClient:NSObject{
 
-    func getList<T: Serializable>(url: NSURL, completion:([T])->Void) {
-        var parsedList = [T]()
+    class func fetchData(url: NSURL,success:(NSData->Void)) {
         let request = NSURLRequest(URL: url)
         let urlSession = NSURLSession.sharedSession()
         let dataTask = urlSession.dataTaskWithRequest(request) {
             (var data, var response, var error) in
-            if (error != nil) {
-                var parseError : NSError?
-                let unparsedArray = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &parseError) as [AnyObject]
-                parsedList = JsonParser.parseArrayToArrayOfType(unparsedArray)
+            if (error == nil) {
+                success(data)
             } else {
-                println(error)
-            }
-            // call the completion function (on the main thread)
-            dispatch_async(dispatch_get_main_queue()) {
-                completion(parsedList)
+                fatalError("could not fetch data")
             }
         }
         dataTask.resume()

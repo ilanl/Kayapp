@@ -1,0 +1,358 @@
+{
+    "IsFrozen":false,
+    "Set":{
+        "TimePrefs":[
+                     {
+                     "DayOfWeek":"Sunday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Sunday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Sunday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Saturday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Saturday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Saturday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Tuesday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Tuesday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Tuesday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Thursday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Thursday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Thursday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Friday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Friday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Friday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Monday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Monday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Monday",
+                     "Time":2,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Wednesday",
+                     "Time":0,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Wednesday",
+                     "Time":1,
+                     "Type":3
+                     },
+                     {
+                     "DayOfWeek":"Wednesday",
+                     "Time":2,
+                     "Type":3
+                     }
+                     ],
+        "KayakPrefs":[
+                      {
+                      "Key":"1",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 01 ",
+                      "Type":2,
+                      "Weight":3
+                      },
+                      {
+                      "Key":"2",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 02",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"59",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 03",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"60",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 04",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"61",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 05",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"62",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 06",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"63",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 07",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"64",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 08",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"65",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 09",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"66",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 10",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"67",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 11 \u05e6\u05d5\u05e0\u05de\u05d9 \u05d0\u05d3\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"68",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 12 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05ea\u05db\u05dc\u05ea",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"69",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 13 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05d0\u05d3\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":2
+                      },
+                      {
+                      "Key":"70",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5",
+                      "Type":2,
+                      "Weight":1
+                      },
+                      {
+                      "Key":"71",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 15 \u05d8\u05de\u05e4\u05e1\u05d8 170 \u05db\u05d7\u05d5\u05dc",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"96",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 16 \u05e4\u05d9\u05d1\u05e8, \u05d5\u05e8\u05d5\u05d3",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"97",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 17 \u05e4\u05d9\u05d1\u05e8",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"98",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 18 \u05e4\u05d9\u05d1\u05e8",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"99",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 19 \u05d8\u05de\u05e4\u05e1\u05d8 170 \u05de\u05e0\u05d2\u05d5",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"100",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 20 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05d0\u05d3\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"101",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 21 \u05e1\u05e7\u05d5\u05e8\u05e4\u05d9\u05d5",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"102",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 22 \u05e1\u05e7\u05d5\u05e8\u05e4\u05d9\u05d5",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"116",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 23 \u05d8\u05de\u05e4\u05e1\u05d8 170 \u05d9\u05e8\u05e7\u05e8\u05e7",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"117",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 24 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05d9\u05e8\u05e7\u05e8\u05e7",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"118",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 25 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05e6\u05d4\u05d5\u05d1/\u05db\u05ea\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"129",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 26 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05d0\u05d3\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"130",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 27 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05db\u05ea\u05d5\u05dd",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"131",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 28 \u05e1\u05e7\u05d5\u05e8\u05e4\u05d9\u05d5 \u05db\u05ea\u05d5\u05dd LV",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"132",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 \u05d6\u05d5\u05d2\u05d9 \u05dc\u05d1\u05df",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"136",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 45 XT \u05dc\u05d0 \u05dc\u05d4\u05d6\u05de\u05d9\u05df-\u05de\u05d5\u05e9\u05d1\u05ea",
+                      "Type":1,
+                      "Weight":3
+                      },
+                      {
+                      "Key":"137",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 46 XT \u05e6\u05e8",
+                      "Type":1,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"158",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 47 - \u05dc\u05d0 \u05dc\u05d4\u05d6\u05de\u05d9\u05df,\u05de\u05d5\u05e9\u05d1\u05ea",
+                      "Type":1,
+                      "Weight":2
+                      },
+                      {
+                      "Key":"160",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 48 - epic v8",
+                      "Type":1,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"161",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05d6\u05d5\u05d2\u05d9 \u05de\u05e1' 49",
+                      "Type":1,
+                      "Weight":2
+                      },
+                      {
+                      "Key":"163",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05d6\u05d5\u05d2\u05d9 \u05de\u05e1' 50 ",
+                      "Type":1,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"164",
+                      "Name":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05d6\u05d5\u05d2\u05d9 \u05de\u05e1' 50",
+                      "Type":1,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"165",
+                      "Name":"\u05d0\u05e7\u05d3\u05de\u05d9 \u05d6\u05d5\u05d2\u05d9 25",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"167",
+                      "Name":"\u05d0\u05e7\u05d3\u05de\u05d9 \u05d6\u05d5\u05d2\u05d9 26",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"169",
+                      "Name":"\u05e4\u05e8\u05d8\u05d9",
+                      "Type":2,
+                      "Weight":0
+                      },
+                      {
+                      "Key":"0",
+                      "Name":"\u05e7\u05d9\u05d0\u05e7 \u05e4\u05e8\u05d8\u05d9",
+                      "Type":2,
+                      "Weight":0
+                      }
+                      ]
+    },
+    "Reminder":0,
+    "SecurityToken":null,
+    "Status":"Success",
+    "Error":null
+}
