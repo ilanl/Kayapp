@@ -9,8 +9,8 @@ public class PreferenceServiceTests : XCTestCase {
     var boatsRepository = BoatsRepositoryDummy()
     var boatPrefsRepository = BoatPrefsRepositoryDummy()
     var dayPrefsRepository = DayPrefsRepositoryDummy()
-    var userRepository=UserRepository()
-    var settingRepository=SettingRepository()
+    var userRepository=UserRepositoryDummy()
+    var settingRepository=SettingRepositoryDummy()
     
     public override func setUp() {
         
@@ -21,11 +21,15 @@ public class PreferenceServiceTests : XCTestCase {
         
         let expectation = expectationWithDescription("expecting data")
         
-        self.target.getPreferences({ (boats, boatPrefs, dayPrefs, user) -> Void in
-            println(boats)
+        self.target.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+            
+            XCTAssertTrue(boats!.count > 0, "Could not find boats")
+            XCTAssertTrue(boatPrefs!.count > 0, "Could not find boat prefs")
+            XCTAssertTrue(dayPrefs!.count > 0, "Could not find day prefs")
+            XCTAssertTrue(setting !=  nil, "Could not find setting")
             
             expectation.fulfill()
-            //
+            
         }, onError: { (message) -> Void in
             //
         })
@@ -66,21 +70,22 @@ public class PreferenceServiceTests : XCTestCase {
     public class UserRepositoryDummy: UserRepository{
         public var inMemoryRepository = UserDao(name:"dd",pwd:"sss")
         
-        override public func save(user: UserDao) -> Bool {
-            self.inMemoryRepository = user
-            println("saving user somewhere")
-            return true
+        public override func get() -> UserDao? {
+            
+            var userDao = UserDao(name: "%D7%90%D7%99%D7%9C%D7%9F%20%D7%9C", pwd: "32371")
+            userDao.deviceToken = "7851dc5ce47f31105238767b8e45614789bb46542e4b251fb7b685982dbc4e47"
+            return userDao
         }
     }
     
     public class SettingRepositoryDummy: SettingRepository{
-//        public var inMemoryRepository: SettingDao
-//        
-//        override public func save(setting: SettingDao) -> Bool {
-//            self.inMemoryRepository = setting
-//            println("saving settings somewhere")
-//            return true
-//        }
+        public var inMemoryRepository: SettingDao?
+        
+        public override func save(setting: SettingDao) -> Bool {
+            self.inMemoryRepository = setting
+            println("saving settings somewhere")
+            return true
+        }
     }
 }
 

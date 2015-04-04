@@ -27,7 +27,6 @@ class Repository<T:AnyObject> {
                 self.arrayOfData = array
             }
         }
-        
     }
     
     func save(array: [T])->Bool {

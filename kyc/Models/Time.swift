@@ -11,7 +11,11 @@ public class Time: NSObject{
         super.init()
     }
     
-    class func everydays() -> [Time]{
+    public class func getTimeByString(timeOfDay:String)->Int{
+        return everytimes().filter({ $0.name == timeOfDay }).first!.tag
+    }
+    
+    class func everytimes() -> [Time]{
         let times : [Time] = [
             Time(time:"Morning",raw:1),
             Time(time:"Afternoon",raw:2),

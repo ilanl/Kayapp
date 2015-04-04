@@ -11,6 +11,10 @@ public class Day: NSObject{
         super.init()
     }
     
+    public class func getDayByString(dayOfWeek:String)->Int{
+        return everydays().filter({ $0.name == dayOfWeek }).first!.tag
+    }
+    
     class func everydays() -> [Day]{
         let days : [Day] = [
             Day(day:"Sunday",raw:1),
