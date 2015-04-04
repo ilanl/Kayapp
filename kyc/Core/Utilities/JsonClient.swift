@@ -11,10 +11,11 @@ public class JsonClient:NSObject{
                 fatalError("could not fetch data")
             }
         }
+        
         dataTask.resume()
     }
     
-    class func post(params : Dictionary<String, String>, url : String,success:(NSData->Void)) {
+    class func post(params : Dictionary<String, AnyObject>, url : String,success:(NSData->Void)) {
         
         var request = NSMutableURLRequest(URL: NSURL(string:url)!)
         var session = NSURLSession.sharedSession()

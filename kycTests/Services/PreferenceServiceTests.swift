@@ -17,7 +17,7 @@ public class PreferenceServiceTests : XCTestCase {
         self.target = PreferenceService(boatsRepo: self.boatsRepository, boatPrefRepo: self.boatPrefsRepository, dayPrefsRepo: self.dayPrefsRepository, userRepo: self.userRepository, settingRepo: self.settingRepository)
     }
     
-    public func test_preference_service_live() {
+    public func test_preference_service_get() {
         
         let expectation = expectationWithDescription("expecting data")
         
@@ -34,7 +34,26 @@ public class PreferenceServiceTests : XCTestCase {
             //
         })
         
-        waitForExpectationsWithTimeout(5.0, handler:nil)
+        waitForExpectationsWithTimeout(60.0, handler:nil)
+    }
+    
+    public func test_preference_service_save() {
+        
+        let expectation = expectationWithDescription("expecting data")
+        
+        self.dayPrefsRepository.save([DayPrefDao(day: 1, time: 1, type: 1)])
+        self.boatPrefsRepository.save([BoatPrefDao(name: "ss", order: 1)])
+        self.settingRepository.save(SettingDao(mode: 1, reminder: 30))
+        
+        self.target.savePreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+            
+            expectation.fulfill()
+            
+            }, onError: { (message) -> Void in
+                //
+        })
+        
+        waitForExpectationsWithTimeout(800.0, handler:nil)
     }
     
     public class BoatsRepositoryDummy: BoatsRepository{

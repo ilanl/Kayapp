@@ -2,6 +2,8 @@ import Foundation
 
 @objc public protocol PreferenceServiceProtocol {
     
+    func savePreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
+    
     func getPreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
 }
 
@@ -21,6 +23,30 @@ public class PreferenceService: NSObject, PreferenceServiceProtocol {
         self.dayPrefsRepository = dayPrefsRepo
     }
     
+    public func savePreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
+    {
+        let url = "http://breezback.com/IKayak/preferences.ashx"
+        
+        let userDao = self.userRepository.get()
+        if userDao == nil || userDao!.isAnonymous(){
+            fatalError("can not fetch preferences as anonymous")
+        }
+        let set: AnyObject = self.read()
+        let settingDao = self.settingRepository.get()
+        
+        JsonClient.post(["UserName":userDao!.name,"Password":userDao!.pwd,"Action":"1","IsFrozen": settingDao?.mode == 1 ? "1" : "" ,"Reminder":"\(settingDao!.reminder!)","DeviceToken":userDao!.deviceToken!, "Set": set], url: url){ (data:NSData) -> Void in
+            
+            let preferences = PreferenceParser.parseJson(data)
+            
+            if preferences.status!.lowercaseString != "success"
+            {
+                fatalError("could not save preferences")
+            }
+            
+            //never save the result of the save response
+        }
+    }
+    
     public func getPreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
     {
         let url = "http://breezback.com/IKayak/preferences.ashx"
@@ -38,34 +64,73 @@ public class PreferenceService: NSObject, PreferenceServiceProtocol {
             
             if preferences.status!.lowercaseString != "success"
             {
-                fatalError("could not fetch boat preferences")
+                fatalError("could not fetch preferences")
             }
             
-            var boatsDaos = [BoatDao]()
-            var boatPrefsDaos = [BoatPrefDao]()
-
-            for b in preferences.set.arrayOfKayakPrefs
-            {
-                boatsDaos.append(BoatDao(name: b.name!, type: b.type!))
-                if b.weight != nil && b.weight! > 0
-                {
-                    boatPrefsDaos.append(BoatPrefDao(name: b.name!, order: b.weight!))
-                }
-            }
-            self.boatsRepository.save(boatsDaos)
-            self.boatPrefsRepository.save(boatPrefsDaos)
-
-            var dayPrefDaos = [DayPrefDao]()
-            for b in preferences.set.arrayOfTimePrefs
-            {
-                dayPrefDaos.append(DayPrefDao(day: Day.getDayByString(b.dayOfWeek!), time: b.time!, type: b.type!))
-            }
-            self.dayPrefsRepository.save(dayPrefDaos)
-            
-            var settingDao = SettingDao(mode: preferences.isFrozen! ? 0 : 1, reminder:  preferences.reminder!)
-            self.settingRepository.save(settingDao)
-            
-            successBlock!(boatsDaos,boatPrefsDaos,dayPrefDaos,settingDao)
+            self.persist(preferences, successBlock)
         }
+    }
+    
+    private func persist(preferences:PreferenceJson, successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?){
+        
+        var boatsDaos = [BoatDao]()
+        var boatPrefsDaos = [BoatPrefDao]()
+        
+        for b in preferences.set.arrayOfKayakPrefs
+        {
+            boatsDaos.append(BoatDao(name: b.name!, type: b.type!))
+            if b.weight != nil && b.weight! > 0
+            {
+                boatPrefsDaos.append(BoatPrefDao(name: b.name!, order: b.weight!))
+            }
+        }
+        self.boatsRepository.save(boatsDaos)
+        self.boatPrefsRepository.save(boatPrefsDaos)
+        
+        var dayPrefDaos = [DayPrefDao]()
+        for b in preferences.set.arrayOfTimePrefs
+        {
+            dayPrefDaos.append(DayPrefDao(day: Day.getDayByString(b.dayOfWeek!), time: b.time!, type: b.type!))
+        }
+        self.dayPrefsRepository.save(dayPrefDaos)
+        
+        var settingDao = SettingDao(mode: preferences.isFrozen! ? 0 : 1, reminder:  preferences.reminder!)
+        self.settingRepository.save(settingDao)
+        
+        successBlock!(boatsDaos,boatPrefsDaos,dayPrefDaos,settingDao)
+    }
+    
+    private func read()->AnyObject{
+        
+        var setDict = [NSObject : AnyObject]()
+        
+        var timePrefs = [[NSObject : AnyObject]]()
+        for e in self.dayPrefsRepository.get(){
+            //{"Time":0,"DayOfWeek":"Sunday","Type":2}
+            var obj = [NSObject : AnyObject]()
+            obj["Time"] = 0
+            obj["DayOfWeek"] = "Sunday"
+            obj["Type"] = 2
+            timePrefs.append(obj)
+        }
+        setDict["TimePrefs"] = timePrefs
+        
+        var boatPrefs = [[NSObject : AnyObject]]()
+        for e in self.boatPrefsRepository.get(){
+            //{"Key":"2","Name":"קיאק 02","Weight":3,"Type":2}
+            var obj = [NSObject : AnyObject]()
+            obj["Key"] = "2"
+            obj["Name"] = "קיאק 02"
+            obj["Weight"] = 3
+            obj["Type"] = 2
+            boatPrefs.append(obj)
+        }
+        setDict["KayakPrefs"] = boatPrefs
+        
+        var error:NSError?
+        var data = NSJSONSerialization.dataWithJSONObject(setDict, options:NSJSONWritingOptions(0), error: &error)
+        
+        return setDict
+        //return NSString(data: data!, encoding: NSUTF8StringEncoding)!
     }
 }
