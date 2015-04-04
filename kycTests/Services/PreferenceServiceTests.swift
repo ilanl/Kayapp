@@ -53,7 +53,7 @@ public class PreferenceServiceTests : XCTestCase {
                 //
         })
         
-        waitForExpectationsWithTimeout(800.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
     public class BoatsRepositoryDummy: BoatsRepository{
