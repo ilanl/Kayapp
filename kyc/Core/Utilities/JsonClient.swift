@@ -26,7 +26,7 @@ public class JsonClient:NSObject{
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            println("Response: \(response)")
+            
             if (error == nil) {
                 success(data)
             } else {

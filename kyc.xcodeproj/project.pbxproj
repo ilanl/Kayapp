@@ -39,6 +39,7 @@
 		D280BD6B1ACEC5430011D4E6 /* ForecastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */; };
 		D280BD6D1ACEC5510011D4E6 /* PreferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */; };
 		D280BD6F1ACEC84A0011D4E6 /* PreferenceParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */; };
+		D285ADAE1AD010EB00E12663 /* BookingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
 		D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A911ABDC4D30008EFCB /* DateExt.swift */; };
 		D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */; };
@@ -135,6 +136,7 @@
 		D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParser.swift; sourceTree = "<group>"; };
 		D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParser.swift; sourceTree = "<group>"; };
 		D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParserTests.swift; sourceTree = "<group>"; };
+		D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingServiceTests.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D2985A911ABDC4D30008EFCB /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithBookingCell.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				D209DFD61AC3414F00648137 /* BookingRepository.swift */,
 				D209DFE81AC4AFE300648137 /* BoatPrefsRepository.swift */,
 				D209DFD31AC23F5500648137 /* Repository.swift */,
+				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D209DFEC1AC4B64B00648137 /* UserRepository.swift */,
 				D209DFF01AC4B96700648137 /* SettingRepository.swift */,
 			);
@@ -282,6 +285,7 @@
 				D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */,
 				D2735C0D1AD0008800AB60E0 /* bookingData.json */,
 				D2735C111AD0066F00AB60E0 /* BookingParserTests.swift */,
+				D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -334,7 +338,8 @@
 			children = (
 				D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */,
 			);
-			path = Container;
+			name = Container;
+			path = ../Container;
 			sourceTree = "<group>";
 		};
 		D2BD50F91AB4DA8A0025E03F /* Dao */ = {
@@ -427,7 +432,6 @@
 			isa = PBXGroup;
 			children = (
 				D24E6B591AC4C4250035FBBF /* Services */,
-				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D209DFD11AC23F5500648137 /* Repository */,
 				D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */,
 				D2985A511ABD8AA20008EFCB /* Utilities */,
@@ -785,6 +789,7 @@
 				D24E6B4D1AC4BE130035FBBF /* BoatsRepositoryTests.swift in Sources */,
 				D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */,
 				D24E6B4E1AC4BE130035FBBF /* BookingRepositoryTests.swift in Sources */,
+				D285ADAE1AD010EB00E12663 /* BookingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

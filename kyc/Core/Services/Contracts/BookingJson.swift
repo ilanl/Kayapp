@@ -33,16 +33,21 @@ public class BookingBoatJson:NSObject, Serializable{
     
     public var id:Int?
     public var boatId:String?
+    public var boatName:String?
     public var boatType:Int?
     public var tripId:String?
     public var tripDate:String?
     public var time:String?
     public var day:String?
+    public var state:Int?
     
     required public init(dictionary: [NSObject : AnyObject]) {
         
         if let _id = dictionary["Id"] as? Int{
             self.id = _id
+        }
+        if let _boatName = dictionary["KayakName"] as? String{
+            self.boatName = _boatName
         }
         if let _boatId = dictionary["KayakKey"] as? String{
             self.boatId = _boatId
@@ -61,6 +66,9 @@ public class BookingBoatJson:NSObject, Serializable{
         }
         if let _tripTime = dictionary["Time"] as? String{
             self.time = _tripTime
+        }
+        if let _state = dictionary["State"] as? Int{
+            self.state = _state
         }
     }
 }

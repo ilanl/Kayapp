@@ -13,6 +13,9 @@ public class BookingParserTests : XCTestCase {
         XCTAssertNotNil(bookingJson, "Incorrect Json Array")
         
         XCTAssertNotNil(bookingJson.arrayOfBookings[0].boatId)
+        XCTAssertNotNil(bookingJson.arrayOfBookings[0].boatName)
+        XCTAssertNotNil(bookingJson.arrayOfBookings[0].time)
+        XCTAssertNotNil(bookingJson.arrayOfBookings[0].id)
         XCTAssertNotNil(bookingJson.arrayOfBookings[0].boatType)
         XCTAssertNotNil(bookingJson.arrayOfBookings[0].tripDate)
     }
