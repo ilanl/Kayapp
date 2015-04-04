@@ -1,0 +1,91 @@
+{
+    "Bookings":[
+                {
+                "Id":51,
+                "KayakKey":"70",
+                "Type":2,
+                "TripKey":"223",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428094800",
+                "Day":"Saturday",
+                "Time":"08:00",
+                "KayakName":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5"
+                },
+                {
+                "Id":52,
+                "KayakKey":"70",
+                "Type":2,
+                "TripKey":"212",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428181200",
+                "Day":"Sunday",
+                "Time":"06:30",
+                "KayakName":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5"
+                },
+                {
+                "Id":53,
+                "KayakKey":"158",
+                "Type":1,
+                "TripKey":"213",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428267600",
+                "Day":"Monday",
+                "Time":"06:30",
+                "KayakName":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 47 - \u05dc\u05d0 \u05dc\u05d4\u05d6\u05de\u05d9\u05df,\u05de\u05d5\u05e9\u05d1\u05ea"
+                },
+                {
+                "Id":54,
+                "KayakKey":"70",
+                "Type":2,
+                "TripKey":"214",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428354000",
+                "Day":"Tuesday",
+                "Time":"07:00",
+                "KayakName":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5"
+                },
+                {
+                "Id":55,
+                "KayakKey":"158",
+                "Type":1,
+                "TripKey":"216",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428440400",
+                "Day":"Wednesday",
+                "Time":"06:30",
+                "KayakName":"\u05e1\u05e8\u05e3 \u05e1\u05e7\u05d9 \u05de\u05e1' 47 - \u05dc\u05d0 \u05dc\u05d4\u05d6\u05de\u05d9\u05df,\u05de\u05d5\u05e9\u05d1\u05ea"
+                },
+                {
+                "Id":56,
+                "KayakKey":"70",
+                "Type":2,
+                "TripKey":"217",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428526800",
+                "Day":"Thursday",
+                "Time":"06:30",
+                "KayakName":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5"
+                },
+                {
+                "Id":57,
+                "KayakKey":"70",
+                "Type":2,
+                "TripKey":"222",
+                "UserId":1,
+                "State":0,
+                "OutingDate":"1428613200",
+                "Day":"Friday",
+                "Time":"07:00",
+                "KayakName":"\u05e7\u05d9\u05d0\u05e7 14 \u05d8\u05de\u05e4\u05e1\u05d8 165 \u05de\u05e0\u05d2\u05d5"
+                }
+                ],
+    "SecurityToken":null,
+    "Status":"Success",
+    "Error":null
+}

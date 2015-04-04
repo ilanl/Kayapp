@@ -1,7 +1,6 @@
 import Foundation
 
-public class PreferenceJson:NSObject, Serializable{
-    public var isFrozen:Bool?
+public class BookingJson:NSObject, Serializable{
     public var set:SetJson
     public var reminder:Int?
     public var securityToken:String?
@@ -25,7 +24,7 @@ public class PreferenceJson:NSObject, Serializable{
         if let _status = dictionary["Status"] as? String{
             self.status = _status
         }
-        if let _error = dictionary["Error"] as? String{
+        if let _error = dictionary["error"] as? String{
             self.error = _error
         }
     }
