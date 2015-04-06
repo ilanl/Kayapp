@@ -7,10 +7,15 @@ import Foundation
 
 public class ForecastService: NSObject, ForecastServiceProtocol {
     
-    var forecastRepository:ForecastRepository
+    var forecastRepository:ForecastRepository?
     
-    public init(forecastRepository:ForecastRepository) {
+    override init() {
+        println("init")
+    }
+    
+    init(forecastRepository:ForecastRepository) {
         self.forecastRepository = forecastRepository
+        super.init()
     }
     
     public func getWeather(numberOfLiveDays:Int,onSuccess successBlock: ([ForecastDao] -> Void)?, onError errorBlock: (String -> Void)?)
@@ -34,7 +39,7 @@ public class ForecastService: NSObject, ForecastServiceProtocol {
                 let forecastDao = ForecastDao(date: date, weather: f.weather, temperature: temperature)
                 forecastDaos.append(forecastDao)
             }
-            self.forecastRepository.save(forecastDaos)
+            self.forecastRepository!.save(forecastDaos)
             
             successBlock!(forecastDaos)
         }

@@ -12,6 +12,11 @@ public class UserRepository:NSObject,UserRepositoryProtocol{
     
     let repository = Repository<UserDao>(plist: "User")
     
+    override init(){
+        println("initializing user singleton")
+        super.init()
+    }
+    
     public func reset()->Bool{
         self.repository.reset()
         return true

@@ -3,71 +3,40 @@ import UIKit
 class MainViewController: CenterViewController,UITableViewDataSource, UITableViewDelegate {
 
     var forecastArray:[ForecastDao]?
-    var sectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
-    
-    let dateFormatter = NSDateFormatter()
+    var sectionArray:[ForecastSection]?
     
     @IBAction func menuTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        var forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as? ForecastRepository
         
-//        let forecastService = ForecastService()
-//        forecastService.get({ forecasts in
-//            
-//                let bookingService = BookingService()
-//                bookingService.get({ bookings in
-//                    
-//                    self.dateFormatter.dateFormat = "dd MMM"
-//                    
-//                    for forecast in forecasts{
-//                        
-//                        Logger.log("forecast: \(forecast.datetime)")
-//                        
-//                        //Add header
-//                        let strForecastDay = self.dateFormatter.stringFromDate(forecast.datetime)
-//                        let sectionTuple = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:1)
-//                        
-//                        if (self.sectionArray.last?.title != sectionTuple.title){
-//                            self.sectionArray.append(sectionTuple)
-//                        }
-//                        else{
-//                            var counter:Int = self.sectionArray.last!.totalRows
-//                            var tuple = self.sectionArray.last!
-//                            self.sectionArray[self.sectionArray.count-1] = (title:"\(strForecastDay)",date:forecast.datetime, totalRows:++counter)
-//                            
-//                        }
-//                        
-//                        for booking in bookings{
-//                            if (self.checkIfForecastMatchBookingTime(forecast,booking:booking) == true){
-//                                
-//                                Logger.log("booking: \(booking.datetime)")
-//                                forecast.booking = booking
-//                                break
-//                            }
-//                        }
-//                    }
-//                    
-//                })
-//                self.forecastArray = forecasts
-//            
-//            })
+        self.forecastArray = forecastRepository?.get()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.showLoginIfAnoymous()
     }
     
     //MARK: Table methods
     func numberOfSectionsInTableView(tableView:UITableView!)->Int
     {
-        let sectionCount = self.sectionArray.count
+        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as? ForecastAndBookingMatcher
+        
+        self.sectionArray = forecastAndBookingMatcher!.getSections()
+        let sectionCount = self.sectionArray!.count
+        
+        //TODO: remove after
         Logger.log("table:number of sections: \(sectionCount)")
         return sectionCount
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
     
-        let totalRows = sectionArray[section].totalRows
+        let totalRows = self.sectionArray![section].totalRows
         Logger.log("table:section: \(section), count: \(totalRows)")
         return totalRows
     }
@@ -78,7 +47,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let forecast = forecastArray![indexPath.row] as ForecastDao
+        let forecast = self.forecastArray![indexPath.row] as ForecastDao
         return forecast.booking != nil ? 120 : 60
     }
     
@@ -113,7 +82,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        let sectionTuple = self.sectionArray[section]
+        let sectionTuple = self.sectionArray![section]
         return sectionTuple.title
     }
     
@@ -156,15 +125,20 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     
     //MARK: Private methods
-    private func checkIfForecastMatchBookingTime(forecast:ForecastDao,booking:BookingDao) -> Bool{
-        let bookingTime = booking.datetime
-        let interval =  0 //booking.datetime!.minutesFrom(forecast.datetime!)
-        if (interval == 0){
-            return true
-        }
-        return false
-    }
     
+    private func showLoginIfAnoymous(){
+        
+        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as? UserRepository
+        let user:UserDao? = userRepository!.get()
+        if user == nil || user!.isAnonymous(){
+            var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(LoginViewController) as UIViewController?
+            
+            if (viewController != nil){
+                self.navigationController?.presentViewController(viewController!, animated: true, completion: nil)
+            }
+        }
+        
+    }
     
 }
 

@@ -1,5 +1,10 @@
 import UIKit
 
+
+let coreComponents = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+let fireLoadDataNotificationKey = "com.kyc.fireLoadDataNotificationKey"
+let doneLoadDataNotificationKey = "com.kyc.doneLoadDataNotificationKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -13,14 +18,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: AppDelegate functions
     var window:UIWindow?
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
+        
         let containerViewController = ContainerViewController()
         window!.rootViewController = containerViewController
         window!.makeKeyAndVisible()
         
+        self.loadData()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadData", name: fireLoadDataNotificationKey, object: nil)
+        
         return true
     }
 
+    func loadData(){
+        
+        let forecastService = coreComponents.componentForKey("forecastServiceFactory") as? ForecastService
+        
+        forecastService?.getWeather(7, onSuccess: { forecasts in
+            
+            let preferenceService = coreComponents.componentForKey("preferenceServiceFactory") as? PreferenceService
+            preferenceService!.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+                
+                let bookingService = coreComponents.componentForKey("bookingServiceFactory") as? BookingService
+                
+                bookingService?.getBookings(onSuccess: { bookings in
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(doneLoadDataNotificationKey, object: self)
+                    
+                }, onError: {error in
+                    println(error)
+                })
+                
+            }, onError: { error in
+                println(error)
+            })
+            
+        }, onError: { message in
+            println(message)
+        })
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

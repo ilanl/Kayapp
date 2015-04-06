@@ -7,10 +7,14 @@ import Foundation
 
 public class BookingService: NSObject, BookingServiceProtocol {
     
-    var bookingRepository:BookingRepository
-    var userRepository:UserRepository
+    var bookingRepository:BookingRepository?
+    var userRepository:UserRepository?
     
-    public init(bookingRepo:BookingRepository,userRepo:UserRepository) {
+    override init() {
+        println("init")
+    }
+    
+    init(bookingRepo:BookingRepository,userRepo:UserRepository) {
         self.bookingRepository = bookingRepo
         self.userRepository = userRepo
     }
@@ -20,7 +24,7 @@ public class BookingService: NSObject, BookingServiceProtocol {
         let url = "http://breezback.com/IKayak/bookings.ashx"
         //{"DeviceToken":"7851dc5ce47f31105238767b8e45614789bb46542e4b251fb7b685982dbc4e47","Action":"0","Password":"32371","UserName":"%D7%90%D7%99%D7%9C%D7%9F%20%D7%9C","Keys":null,"SecurityToken":null}
         
-        let userDao = self.userRepository.get()
+        let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
             fatalError("can not fetch preferences as anonymous")
         }
@@ -47,7 +51,7 @@ public class BookingService: NSObject, BookingServiceProtocol {
                 let bookingDao = BookingDao(date: date, id: id, boatId: boatId, boatName: boatName, tripId: tripId, state: state, time: time, day: day)
                 bookingDaos.append(bookingDao)
             }
-            self.bookingRepository.save(bookingDaos)
+            self.bookingRepository!.save(bookingDaos)
             
             successBlock!(bookingDaos)
         }

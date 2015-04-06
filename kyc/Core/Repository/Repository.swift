@@ -23,7 +23,7 @@ class Repository<T:AnyObject> {
         
         if let rawData = NSData(contentsOfFile: path) {
             
-            if let array = NSKeyedUnarchiver.unarchiveObjectWithData(rawData) as? [T] {
+            if var array = NSKeyedUnarchiver.unarchiveObjectWithData(rawData) as? [T] {
                 self.arrayOfData = array
             }
         }

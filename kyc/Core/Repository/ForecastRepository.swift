@@ -10,15 +10,18 @@ import Foundation
 
 public class ForecastRepository:NSObject,ForecastRepositoryProtocol{
     
-    let repository = Repository<ForecastDao>(plist: "Forecasts")
-        
+    var repository = Repository<ForecastDao>(plist: "Forecasts")
     public func reset()->Bool{
         self.repository.reset()
         return true
     }
     
     public func get() -> [ForecastDao]{
-        return self.repository.get()
+        var arraySortable = Array<ForecastDao>(self.repository.get())
+        arraySortable.sort({
+            let interval = $1.datetime!.timeIntervalSinceDate($0.datetime!)
+            return interval > 0 })
+        return arraySortable
     }
     
     public func save(forecasts: [ForecastDao])->Bool{

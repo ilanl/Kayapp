@@ -8,7 +8,7 @@ public class JsonClient:NSObject{
             if (error == nil) {
                 success(data)
             } else {
-                fatalError("could not fetch data")
+                Logger.log("could not fetch data")
             }
         }
         

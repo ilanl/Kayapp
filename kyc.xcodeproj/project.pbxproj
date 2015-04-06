@@ -40,6 +40,7 @@
 		D280BD6D1ACEC5510011D4E6 /* PreferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */; };
 		D280BD6F1ACEC84A0011D4E6 /* PreferenceParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */; };
 		D285ADAE1AD010EB00E12663 /* BookingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */; };
+		D291D34C1AD07D2900666F88 /* ForecastAndBookingMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D291D34B1AD07D2900666F88 /* ForecastAndBookingMatcher.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
 		D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A911ABDC4D30008EFCB /* DateExt.swift */; };
 		D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */; };
@@ -80,12 +81,12 @@
 		D2F5CD951AB4AB520035B91A /* DaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD941AB4AB520035B91A /* DaysViewController.swift */; };
 		D2F5CD971AB4AB900035B91A /* BookingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD961AB4AB900035B91A /* BookingsViewController.swift */; };
 		D2F5CD991AB4ABA30035B91A /* BoatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD981AB4ABA30035B91A /* BoatsViewController.swift */; };
-		D2F5CD9B1AB4ABF60035B91A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD9A1AB4ABF60035B91A /* LoginViewController.swift */; };
 		D2F5CD9F1AB4B9790035B91A /* Days.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD9E1AB4B9790035B91A /* Days.storyboard */; };
 		D2F5CDA11AB4B9C50035B91A /* Boats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA01AB4B9C50035B91A /* Boats.storyboard */; };
 		D2F5CDA31AB4B9DF0035B91A /* Bookings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA21AB4B9DF0035B91A /* Bookings.storyboard */; };
 		D2F5CDA51AB4BCB80035B91A /* Global.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA41AB4BCB80035B91A /* Global.xcassets */; };
 		D2F5CDA71AB4C0BA0035B91A /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CDA61AB4C0BA0035B91A /* Settings.storyboard */; };
+		D2FA22931AD0710500D6BE94 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FA22921AD0710500D6BE94 /* LoginViewController.swift */; };
 		D38B3E9555A11CB7C040ADE3 /* libPods-kyc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 483DDD11EFC66F30E4A129CF /* libPods-kyc.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParser.swift; sourceTree = "<group>"; };
 		D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParserTests.swift; sourceTree = "<group>"; };
 		D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingServiceTests.swift; sourceTree = "<group>"; };
+		D291D34B1AD07D2900666F88 /* ForecastAndBookingMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAndBookingMatcher.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D2985A911ABDC4D30008EFCB /* DateExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithBookingCell.swift; sourceTree = "<group>"; };
@@ -183,12 +185,12 @@
 		D2F5CD941AB4AB520035B91A /* DaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysViewController.swift; sourceTree = "<group>"; };
 		D2F5CD961AB4AB900035B91A /* BookingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingsViewController.swift; sourceTree = "<group>"; };
 		D2F5CD981AB4ABA30035B91A /* BoatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatsViewController.swift; sourceTree = "<group>"; };
-		D2F5CD9A1AB4ABF60035B91A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D2F5CD9E1AB4B9790035B91A /* Days.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Days.storyboard; sourceTree = "<group>"; };
 		D2F5CDA01AB4B9C50035B91A /* Boats.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Boats.storyboard; sourceTree = "<group>"; };
 		D2F5CDA21AB4B9DF0035B91A /* Bookings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Bookings.storyboard; sourceTree = "<group>"; };
 		D2F5CDA41AB4BCB80035B91A /* Global.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Global.xcassets; path = ../Global.xcassets; sourceTree = "<group>"; };
 		D2F5CDA61AB4C0BA0035B91A /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		D2FA22921AD0710500D6BE94 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F385E8AF0743AF52C2A71D2D /* Pods-kycTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kycTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kycTests/Pods-kycTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,7 +243,6 @@
 				D209DFD61AC3414F00648137 /* BookingRepository.swift */,
 				D209DFE81AC4AFE300648137 /* BoatPrefsRepository.swift */,
 				D209DFD31AC23F5500648137 /* Repository.swift */,
-				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D209DFEC1AC4B64B00648137 /* UserRepository.swift */,
 				D209DFF01AC4B96700648137 /* SettingRepository.swift */,
 			);
@@ -270,6 +271,7 @@
 				D24E6B5A1AC4C4370035FBBF /* ForecastService.swift */,
 				D2616B681ACF3954009D62FC /* PreferenceService.swift */,
 				D2735C091ACFFC9F00AB60E0 /* BookingService.swift */,
+				D291D34B1AD07D2900666F88 /* ForecastAndBookingMatcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -338,8 +340,7 @@
 			children = (
 				D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */,
 			);
-			name = Container;
-			path = ../Container;
+			path = Container;
 			sourceTree = "<group>";
 		};
 		D2BD50F91AB4DA8A0025E03F /* Dao */ = {
@@ -431,6 +432,7 @@
 		D2F5CD701AB49DF50035B91A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D24E6B591AC4C4250035FBBF /* Services */,
 				D209DFD11AC23F5500648137 /* Repository */,
 				D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */,
@@ -508,7 +510,7 @@
 		D2F5CD791AB49DF50035B91A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D2F5CD9A1AB4ABF60035B91A /* LoginViewController.swift */,
+				D2FA22921AD0710500D6BE94 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -720,7 +722,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2F5CD9B1AB4ABF60035B91A /* LoginViewController.swift in Sources */,
 				D209DFDD1AC35FAF00648137 /* BoatsRepository.swift in Sources */,
 				D2BD51111AB4E3E30025E03F /* SurfBoatsViewController.swift in Sources */,
 				D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */,
@@ -759,11 +760,13 @@
 				D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */,
 				D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */,
 				D2BD51101AB4E3E30025E03F /* KayakBoatsViewController.swift in Sources */,
+				D2FA22931AD0710500D6BE94 /* LoginViewController.swift in Sources */,
 				D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */,
 				D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */,
 				D2735C101AD000C900AB60E0 /* BookingJson.swift in Sources */,
 				D2F5CD881AB4A10D0035B91A /* SidePanelViewController.swift in Sources */,
 				D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */,
+				D291D34C1AD07D2900666F88 /* ForecastAndBookingMatcher.swift in Sources */,
 				D209DFD51AC23F5500648137 /* Repository.swift in Sources */,
 				D2F5CD7E1AB49FF60035B91A /* ViewControllersFactory.swift in Sources */,
 				D2BD50D91AB4C9100025E03F /* Day.swift in Sources */,

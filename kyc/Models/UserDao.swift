@@ -29,7 +29,7 @@ public class UserDao : NSObject,NSCoding{
     }
     
     public func isAnonymous()-> Bool{
-        return (self.name.isEmpty || self.pwd.isEmpty || self.deviceToken == nil)
+        return (self.name.isEmpty || self.pwd.isEmpty)
     }
 }
 

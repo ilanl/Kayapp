@@ -27,7 +27,10 @@ class ViewControllersFactory: NSObject {
             
             case  NSStringFromClass(MainViewController.self):
                 storyBoardName = KMainStoryBoardName
-            
+
+            case  NSStringFromClass(LoginViewController.self):
+                storyBoardName = KMainStoryBoardName
+
             default:
                 storyBoardName = ""
         }
@@ -48,6 +51,7 @@ class ViewControllersFactory: NSObject {
             if(controllerName != nil)
             {
                 var storyBoardName : String? = ViewControllersFactory.getStoryboardNameWithClassName(NSStringFromClass(typeClass))
+                
                 if let isStoryBoardName = storyBoardName
                 {
                     let storyboard = UIStoryboard(name: isStoryBoardName, bundle: nil);
