@@ -8,8 +8,7 @@ public class DayPrefsRepositoryTests : XCTestCase {
     
     public override func setUp() {
         
-        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = factory.componentForKey("dayPrefsRepositoryFactory") as? DayPrefsRepository
+        self.target = DayPrefsRepository()
         self.target.reset()
     }
     

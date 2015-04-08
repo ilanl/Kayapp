@@ -8,8 +8,7 @@ public class ForecastRepositoryTests : XCTestCase {
     
     public override func setUp() {
         
-        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = factory.componentForKey("forecastRepositoryFactory") as? ForecastRepository
+        self.target = ForecastRepository()
         self.target.reset()
     }
     

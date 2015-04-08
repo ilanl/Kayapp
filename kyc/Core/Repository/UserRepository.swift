@@ -12,7 +12,7 @@ public class UserRepository:NSObject,UserRepositoryProtocol{
     
     let repository = Repository<UserDao>(plist: "User")
     
-    override init(){
+    public override required init(){
         println("initializing user singleton")
         super.init()
     }

@@ -6,8 +6,7 @@ public class UserRepositoryTests: XCTestCase {
     
     public override func setUp() {
         
-        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = factory.componentForKey("userRepositoryFactory") as? UserRepository
+        self.target = UserRepository()
         self.target.reset()
     }
     

@@ -5,39 +5,51 @@ public class CoreComponents: TyphoonAssembly {
 
     //MARK: - Services
     public dynamic func forecastServiceFactory() -> AnyObject {
-        return TyphoonDefinition.withClass(ForecastService.self){
+        
+        return TyphoonDefinition.withClass(ForecastService.self) {
             (definition) in
-            definition.injectProperty("forecastRepository", with: self.forecastRepositoryFactory())
+            definition.useInitializer("initWithForecastRepository:") {
+                (initializer) in
+                initializer.injectParameterWith(self.forecastRepositoryFactory())
+            }
         }
     }
-    
+
     public dynamic func preferenceServiceFactory() -> AnyObject {
         return TyphoonDefinition.withClass(PreferenceService.self){
             (definition) in
-            definition.injectProperty("boatsRepository", with: self.boatsRepositoryFactory())
-            definition.injectProperty("boatPrefsRepository", with: self.boatPrefsRepositoryFactory())
-            definition.injectProperty("dayPrefsRepository", with: self.dayPrefsRepositoryFactory())
-            definition.injectProperty("userRepository", with: self.userRepositoryFactory())
-            definition.injectProperty("settingRepository", with: self.settingRepositoryFactory())
+            definition.useInitializer("initWithBoatsRepository:boatPrefRepo:dayPrefsRepo:userRepo:settingRepo:") {
+                (initializer) in
+                initializer.injectParameterWith(self.boatsRepositoryFactory())
+                initializer.injectParameterWith(self.boatPrefsRepositoryFactory())
+                initializer.injectParameterWith(self.dayPrefsRepositoryFactory())
+                initializer.injectParameterWith(self.userRepositoryFactory())
+                initializer.injectParameterWith(self.settingRepositoryFactory())
+            }
         }
     }
     
     public dynamic func bookingServiceFactory() -> AnyObject {
         return TyphoonDefinition.withClass(BookingService.self){
             (definition) in
-            definition.injectProperty("bookingRepository", with: self.bookingRepositoryFactory())
-            definition.injectProperty("userRepository", with: self.userRepositoryFactory())
+            definition.useInitializer("initWithBookingRepository:userRepo:") {
+                (initializer) in
+                initializer.injectParameterWith(self.bookingRepositoryFactory())
+                initializer.injectParameterWith(self.userRepositoryFactory())
+            }
         }
     }
 
     public dynamic func forecastAndBookingMatcherFactory() -> AnyObject {
         return TyphoonDefinition.withClass(ForecastAndBookingMatcher.self){
             (definition) in
-            definition.injectProperty("forecastRepository", with: self.forecastRepositoryFactory())
-            definition.injectProperty("bookingRepository", with: self.bookingRepositoryFactory())
+            definition.useInitializer("initWithForecastRepository:bookingRepository:") {
+                (initializer) in
+                initializer.injectParameterWith(self.bookingRepositoryFactory())
+                initializer.injectParameterWith(self.userRepositoryFactory())
+            }
         }
     }
-
     
     //MARK: - Repositories
     

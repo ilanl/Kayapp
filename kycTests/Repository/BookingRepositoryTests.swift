@@ -6,8 +6,7 @@ public class BookingRepositoryTests: XCTestCase {
     
     public override func setUp() {
         
-        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = factory.componentForKey("bookingRepositoryFactory") as? BookingRepository
+        self.target = BookingRepository()
         self.target.reset()
     }
     

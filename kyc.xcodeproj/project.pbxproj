@@ -65,6 +65,7 @@
 		D2C0D0341AC5709D00A5BC42 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0331AC5709D00A5BC42 /* JsonParser.swift */; };
 		D2C0D0361AC5715700A5BC42 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0351AC5715700A5BC42 /* JsonClient.swift */; };
 		D2C0D03A1AC57E7100A5BC42 /* ForecastParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0391AC57E7100A5BC42 /* ForecastParserTests.swift */; };
+		D2C97A731AD5C5B9003C924B /* ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C97A721AD5C5B9003C924B /* ComponentsTests.swift */; };
 		D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */; };
 		D2F5CD561AB49A0C0035B91A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD541AB49A0C0035B91A /* Main.storyboard */; };
 		D2F5CD581AB49A0C0035B91A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD571AB49A0C0035B91A /* Images.xcassets */; };
@@ -145,7 +146,6 @@
 		D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithNoBookingCell.swift; sourceTree = "<group>"; };
 		D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
 		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
-		D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
@@ -165,6 +165,8 @@
 		D2C0D0331AC5709D00A5BC42 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		D2C0D0351AC5715700A5BC42 /* JsonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
 		D2C0D0391AC57E7100A5BC42 /* ForecastParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParserTests.swift; sourceTree = "<group>"; };
+		D2C97A701AD5C429003C924B /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2C97A721AD5C5B9003C924B /* ComponentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsTests.swift; sourceTree = "<group>"; };
 		D2F5CD4B1AB49A0C0035B91A /* kyc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F5CD4F1AB49A0C0035B91A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
@@ -367,6 +369,14 @@
 			path = Contracts;
 			sourceTree = "<group>";
 		};
+		D2C97A711AD5C5B9003C924B /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				D2C97A721AD5C5B9003C924B /* ComponentsTests.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		D2F5CD421AB49A0C0035B91A = {
 			isa = PBXGroup;
 			children = (
@@ -390,7 +400,7 @@
 		D2F5CD4D1AB49A0C0035B91A /* kyc */ = {
 			isa = PBXGroup;
 			children = (
-				D2A783EE1AC0CA3A00AA2777 /* kyc-Bridging-Header.h */,
+				D2C97A701AD5C429003C924B /* kyc-Bridging-Header.h */,
 				D2985A4E1ABD66A50008EFCB /* Assets */,
 				D2F5CD701AB49DF50035B91A /* Core */,
 				D2F5CD731AB49DF50035B91A /* Models */,
@@ -413,6 +423,7 @@
 		D2F5CD631AB49A0C0035B91A /* kycTests */ = {
 			isa = PBXGroup;
 			children = (
+				D2C97A711AD5C5B9003C924B /* Container */,
 				D24E6B5C1AC4C73B0035FBBF /* Services */,
 				D24E6B441AC4BE130035FBBF /* Repository */,
 				D2F5CD641AB49A0C0035B91A /* Supporting Files */,
@@ -781,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2735C121AD0066F00AB60E0 /* BookingParserTests.swift in Sources */,
+				D2C97A731AD5C5B9003C924B /* ComponentsTests.swift in Sources */,
 				D2C0D03A1AC57E7100A5BC42 /* ForecastParserTests.swift in Sources */,
 				D280BD6F1ACEC84A0011D4E6 /* PreferenceParserTests.swift in Sources */,
 				D24E6B5E1AC4C7520035FBBF /* ForecastServiceTests.swift in Sources */,
@@ -913,7 +925,7 @@
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc/kyc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -927,7 +939,7 @@
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/ilanlevy/Desktop/kyc/kyc/kyc-Bridging-Header.h";
 			};
 			name = Release;
 		};

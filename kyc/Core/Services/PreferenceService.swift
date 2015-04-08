@@ -7,7 +7,7 @@ import Foundation
     func getPreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
 }
 
-public class PreferenceService: NSObject, PreferenceServiceProtocol {
+public class PreferenceService:PreferenceServiceProtocol {
     
     var boatsRepository:BoatsRepository?
     var boatPrefsRepository:BoatPrefsRepository?
@@ -15,11 +15,7 @@ public class PreferenceService: NSObject, PreferenceServiceProtocol {
     var userRepository:UserRepository?
     var settingRepository:SettingRepository?
     
-    override init() {
-        println("init")
-    }
-    
-    init(boatsRepo:BoatsRepository,boatPrefRepo:BoatPrefsRepository,dayPrefsRepo:DayPrefsRepository,userRepo:UserRepository, settingRepo:SettingRepository) {
+    public init(boatsRepo:BoatsRepository,boatPrefRepo:BoatPrefsRepository,dayPrefsRepo:DayPrefsRepository,userRepo:UserRepository, settingRepo:SettingRepository) {
         self.boatsRepository = boatsRepo
         self.boatPrefsRepository = boatPrefRepo
         self.userRepository = userRepo
@@ -48,6 +44,7 @@ public class PreferenceService: NSObject, PreferenceServiceProtocol {
             }
             
             //never save the result of the save response
+            successBlock!(nil,nil,nil,nil)
         }
     }
     

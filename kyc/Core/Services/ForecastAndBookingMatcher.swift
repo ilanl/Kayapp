@@ -17,18 +17,14 @@ public class ForecastSection:NSObject{
     }
 }
 
-public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtocol{
+public class ForecastAndBookingMatcher:ForecastAndBookingMatcherProtocol{
     
     private var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
     let dateFormatter = NSDateFormatter()
     var forecastRepository:ForecastRepository?
     var bookingRepository:BookingRepository?
     
-    override init() {
-        println("init")
-    }
-    
-    init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository) {
+    public init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository) {
         self.forecastRepository = forecastRepository
         self.bookingRepository = bookingRepository
     }

@@ -51,9 +51,11 @@ public class PreferenceServiceTests : XCTestCase {
             
             }, onError: { (message) -> Void in
                 //
+                
+                println("handle errors here")
         })
         
-        waitForExpectationsWithTimeout(10.0, handler:nil)
+        waitForExpectationsWithTimeout(200.0, handler:nil)
     }
     
     public class BoatsRepositoryDummy: BoatsRepository{
@@ -99,6 +101,10 @@ public class PreferenceServiceTests : XCTestCase {
     
     public class SettingRepositoryDummy: SettingRepository{
         public var inMemoryRepository: SettingDao?
+        
+        public override func get() -> SettingDao? {
+            return inMemoryRepository
+        }
         
         public override func save(setting: SettingDao) -> Bool {
             self.inMemoryRepository = setting

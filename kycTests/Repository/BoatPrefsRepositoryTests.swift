@@ -8,8 +8,7 @@ public class BoatPrefsRepositoryTests : XCTestCase {
     
     public override func setUp() {
         
-        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        self.target = factory.componentForKey("boatPrefsRepositoryFactory") as? BoatPrefsRepository
+        self.target = BoatPrefsRepository()
         self.target.reset()
     }
     

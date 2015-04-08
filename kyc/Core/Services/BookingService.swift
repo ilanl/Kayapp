@@ -5,16 +5,12 @@ import Foundation
     func getBookings(onSuccess successBlock: (([BookingDao]) -> Void)?, onError errorBlock: ((String) -> Void)?)
 }
 
-public class BookingService: NSObject, BookingServiceProtocol {
+public class BookingService: BookingServiceProtocol {
     
     var bookingRepository:BookingRepository?
     var userRepository:UserRepository?
     
-    override init() {
-        println("init")
-    }
-    
-    init(bookingRepo:BookingRepository,userRepo:UserRepository) {
+    public init(bookingRepo:BookingRepository,userRepo:UserRepository) {
         self.bookingRepository = bookingRepo
         self.userRepository = userRepo
     }
