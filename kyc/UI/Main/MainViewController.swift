@@ -11,9 +11,8 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as? ForecastRepository
-        
-        self.forecastArray = forecastRepository?.get()
+        let forecastRepository = ForecastRepository()
+        self.forecastArray = forecastRepository.get()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -24,9 +23,9 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     //MARK: Table methods
     func numberOfSectionsInTableView(tableView:UITableView!)->Int
     {
-        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as? ForecastAndBookingMatcher
+        var forecastAndBookingMatcher = ForecastAndBookingMatcher(forecastRepository: ForecastRepository(), bookingRepository: BookingRepository())
         
-        self.sectionArray = forecastAndBookingMatcher!.getSections()
+        self.sectionArray = forecastAndBookingMatcher.getSections()
         let sectionCount = self.sectionArray!.count
         
         //TODO: remove after
@@ -128,8 +127,8 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     private func showLoginIfAnoymous(){
         
-        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as? UserRepository
-        let user:UserDao? = userRepository!.get()
+        let userRepository = UserRepository()
+        let user:UserDao? = userRepository.get()
         if user == nil || user!.isAnonymous(){
             var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(LoginViewController) as UIViewController?
             

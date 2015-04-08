@@ -16,8 +16,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func didPressLogin(sender: UIButton) {
         
-        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as? UserRepository
-        userRepository?.save(UserDao(name: self.txtUser.text, pwd: self.txtPwd.text))
+        let userRepository = UserRepository()
+        userRepository.save(UserDao(name: self.txtUser.text, pwd: self.txtPwd.text))
         
         NSNotificationCenter.defaultCenter().postNotificationName(fireLoadDataNotificationKey, object: self)
     }

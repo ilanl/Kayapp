@@ -5,7 +5,7 @@ import Foundation
     func getWeather(numberOfLiveDays:Int,onSuccess successBlock: (([ForecastDao]) -> Void)?, onError errorBlock: ((String) -> Void)?)
 }
 
-public class ForecastService: ForecastServiceProtocol {
+public class ForecastService:NSObject, ForecastServiceProtocol {
     
     var forecastRepository:ForecastRepository?
     

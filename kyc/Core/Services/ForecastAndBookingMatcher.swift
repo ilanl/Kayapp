@@ -38,10 +38,15 @@ public class ForecastAndBookingMatcher:ForecastAndBookingMatcherProtocol{
     
     private func match()
     {
+        
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMM"
         
         for forecastDao in self.forecastRepository!.get(){
+            
+            if (forecastDao.datetime == nil){
+                continue
+            }
             
             Logger.log("forecast: \(forecastDao.datetime)")
             

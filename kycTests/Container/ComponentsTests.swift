@@ -4,6 +4,14 @@ import kyc
 
 public class ComponentsTests : XCTestCase {
     
+    public func test_transient_service() {
+        
+        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+        var target = factory.componentForKey("forecastServiceFactory") as? ForecastService
+        
+        XCTAssertNotNil(target, "target is nil")
+    }
+    
     public func test_singleton_repository() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])

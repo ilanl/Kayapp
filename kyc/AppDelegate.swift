@@ -1,7 +1,7 @@
 import UIKit
 
 
-let coreComponents = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+//let coreComponents = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
 let fireLoadDataNotificationKey = "com.kyc.fireLoadDataNotificationKey"
 let doneLoadDataNotificationKey = "com.kyc.doneLoadDataNotificationKey"
 
@@ -32,16 +32,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func loadData(){
         
-        let forecastService = coreComponents.componentForKey("forecastServiceFactory") as? ForecastService
+//        let forecastService = coreComponents.componentForKey("forecastServiceFactory") as? ForecastService
+
+        let forecastService = ForecastService(forecastRepository: ForecastRepository())
         
-        forecastService?.getWeather(7, onSuccess: { forecasts in
+        forecastService.getWeather(7, onSuccess: { forecasts in
             
-            let preferenceService = coreComponents.componentForKey("preferenceServiceFactory") as? PreferenceService
-            preferenceService!.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+            let preferenceService = PreferenceService(boatsRepo: BoatsRepository(),boatPrefRepo: BoatPrefsRepository(),dayPrefsRepo: DayPrefsRepository(),userRepo: UserRepository(), settingRepo: SettingRepository())
+            
+            preferenceService.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
                 
-                let bookingService = coreComponents.componentForKey("bookingServiceFactory") as? BookingService
+                let bookingService = BookingService(bookingRepo: BookingRepository(), userRepo: UserRepository())
                 
-                bookingService?.getBookings(onSuccess: { bookings in
+                bookingService.getBookings(onSuccess: { bookings in
                     
                     NSNotificationCenter.defaultCenter().postNotificationName(doneLoadDataNotificationKey, object: self)
                     
