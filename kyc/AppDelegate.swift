@@ -38,11 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         forecastService.getWeather(7, onSuccess: { forecasts in
             
-            let preferenceService = PreferenceService(boatsRepo: BoatsRepository(),boatPrefRepo: BoatPrefsRepository(),dayPrefsRepo: DayPrefsRepository(),userRepo: UserRepository(), settingRepo: SettingRepository())
+            let preferenceService = PreferenceService(boatsRepository: BoatsRepository(),boatPrefsRepository: BoatPrefsRepository(),dayPrefsRepository: DayPrefsRepository(),userRepository: UserRepository(), settingRepository: SettingRepository())
             
             preferenceService.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
                 
-                let bookingService = BookingService(bookingRepo: BookingRepository(), userRepo: UserRepository())
+                let bookingService = BookingService(bookingRepository: BookingRepository(), userRepository: UserRepository())
                 
                 bookingService.getBookings(onSuccess: { bookings in
                     

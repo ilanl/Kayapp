@@ -4,12 +4,46 @@ import kyc
 
 public class ComponentsTests : XCTestCase {
     
-    public func test_transient_service() {
+    public func test_transient_booking_service() {
+        
+        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+        var target = factory.componentForKey("bookingServiceFactory") as? BookingService
+        
+        XCTAssertNotNil(target, "Booking service is Null")
+    }
+    
+    public func test_transient_preference_service() {
+        
+        let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
+        var target = factory.componentForKey("preferenceServiceFactory") as? PreferenceService
+        
+        let expectation = expectationWithDescription("expecting data")
+        
+        target?.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+            
+            expectation.fulfill()
+            
+            }, onError: { (message) -> Void in
+                
+        })
+        
+        waitForExpectationsWithTimeout(5.0, handler:nil)
+    }
+    
+    public func test_transient_forecast_service() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
         var target = factory.componentForKey("forecastServiceFactory") as? ForecastService
         
-        XCTAssertNotNil(target, "target is nil")
+        let expectation = expectationWithDescription("expecting data")
+        target?.getWeather(5, onSuccess: { forecasts in
+            
+            XCTAssertTrue(true, "failed to run success block")
+            expectation.fulfill()
+            
+            }, onError: nil)
+        
+        waitForExpectationsWithTimeout(5.0, handler:nil)
     }
     
     public func test_singleton_repository() {

@@ -14,7 +14,7 @@ public class PreferenceServiceTests : XCTestCase {
     
     public override func setUp() {
         
-        self.target = PreferenceService(boatsRepo: self.boatsRepository, boatPrefRepo: self.boatPrefsRepository, dayPrefsRepo: self.dayPrefsRepository, userRepo: self.userRepository, settingRepo: self.settingRepository)
+        self.target = PreferenceService(boatsRepository: self.boatsRepository, boatPrefsRepository: self.boatPrefsRepository, dayPrefsRepository: self.dayPrefsRepository, userRepository: self.userRepository, settingRepository: self.settingRepository)
     }
     
     public func test_preference_service_get() {

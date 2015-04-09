@@ -17,7 +17,7 @@ public class ForecastSection:NSObject{
     }
 }
 
-public class ForecastAndBookingMatcher:ForecastAndBookingMatcherProtocol{
+public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtocol{
     
     private var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
     let dateFormatter = NSDateFormatter()

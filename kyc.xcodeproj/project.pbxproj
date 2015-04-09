@@ -46,6 +46,7 @@
 		D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */; };
 		D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */; };
 		D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */; };
+		D29F775D1AD6F0D1009BC222 /* UtilityClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D29F775C1AD6F0D1009BC222 /* UtilityClass.m */; };
 		D2A783EC1AC0C80D00AA2777 /* CoreComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */; };
 		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
 		D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */; };
@@ -145,6 +146,8 @@
 		D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithBookingCell.swift; sourceTree = "<group>"; };
 		D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWithNoBookingCell.swift; sourceTree = "<group>"; };
 		D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastHeaderCell.swift; sourceTree = "<group>"; };
+		D29F775B1AD6F0D1009BC222 /* UtilityClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityClass.h; sourceTree = "<group>"; };
+		D29F775C1AD6F0D1009BC222 /* UtilityClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityClass.m; sourceTree = "<group>"; };
 		D2A783EB1AC0C80D00AA2777 /* CoreComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreComponents.swift; sourceTree = "<group>"; };
 		D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kycTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -428,6 +431,8 @@
 				D24E6B441AC4BE130035FBBF /* Repository */,
 				D2F5CD641AB49A0C0035B91A /* Supporting Files */,
 				D2A7840F1AC1FC8600AA2777 /* kycTests-Bridging-Header.h */,
+				D29F775B1AD6F0D1009BC222 /* UtilityClass.h */,
+				D29F775C1AD6F0D1009BC222 /* UtilityClass.m */,
 			);
 			path = kycTests;
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */,
 				D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */,
 				D2616B6B1ACF3E92009D62FC /* PreferenceServiceTests.swift in Sources */,
+				D29F775D1AD6F0D1009BC222 /* UtilityClass.m in Sources */,
 				D24E6B4D1AC4BE130035FBBF /* BoatsRepositoryTests.swift in Sources */,
 				D24E6B521AC4BE130035FBBF /* UserRepositoryTests.swift in Sources */,
 				D24E6B4E1AC4BE130035FBBF /* BookingRepositoryTests.swift in Sources */,

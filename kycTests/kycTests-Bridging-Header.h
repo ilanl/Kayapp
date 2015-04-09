@@ -9,5 +9,6 @@
 #ifndef kyc_kycTests_Bridging_Header_h
 #define kyc_kycTests_Bridging_Header_h
 
+#import "UtilityClass.h"
 
 #endif
