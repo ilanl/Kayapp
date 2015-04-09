@@ -7,7 +7,7 @@ public class ComponentsTests : XCTestCase {
     public func test_transient_booking_service() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        var target = factory.componentForKey("bookingServiceFactory") as? BookingService
+        var target = factory.componentForKey("bookingServiceFactory") as BookingService
         
         XCTAssertNotNil(target, "Booking service is Null")
     }
@@ -15,11 +15,11 @@ public class ComponentsTests : XCTestCase {
     public func test_transient_preference_service() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        var target = factory.componentForKey("preferenceServiceFactory") as? PreferenceService
+        var target = factory.componentForKey("preferenceServiceFactory") as PreferenceService
         
         let expectation = expectationWithDescription("expecting data")
         
-        target?.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+        target.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
             
             expectation.fulfill()
             
@@ -33,10 +33,10 @@ public class ComponentsTests : XCTestCase {
     public func test_transient_forecast_service() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        var target = factory.componentForKey("forecastServiceFactory") as? ForecastService
+        var target = factory.componentForKey("forecastServiceFactory") as ForecastService
         
         let expectation = expectationWithDescription("expecting data")
-        target?.getWeather(5, onSuccess: { forecasts in
+        target.getWeather(5, onSuccess: { forecasts in
             
             XCTAssertTrue(true, "failed to run success block")
             expectation.fulfill()
@@ -49,13 +49,18 @@ public class ComponentsTests : XCTestCase {
     public func test_singleton_repository() {
         
         let factory = TyphoonBlockComponentFactory(assemblies: [CoreComponents()])
-        var target = factory.componentForKey("forecastRepositoryFactory") as? ForecastRepository
+        var target = factory.componentForKey("forecastRepositoryFactory") as ForecastRepository
         
-        target?.save([ForecastDao(date: nil, weather: "some weather", temperature: 10)])
+        target.save([ForecastDao(date: nil, weather: "some weather", temperature: 10)])
         
-        var target2 = factory.componentForKey("forecastRepositoryFactory") as? ForecastRepository
+        for var i=0;i<10;i++ {
+            var target2 = factory.componentForKey("forecastRepositoryFactory") as ForecastRepository
+            
+            let results = target2.get()
+        }
+        var target2 = factory.componentForKey("forecastRepositoryFactory") as ForecastRepository
         
-        let results = target2?.get()
-        XCTAssertTrue(results!.count == 1, "Not singleton")
+        let results = target2.get()
+        XCTAssertTrue(results.count == 1, "Not singleton")
     }
 }

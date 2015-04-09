@@ -9,11 +9,10 @@ public class ForecastSection:NSObject{
     var date:NSDate
     var totalRows:Int
     
-    public required init(title:String,date:NSDate,totalRows:Int){
+    init(title:String,date:NSDate,totalRows:Int){
         self.title = title
         self.date = date
         self.totalRows = totalRows
-        super.init()
     }
 }
 
@@ -21,10 +20,10 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
     
     private var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
     let dateFormatter = NSDateFormatter()
-    var forecastRepository:ForecastRepository?
-    var bookingRepository:BookingRepository?
+    var forecastRepository:ForecastRepository
+    var bookingRepository:BookingRepository
     
-    public init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository) {
+    public init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository){
         self.forecastRepository = forecastRepository
         self.bookingRepository = bookingRepository
     }
@@ -42,7 +41,7 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd MMM"
         
-        for forecastDao in self.forecastRepository!.get(){
+        for forecastDao in self.forecastRepository.get(){
             
             if (forecastDao.datetime == nil){
                 continue
@@ -65,7 +64,7 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
                 
             }
             
-            for bookingDao in self.bookingRepository!.get(){
+            for bookingDao in self.bookingRepository.get(){
                 if (self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao) == true){
                     
                     Logger.log("booking: \(bookingDao.datetime)")

@@ -83,18 +83,15 @@ public class CoreComponents: TyphoonAssembly {
             }
         }
     }
-//
-//    public dynamic func forecastAndBookingMatcherFactory() -> AnyObject {
-//        return TyphoonDefinition.withClass(ForecastAndBookingMatcher.self){
-//            (definition) in
-//            definition.useInitializer("initWithForecastRepository:bookingRepository:") {
-//                (initializer) in
-//                initializer.injectParameterWith(self.bookingRepositoryFactory())
-//                initializer.injectParameterWith(self.userRepositoryFactory())
-//            }
-//        }
-//    }
-//    
-    
-    
+
+    public dynamic func forecastAndBookingMatcherFactory() -> AnyObject {
+        return TyphoonDefinition.withClass(ForecastAndBookingMatcher.self){
+            (definition) in
+            definition.useInitializer("initWithForecastRepository:bookingRepository:") {
+                (initializer) in
+                initializer.injectParameterWith(self.forecastRepositoryFactory())
+                initializer.injectParameterWith(self.bookingRepositoryFactory())
+            }
+        }
+    }
 }

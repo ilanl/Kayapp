@@ -4,6 +4,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     var forecastArray:[ForecastDao]?
     var sectionArray:[ForecastSection]?
+    let forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as ForecastRepository
     
     @IBAction func menuTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
@@ -11,8 +12,8 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let forecastRepository = ForecastRepository()
-        self.forecastArray = forecastRepository.get()
+        
+        self.forecastArray = self.forecastRepository.get()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -23,14 +24,16 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     //MARK: Table methods
     func numberOfSectionsInTableView(tableView:UITableView!)->Int
     {
-        var forecastAndBookingMatcher = ForecastAndBookingMatcher(forecastRepository: ForecastRepository(), bookingRepository: BookingRepository())
+        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as ForecastAndBookingMatcher
         
         self.sectionArray = forecastAndBookingMatcher.getSections()
-        let sectionCount = self.sectionArray!.count
+        let sectionCount = self.sectionArray?.count
         
-        //TODO: remove after
-        Logger.log("table:number of sections: \(sectionCount)")
-        return sectionCount
+        if let sectionCount = self.sectionArray?.count
+        {
+            return sectionCount
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -127,8 +130,10 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     private func showLoginIfAnoymous(){
         
-        let userRepository = UserRepository()
+        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as UserRepository
+        
         let user:UserDao? = userRepository.get()
+        
         if user == nil || user!.isAnonymous(){
             var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(LoginViewController) as UIViewController?
             
