@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadData", name: fireLoadDataNotificationKey, object: nil)
         
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
         return true
     }
 
@@ -57,6 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }, onError: { message in
             println(message)
         })
+    }
+    
+    func application(application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+        println("Got token data! \(deviceToken)")
+    }
+    
+    func application(application: UIApplication,didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+        println("Couldn’t register: \(error)")
     }
     
     func applicationWillResignActive(application: UIApplication) {

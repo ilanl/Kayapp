@@ -29,7 +29,8 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            fatalError("can not fetch preferences as anonymous")
+            errorBlock!("can not fetch preferences as anonymous")
+            return
         }
         let set: AnyObject = self.read()
         let settingDao = self.settingRepository!.get()
@@ -41,6 +42,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
             if preferences.status!.lowercaseString != "success"
             {
                 errorBlock!("could not save preferences")
+                return
             }
             
             //never save the result of the save response

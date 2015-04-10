@@ -21,11 +21,12 @@ public class BookingService: NSObject,BookingServiceProtocol {
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            fatalError("can not fetch preferences as anonymous")
+            errorBlock!("can not fetch bookings as anonymous")
+            return
         }
         
         if (userDao == nil || userDao?.deviceToken == nil){
-            errorBlock!("no user credentials")
+            errorBlock!("bookings - no user credentials")
             return
         }
         

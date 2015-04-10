@@ -170,7 +170,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gZB-gp-iY1"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Enter">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -188,11 +188,17 @@
                             <constraint firstItem="5bl-FC-vsd" firstAttribute="leading" secondItem="UDQ-Kq-gIF" secondAttribute="leading" constant="23" id="EDo-BS-JSh"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="width" secondItem="Axe-z1-L9b" secondAttribute="width" constant="50" id="Jbz-Ox-Hnx"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="height" secondItem="5bl-FC-vsd" secondAttribute="height" id="apP-6V-pq6"/>
+                            <constraint firstItem="5bl-FC-vsd" firstAttribute="top" secondItem="Dyx-nO-4EJ" secondAttribute="bottom" constant="142" id="cO7-eo-Kh9"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="top" secondItem="5bl-FC-vsd" secondAttribute="bottom" constant="25" id="eG6-80-Qug"/>
                             <constraint firstAttribute="trailing" secondItem="5bl-FC-vsd" secondAttribute="trailing" constant="34" id="eiv-TI-UA7"/>
                             <constraint firstItem="Axe-z1-L9b" firstAttribute="top" secondItem="AFs-Di-Qdg" secondAttribute="bottom" constant="50" id="qY4-It-vvJ"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="width" secondItem="5bl-FC-vsd" secondAttribute="width" id="yQL-j4-Snx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5lG-uF-yjK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

@@ -17,14 +17,15 @@ class LoginViewController: UIViewController {
     @IBAction func didPressLogin(sender: UIButton) {
         
         let userRepository = coreComponents.componentForKey("userRepositoryFactory") as UserRepository
-        
-        userRepository.save(UserDao(name: self.txtUser.text, pwd: self.txtPwd.text))
+        var user = UserDao(name: self.txtUser.text, pwd: self.txtPwd.text)
+        user.deviceToken = "213132313"
+        userRepository.save(user)
         
         NSNotificationCenter.defaultCenter().postNotificationName(fireLoadDataNotificationKey, object: self)
     }
     
     func afterLoadData(){
         
-        //self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
