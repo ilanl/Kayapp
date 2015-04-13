@@ -24,8 +24,6 @@ public class PreferenceServiceTests : XCTestCase {
         self.target.getPreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
             
             XCTAssertTrue(boats!.count > 0, "Could not find boats")
-            XCTAssertTrue(boatPrefs!.count > 0, "Could not find boat prefs")
-            XCTAssertTrue(dayPrefs!.count > 0, "Could not find day prefs")
             XCTAssertTrue(setting !=  nil, "Could not find setting")
             
             expectation.fulfill()
@@ -34,7 +32,7 @@ public class PreferenceServiceTests : XCTestCase {
             //
         })
         
-        waitForExpectationsWithTimeout(60.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
     public func test_preference_service_save() {
@@ -55,7 +53,7 @@ public class PreferenceServiceTests : XCTestCase {
                 println("handle errors here")
         })
         
-        waitForExpectationsWithTimeout(200.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
     public class BoatsRepositoryDummy: BoatsRepository{

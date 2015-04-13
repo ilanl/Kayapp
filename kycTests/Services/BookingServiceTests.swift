@@ -18,7 +18,7 @@ public class BookingServiceTests : XCTestCase {
         
         let expectation = expectationWithDescription("expecting data")
         
-        self.target.getBookings({ (bookings) -> Void in
+        self.target.getBookings(onSuccess: { (bookings) -> Void in
             
             expectation.fulfill()
             
