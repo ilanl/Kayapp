@@ -1,5 +1,42 @@
 import UIKit
 
+typealias ToggleButtonSet = (imageName : String, raw : String, order: Int)
+
+class ToggleButton:UIButton{
+    var _arrayOfValues:[ToggleButtonSet]?
+    var _currentValue:String?
+    
+    var currentValue:String?{
+        get{
+            return _currentValue
+        }
+        set{
+            if let current:ToggleButtonSet = _arrayOfValues?.filter({ $0.raw == newValue}).first!{
+                self.setImage(UIImage (named: current.imageName), forState: .Normal)
+                self._currentValue = current.raw
+            }
+        }
+    }
+    
+    func buttonTap(sender: ToggleButton) {
+        
+        if (self.currentValue == nil)
+        {
+            return
+        }
+        
+        var current:ToggleButtonSet = self._arrayOfValues!.filter({ $0.raw == self.currentValue!}).first!
+        var nextOrder = (current.order+1) % self._arrayOfValues!.count
+        var next:ToggleButtonSet = self._arrayOfValues!.filter({ $0.order == nextOrder}).first!
+        self.currentValue = next.raw
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        super.addTarget(self, action: "buttonTap:", forControlEvents: UIControlEvents.TouchDown)
+    }
+}
+
 class DayPrefSection{
     var title:String
     
@@ -10,8 +47,6 @@ class DayPrefSection{
 
 class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var btnSurfski: UIImageView!
-    @IBOutlet weak var btnKayakPref: UIImageView!
     @IBOutlet weak var exitButton: UIButton!
     
     var dayPrefsArray:[DayPrefDao]?
@@ -62,7 +97,11 @@ class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDe
             default:
                 timeLabel.text = "NA"
         }
+        cell.btnKayak._arrayOfValues = [(imageName : "Day-page-chosed-Kayak-button", raw : "1", order: 1),(imageName : "Day-page-unchosed-Kayak-button", raw : "0", order: 0)]
+        cell.btnKayak.currentValue = "0"
         
+        cell.btnSurfSki._arrayOfValues = [(imageName : "Day-page-chosed-surfski-button", raw : "1", order: 1),(imageName : "Day-page-unchosed-surfski-button", raw : "0", order: 0)]
+        cell.btnSurfSki.currentValue = "1"
         return cell
     }
     
