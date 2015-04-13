@@ -11,8 +11,8 @@ public class BoatPrefDao : NSObject,NSCoding{
     }
     
     public required init(coder: NSCoder) {
-        self.name = coder.decodeObjectForKey("name") as String
-        self.order = coder.decodeObjectForKey("order") as Int
+        self.name = coder.decodeObjectForKey("name") as! String
+        self.order = coder.decodeObjectForKey("order")as! Int
         super.init()
     }
     

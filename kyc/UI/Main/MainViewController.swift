@@ -4,7 +4,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     var forecastArray:[ForecastDao]?
     var sectionArray:[ForecastSection]?
-    let forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as ForecastRepository
+    let forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as! ForecastRepository
     
     @IBAction func menuTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
@@ -24,7 +24,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     //MARK: Table methods
     func numberOfSectionsInTableView(tableView:UITableView!)->Int
     {
-        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as ForecastAndBookingMatcher
+        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
         
         self.sectionArray = forecastAndBookingMatcher.getSections()
         let sectionCount = self.sectionArray?.count
@@ -49,16 +49,16 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let forecast = self.forecastArray![indexPath.row] as ForecastDao
+        let forecast = self.forecastArray![indexPath.row] as! ForecastDao
         return forecast.booking != nil ? 120 : 60
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let forecast = forecastArray![indexPath.row] as ForecastDao
+        let forecast = forecastArray![indexPath.row] as! ForecastDao
         
         if (forecast.booking != nil){
-            let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as ForecastWithBookingCell
+            let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
             
             let tempLabel = cell.tempLabel
             //tempLabel.text = "\(forecast.temp)"
@@ -71,7 +71,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
             return cell
         }
         else{
-            let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as ForecastWithNoBookingCell
+            let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as! ForecastWithNoBookingCell
             
             let waveHeightLabel = cell.waveHeightLabel
             //waveHeightLabel.text = "\(forecast.waveHeight) cm"
@@ -130,12 +130,12 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     private func showLoginIfAnoymous(){
         
-        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as UserRepository
+        let userRepository = coreComponents.componentForKey("userRepositoryFactory") as! UserRepository
         
         let user:UserDao? = userRepository.get()
         
         if user == nil || user!.isAnonymous(){
-            var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(LoginViewController) as UIViewController?
+            var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(LoginViewController) as! UIViewController?
             
             if (viewController != nil){
                 self.navigationController?.presentViewController(viewController!, animated: true, completion: nil)

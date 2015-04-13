@@ -13,9 +13,9 @@ public class DayPrefDao : NSObject,NSCoding{
     }
     
     public required init(coder: NSCoder) {
-        self.day = coder.decodeObjectForKey("day") as Int
-        self.time = coder.decodeObjectForKey("time") as Int
-        self.type = coder.decodeObjectForKey("type") as Int
+        self.day = coder.decodeObjectForKey("day") as! Int
+        self.time = coder.decodeObjectForKey("time") as! Int
+        self.type = coder.decodeObjectForKey("type")as! Int
         super.init()
     }
     

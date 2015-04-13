@@ -141,17 +141,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5lG-uF-yjK" userLabel="btnExit">
-                                <rect key="frame" x="325" y="30" width="40" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="40" constant="40" id="7PI-NA-MCg"/>
-                                    <constraint firstAttribute="width" constant="40" id="chy-B8-m1u"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                <state key="normal" image="close_grey">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-FC-vsd" userLabel="txtUser">
                                 <rect key="frame" x="23" y="162" width="318" height="44"/>
                                 <constraints>
@@ -180,11 +169,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5bl-FC-vsd" firstAttribute="top" secondItem="5lG-uF-yjK" secondAttribute="bottom" constant="100" id="08I-Ed-CHg"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="leading" secondItem="5bl-FC-vsd" secondAttribute="leading" id="3HP-y1-37K"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="centerX" secondItem="Axe-z1-L9b" secondAttribute="centerX" id="9Zj-Rx-Ar7"/>
-                            <constraint firstAttribute="trailing" secondItem="5lG-uF-yjK" secondAttribute="trailing" constant="10" id="9a2-Zn-3P7"/>
-                            <constraint firstItem="5lG-uF-yjK" firstAttribute="top" secondItem="Dyx-nO-4EJ" secondAttribute="bottom" constant="10" id="BCR-d3-pFr"/>
                             <constraint firstItem="5bl-FC-vsd" firstAttribute="leading" secondItem="UDQ-Kq-gIF" secondAttribute="leading" constant="23" id="EDo-BS-JSh"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="width" secondItem="Axe-z1-L9b" secondAttribute="width" constant="50" id="Jbz-Ox-Hnx"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="height" secondItem="5bl-FC-vsd" secondAttribute="height" id="apP-6V-pq6"/>
@@ -194,11 +180,6 @@
                             <constraint firstItem="Axe-z1-L9b" firstAttribute="top" secondItem="AFs-Di-Qdg" secondAttribute="bottom" constant="50" id="qY4-It-vvJ"/>
                             <constraint firstItem="AFs-Di-Qdg" firstAttribute="width" secondItem="5bl-FC-vsd" secondAttribute="width" id="yQL-j4-Snx"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="5lG-uF-yjK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -213,7 +194,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="close_grey" width="22" height="22"/>
         <image name="hamburger" width="22" height="22"/>
     </resources>
 </document>

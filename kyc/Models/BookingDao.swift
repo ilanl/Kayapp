@@ -25,8 +25,8 @@ public class BookingDao: NSObject,NSCoding{
     public required init(coder: NSCoder) {
         self.datetime = coder.decodeObjectForKey("date") as? NSDate
         self.id = coder.decodeObjectForKey("id") as? Int
-        self.boatId = coder.decodeObjectForKey("boatId") as Int?
-        self.boatName = coder.decodeObjectForKey("boatName") as String?
+        self.boatId = coder.decodeObjectForKey("boatId") as? Int
+        self.boatName = coder.decodeObjectForKey("boatName") as? String
         self.tripId = coder.decodeObjectForKey("tripId") as? Int
         self.state = coder.decodeObjectForKey("state") as? Int
         self.day = coder.decodeObjectForKey("day") as? String

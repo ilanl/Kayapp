@@ -11,8 +11,8 @@ public class SettingDao : NSObject,NSCoding{
     }
     
     public required init(coder: NSCoder) {
-        self.mode = coder.decodeObjectForKey("mode") as Int
-        self.reminder = coder.decodeObjectForKey("reminder") as Int?
+        self.mode = coder.decodeObjectForKey("mode") as! Int
+        self.reminder = coder.decodeObjectForKey("reminder") as! Int?
         super.init()
     }
     

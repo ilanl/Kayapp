@@ -14,7 +14,7 @@ public class JsonParser:NSObject{
     public class func parseArrayToArrayOfType<T: Serializable>(array: [AnyObject]) -> [T] {
         var parsedArray = [T]()
         for object in array {
-            let dictionary = object as [NSObject: AnyObject]
+            let dictionary = object as! [NSObject: AnyObject]
             let parsedObject: T = parseDictionaryToType(dictionary)
             parsedArray.append(parsedObject)
         }

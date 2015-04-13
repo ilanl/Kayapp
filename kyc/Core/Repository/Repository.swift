@@ -9,7 +9,7 @@ class Repository<T:AnyObject> {
         
         pList = plist + ".plist"
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDirectory = paths[0] as String
+        let documentsDirectory = paths[0] as! String
         let path = documentsDirectory.stringByAppendingPathComponent(pList)
         let fileManager = NSFileManager.defaultManager()
         
@@ -34,8 +34,8 @@ class Repository<T:AnyObject> {
         self.arrayOfData = array
         
         let saveData = NSKeyedArchiver.archivedDataWithRootObject(array);
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
-        let documentsDirectory = paths.objectAtIndex(0) as NSString;
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as! NSArray;
+        let documentsDirectory = paths.objectAtIndex(0) as! NSString;
         let path = documentsDirectory.stringByAppendingPathComponent(self.pList);
         
         saveData.writeToFile(path, atomically: true);

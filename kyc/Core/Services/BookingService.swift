@@ -21,7 +21,7 @@ public class BookingService: NSObject,BookingServiceProtocol {
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            errorBlock!("can not fetch bookings as anonymous")
+            errorBlock!("can not fetch bookings as! anonymous")
             return
         }
         
@@ -44,12 +44,12 @@ public class BookingService: NSObject,BookingServiceProtocol {
                     bookingDaos = [BookingDao]()
                 }
                 
-                let timeinterval : NSTimeInterval = (f.tripDate! as NSString).doubleValue
-                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as NSDate?
+                let timeinterval : NSTimeInterval = (f.tripDate! as! NSString).doubleValue
+                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as! NSDate?
                 let boatName : String = f.boatName!
                 let id : Int = f.id!
-                let boatId : Int = (f.boatId! as NSString).integerValue
-                let tripId : Int = (f.tripId! as NSString).integerValue
+                let boatId : Int = (f.boatId! as! NSString).integerValue
+                let tripId : Int = (f.tripId! as! NSString).integerValue
                 let day : String = f.day!
                 let state: Int = f.state!
                 let time : String = f.time!

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -31,11 +31,72 @@
                                     <action selector="didPressExit:" destination="Vg6-F2-1pf" eventType="touchUpInside" id="LOe-TI-7EE"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SBY-OW-tgr" userLabel="tblDayPrefs">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="dayPrefCell" id="XRZ-IF-3oe" customClass="DayPrefCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XRZ-IF-3oe" id="6Wl-o8-1R5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTX-pt-Gda">
+                                                    <rect key="frame" x="15" y="11" width="120" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="q8S-YJ-yMO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-dE-qX1" userLabel="btnKayakSelection">
+                                                    <rect key="frame" x="175" y="1" width="40" height="41"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Bmm-ri-zPe"/>
+                                                        <constraint firstAttribute="height" constant="41" id="P3w-rV-RPz"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Day-page-chosed-Kayak-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G0-qUG" userLabel="btnSurfskiSelection">
+                                                    <rect key="frame" x="275" y="1" width="40" height="41"/>
+                                                    <state key="normal" image="Day-page-unchosed-surfski-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="MK1-G0-qUG" firstAttribute="height" secondItem="F7G-dE-qX1" secondAttribute="height" id="CIx-j4-PJB"/>
+                                                <constraint firstItem="MK1-G0-qUG" firstAttribute="leading" secondItem="F7G-dE-qX1" secondAttribute="trailing" constant="60" id="D6I-9B-1U6"/>
+                                                <constraint firstItem="VTX-pt-Gda" firstAttribute="leading" secondItem="6Wl-o8-1R5" secondAttribute="leadingMargin" constant="7" id="Wv6-6f-V5g"/>
+                                                <constraint firstAttribute="centerY" secondItem="MK1-G0-qUG" secondAttribute="centerY" id="bMW-vE-M6U"/>
+                                                <constraint firstItem="VTX-pt-Gda" firstAttribute="centerY" secondItem="6Wl-o8-1R5" secondAttribute="centerY" id="gPm-Kv-TrZ"/>
+                                                <constraint firstItem="MK1-G0-qUG" firstAttribute="width" secondItem="F7G-dE-qX1" secondAttribute="width" id="gr9-Ke-D1Y"/>
+                                                <constraint firstItem="F7G-dE-qX1" firstAttribute="leading" secondItem="VTX-pt-Gda" secondAttribute="trailing" constant="40" id="jHC-Dz-ULj"/>
+                                                <constraint firstAttribute="centerY" secondItem="F7G-dE-qX1" secondAttribute="centerY" id="ljl-v3-sGY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="VTX-pt-Gda" id="1bm-8S-2uP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vg6-F2-1pf" id="GR6-n8-Xmt"/>
+                                    <outlet property="delegate" destination="Vg6-F2-1pf" id="clq-ug-mG7"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SBY-OW-tgr" firstAttribute="leading" secondItem="Sea-I0-Uc4" secondAttribute="leading" id="9qg-dn-qHe"/>
                             <constraint firstItem="Ljk-WB-yYz" firstAttribute="trailing" secondItem="Sea-I0-Uc4" secondAttribute="trailingMargin" id="O1d-i1-nEt"/>
+                            <constraint firstItem="SBY-OW-tgr" firstAttribute="top" secondItem="Ljk-WB-yYz" secondAttribute="bottom" constant="8" id="Ows-L0-VIG"/>
+                            <constraint firstItem="SBY-OW-tgr" firstAttribute="trailing" secondItem="Sea-I0-Uc4" secondAttribute="trailing" id="dF7-2l-bYc"/>
                             <constraint firstItem="Ljk-WB-yYz" firstAttribute="top" secondItem="rMV-GG-24W" secondAttribute="bottom" id="l4V-MV-u2F"/>
+                            <constraint firstItem="EO2-HA-8PD" firstAttribute="top" secondItem="SBY-OW-tgr" secondAttribute="bottom" id="nF9-Uh-EfG"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -45,10 +106,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xN-kQ-m18" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="323"/>
+            <point key="canvasLocation" x="83.5" y="322.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Day-page-chosed-Kayak-button" width="40" height="41"/>
+        <image name="Day-page-unchosed-surfski-button" width="40" height="41"/>
         <image name="close_grey" width="22" height="22"/>
     </resources>
 </document>

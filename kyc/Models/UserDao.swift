@@ -13,10 +13,10 @@ public class UserDao : NSObject,NSCoding{
     }
     
     public required init(coder: NSCoder) {
-        self.name = coder.decodeObjectForKey("name") as String
-        self.pwd = coder.decodeObjectForKey("pwd") as String
-        self.deviceToken = coder.decodeObjectForKey("deviceToken") as String?
-        self.securityToken = coder.decodeObjectForKey("securityToken") as String?
+        self.name = coder.decodeObjectForKey("name") as! String
+        self.pwd = coder.decodeObjectForKey("pwd") as! String
+        self.deviceToken = coder.decodeObjectForKey("deviceToken") as! String?
+        self.securityToken = coder.decodeObjectForKey("securityToken") as! String?
         
         super.init()
     }

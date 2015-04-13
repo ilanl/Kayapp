@@ -29,7 +29,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            errorBlock!("can not fetch preferences as anonymous")
+            errorBlock!("can not fetch preferences as! anonymous")
             return
         }
         let set: AnyObject = self.read()
@@ -56,7 +56,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         let userDao:UserDao? = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            errorBlock!("can not fetch preferences as anonymous")
+            errorBlock!("can not fetch preferences as! anonymous")
             return
         }
         let deviceToken:String = (userDao!.deviceToken == nil) ? "" : userDao!.deviceToken!
@@ -71,7 +71,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
                 return
             }
             
-            self.persist(preferences, successBlock)
+            self.persist(preferences, successBlock: successBlock)
         }
     }
     

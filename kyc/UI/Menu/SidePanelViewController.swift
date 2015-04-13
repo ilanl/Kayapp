@@ -34,7 +34,7 @@ class SidePanelViewController: UIViewController, UITableViewDataSource, UITableV
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell, forIndexPath: indexPath) as MenuItemCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(TableView.CellIdentifiers.MenuItemCell, forIndexPath: indexPath) as! MenuItemCell
     cell.configureForMenuItem(menuItems[indexPath.row])
     return cell
   }
@@ -52,7 +52,7 @@ class MenuItemCell: UITableViewCell {
   @IBOutlet weak var menuItemTitle: UILabel!
 
   func configureForMenuItem(menuItem: MenuItem) {
-    if ((menuItem.image as UIImage?) != nil){
+    if ((menuItem.image as! UIImage?) != nil){
         menuItemImage.image = menuItem.image
     }
     menuItemTitle.text = menuItem.title

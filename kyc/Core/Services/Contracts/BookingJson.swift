@@ -7,7 +7,7 @@ public class BookingJson:NSObject, Serializable{
     
     required public init(dictionary: [NSObject : AnyObject]) {
         
-        self.arrayOfBookings = JsonParser.parseArrayToArrayOfType(dictionary["Bookings"] as [AnyObject])
+        self.arrayOfBookings = JsonParser.parseArrayToArrayOfType(dictionary["Bookings"] as! [AnyObject])
         
         if let _status = dictionary["Status"] as? String{
             self.status = _status

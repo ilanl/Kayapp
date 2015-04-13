@@ -30,7 +30,7 @@ class CenterViewController: UIViewController, SidePanelViewControllerDelegate {
         }
 
         if (typeClass != nil){
-            var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(typeClass!) as UIViewController?
+            var viewController: UIViewController? = ViewControllersFactory.instantiateControllerWithClass(typeClass!) as! UIViewController?
             
             if (viewController != nil){
                 self.navigationController?.presentViewController(viewController!, animated: true, completion: nil)

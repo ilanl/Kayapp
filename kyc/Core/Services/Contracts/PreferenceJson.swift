@@ -82,7 +82,7 @@ public class SetJson:NSObject, Serializable{
     
     required public init(dictionary: [NSObject : AnyObject]) {
         
-        let dict = dictionary["Set"] as [NSObject: AnyObject]
+        let dict = dictionary["Set"] as! [NSObject: AnyObject]
         if let _arrayOfKayakPrefs = dict["KayakPrefs"] as? [AnyObject]{
             self.arrayOfKayakPrefs = JsonParser.parseArrayToArrayOfType(_arrayOfKayakPrefs)
         }
