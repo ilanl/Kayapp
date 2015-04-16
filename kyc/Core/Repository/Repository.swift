@@ -1,6 +1,6 @@
 import Foundation
 
-class Repository<T:AnyObject> {
+class Repository<T:AnyObject where T:Equatable>{
     
     var arrayOfData = Array<T>()
     var pList: String
@@ -34,7 +34,7 @@ class Repository<T:AnyObject> {
         self.arrayOfData = array
         
         let saveData = NSKeyedArchiver.archivedDataWithRootObject(array);
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as! NSArray;
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
         let documentsDirectory = paths.objectAtIndex(0) as! NSString;
         let path = documentsDirectory.stringByAppendingPathComponent(self.pList);
         
@@ -49,6 +49,28 @@ class Repository<T:AnyObject> {
     
     func get() -> [T]{
         return self.arrayOfData
+    }
+    
+    func delete(element:T) -> Bool{
+        self.arrayOfData = self.arrayOfData.filter({ !self.checkEquality($0, left: element) })
+        self.save(self.arrayOfData)
+        return true
+    }
+    
+    func checkEquality(right:T, left:T) -> Bool{
+        return right == left
+    }
+    
+    func saveOne(element:T) -> Bool{
+        var existing: T? = self.arrayOfData.filter({ self.checkEquality($0, left: element) }).first
+        if existing != nil {
+            existing = element
+        }
+        else{
+            self.arrayOfData.append(element)
+        }
+        self.save(self.arrayOfData)
+        return true
     }
     
 }

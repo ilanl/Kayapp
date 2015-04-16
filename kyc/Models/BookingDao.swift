@@ -45,3 +45,7 @@ public class BookingDao: NSObject,NSCoding{
         coder.encodeObject(self.time, forKey: "time")
     }
 }
+
+public func ==(lhs: BookingDao, rhs: BookingDao) -> Bool {
+    return lhs.time == rhs.time && lhs.boatId == rhs.boatId && lhs.datetime == rhs.datetime
+}

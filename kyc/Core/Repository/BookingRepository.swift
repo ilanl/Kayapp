@@ -6,6 +6,10 @@ import Foundation
     func get() -> [BookingDao]
     
     func save(bookings: [BookingDao])->Bool
+    
+    func saveOne(dayPrefOne: BookingDao)->Bool
+    
+    func deleteOne(dayPref: BookingDao)->Bool
 }
 
 public class BookingRepository:NSObject,BookingRepositoryProtocol{
@@ -23,5 +27,13 @@ public class BookingRepository:NSObject,BookingRepositoryProtocol{
     
     public func save(bookings: [BookingDao])->Bool{
         return self.repository.save(bookings)
+    }
+    
+    public func saveOne(bookingOne: BookingDao)->Bool{
+        return self.repository.saveOne(bookingOne)
+    }
+    
+    public func deleteOne(bookingOne: BookingDao)->Bool{
+        return self.repository.delete(bookingOne)
     }
 }

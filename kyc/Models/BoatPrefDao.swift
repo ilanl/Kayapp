@@ -21,3 +21,7 @@ public class BoatPrefDao : NSObject,NSCoding{
         coder.encodeObject(self.order, forKey: "order")
     }
 }
+
+public func ==(lhs: BoatPrefDao, rhs: BoatPrefDao) -> Bool {
+    return lhs.name == rhs.name
+}

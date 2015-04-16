@@ -1,12 +1,17 @@
 import UIKit
 
-typealias ToggleButtonSet = (imageName : String, raw : String, order: Int)
+typealias ToggleButtonSet = (imageName : String, raw : Int, order: Int)
 
 class ToggleButton:UIButton{
     var _arrayOfValues:[ToggleButtonSet]?
-    var _currentValue:String?
+    var _currentValue:Int?
     
-    var currentValue:String?{
+    var day: Int?
+    var time: Int?
+    
+    var dayPrefRepository:DayPrefsRepository?
+    
+    var currentValue:Int?{
         get{
             return _currentValue
         }
@@ -14,21 +19,24 @@ class ToggleButton:UIButton{
             if let current:ToggleButtonSet = _arrayOfValues?.filter({ $0.raw == newValue}).first!{
                 self.setImage(UIImage (named: current.imageName), forState: .Normal)
                 self._currentValue = current.raw
+                println("new value: \(self._currentValue)")
             }
         }
     }
     
     func buttonTap(sender: ToggleButton) {
         
-        if (self.currentValue == nil)
+        if (sender.currentValue == nil)
         {
             return
         }
         
-        var current:ToggleButtonSet = self._arrayOfValues!.filter({ $0.raw == self.currentValue!}).first!
-        var nextOrder = (current.order+1) % self._arrayOfValues!.count
-        var next:ToggleButtonSet = self._arrayOfValues!.filter({ $0.order == nextOrder}).first!
-        self.currentValue = next.raw
+        var current:ToggleButtonSet = sender._arrayOfValues!.filter({ $0.raw == self.currentValue!}).first!
+        var nextOrder = (current.order+1) % sender._arrayOfValues!.count
+        var next:ToggleButtonSet = sender._arrayOfValues!.filter({ $0.order == nextOrder}).first!
+        sender.currentValue = next.raw
+        
+        self.dayPrefRepository?.saveOne(DayPrefDao(day: sender.day!, time: sender.time!, type: sender.currentValue!))
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -82,9 +90,23 @@ class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        //let dayPref = self.dayPrefsArray![indexPath.row] as! DayPrefDao
+        let daySection = indexPath.section + 1
+        println("day: \(daySection)")
         
         let cell:DayPrefCell = tableView.dequeueReusableCellWithIdentifier("dayPrefCell", forIndexPath: indexPath) as! DayPrefCell
+        
+        cell.btnKayak._arrayOfValues = [(imageName : "Day-page-chosed-Kayak-button", raw : 1, order: 1),(imageName : "Day-page-unchosed-Kayak-button", raw : 0, order: 0)]
+        
+        cell.btnSurfSki._arrayOfValues = [(imageName : "Day-page-chosed-surfski-button", raw : 2, order: 1),(imageName : "Day-page-unchosed-surfski-button", raw : 0, order: 0)]
+        
+        
+        cell.btnKayak.dayPrefRepository = self.dayPrefsRepository
+        cell.btnKayak.day = daySection
+        cell.btnKayak.time = indexPath.row
+        
+        cell.btnSurfSki.dayPrefRepository = self.dayPrefsRepository
+        cell.btnSurfSki.day = daySection
+        cell.btnSurfSki.time = indexPath.row
         
         let timeLabel = cell.timeLabel
         switch(indexPath.row){
@@ -97,11 +119,21 @@ class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDe
             default:
                 timeLabel.text = "NA"
         }
-        cell.btnKayak._arrayOfValues = [(imageName : "Day-page-chosed-Kayak-button", raw : "1", order: 1),(imageName : "Day-page-unchosed-Kayak-button", raw : "0", order: 0)]
-        cell.btnKayak.currentValue = "0"
         
-        cell.btnSurfSki._arrayOfValues = [(imageName : "Day-page-chosed-surfski-button", raw : "1", order: 1),(imageName : "Day-page-unchosed-surfski-button", raw : "0", order: 0)]
-        cell.btnSurfSki.currentValue = "1"
+        if let foundKayakDayPref = self.dayPrefsArray?.filter({ $0.day == daySection && $0.time == indexPath.row && $0.type == 1 }).first{
+            cell.btnKayak.currentValue = 1
+        }
+        else{
+            cell.btnKayak.currentValue = 0
+        }
+        
+        if let foundSurfSkiDayPref = self.dayPrefsArray?.filter({ $0.day == daySection && $0.time == indexPath.row && $0.type == 2 }).first{
+            cell.btnSurfSki.currentValue = 2
+        }
+        else {
+            cell.btnSurfSki.currentValue = 0
+        }
+        
         return cell
     }
     

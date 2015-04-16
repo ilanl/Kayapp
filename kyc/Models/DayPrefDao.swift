@@ -1,10 +1,10 @@
 import Foundation
 
-public class DayPrefDao : NSObject,NSCoding{
+public class DayPrefDao : NSObject,NSCoding,Equatable{
 
-    public private(set) var day: Int
-    public private(set) var time: Int
-    public private(set) var type: Int
+    public var day: Int
+    public var time: Int
+    public var type: Int
     
     public init(day:Int,time:Int,type:Int) {
         self.day = day
@@ -24,4 +24,8 @@ public class DayPrefDao : NSObject,NSCoding{
         coder.encodeObject(self.time, forKey: "time")
         coder.encodeObject(self.type, forKey: "type")
     }
+}
+
+public func ==(lhs: DayPrefDao, rhs: DayPrefDao) -> Bool{
+    return lhs.time == rhs.time && lhs.day == rhs.day && lhs.type == rhs.type
 }
