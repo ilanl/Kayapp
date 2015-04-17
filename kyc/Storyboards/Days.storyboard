@@ -50,7 +50,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-dE-qX1" userLabel="btnKayakSelection" customClass="ToggleButton" customModule="kyc" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7G-dE-qX1" userLabel="btnKayakSelection" customClass="DayPrefToggleButton" customModule="kyc" customModuleProvider="target">
                                                     <rect key="frame" x="175" y="1" width="40" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Bmm-ri-zPe"/>
@@ -63,7 +63,7 @@
                                                         <action selector="kayakTap:" destination="XRZ-IF-3oe" eventType="touchUpInside" id="xOz-zw-qRd"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G0-qUG" userLabel="btnSurfskiSelection" customClass="ToggleButton" customModule="kyc" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MK1-G0-qUG" userLabel="btnSurfskiSelection" customClass="DayPrefToggleButton" customModule="kyc" customModuleProvider="target">
                                                     <rect key="frame" x="275" y="1" width="40" height="41"/>
                                                     <state key="normal" image="Day-page-unchosed-surfski-button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

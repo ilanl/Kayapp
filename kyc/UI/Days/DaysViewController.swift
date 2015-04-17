@@ -1,58 +1,5 @@
 import UIKit
 
-typealias ToggleButtonSet = (imageName : String, raw : Int, order: Int)
-
-class ToggleButton:UIButton{
-    var _arrayOfValues:[ToggleButtonSet]?
-    var _currentValue:Int?
-    
-    var day: Int?
-    var time: Int?
-    
-    var dayPrefRepository:DayPrefsRepository?
-    
-    var currentValue:Int?{
-        get{
-            return _currentValue
-        }
-        set{
-            if let current:ToggleButtonSet = _arrayOfValues?.filter({ $0.raw == newValue}).first!{
-                self.setImage(UIImage (named: current.imageName), forState: .Normal)
-                self._currentValue = current.raw
-                println("new value: \(self._currentValue)")
-            }
-        }
-    }
-    
-    func buttonTap(sender: ToggleButton) {
-        
-        if (sender.currentValue == nil)
-        {
-            return
-        }
-        
-        var current:ToggleButtonSet = sender._arrayOfValues!.filter({ $0.raw == self.currentValue!}).first!
-        var nextOrder = (current.order+1) % sender._arrayOfValues!.count
-        var next:ToggleButtonSet = sender._arrayOfValues!.filter({ $0.order == nextOrder}).first!
-        sender.currentValue = next.raw
-        
-        self.dayPrefRepository?.saveOne(DayPrefDao(day: sender.day!, time: sender.time!, type: sender.currentValue!))
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        super.addTarget(self, action: "buttonTap:", forControlEvents: UIControlEvents.TouchDown)
-    }
-}
-
-class DayPrefSection{
-    var title:String
-    
-    init(title:String){
-        self.title = title
-    }
-}
-
 class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var exitButton: UIButton!
@@ -89,6 +36,8 @@ class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        self.dayPrefsArray = self.dayPrefsRepository.get()
         
         let daySection = indexPath.section + 1
         println("day: \(daySection)")

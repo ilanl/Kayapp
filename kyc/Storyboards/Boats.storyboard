@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Surf Boats View Controller-->
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuP-bc-PRt">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuP-bc-PRt">
                                 <rect key="frame" x="323" y="28" width="42" height="42"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="close_grey">
@@ -26,6 +26,10 @@
                                     <action selector="didPressClose:" destination="ClT-pB-6Ml" eventType="touchUpInside" id="6Vy-hm-wAp"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-Am-pBa">
+                                <rect key="frame" x="92" y="168" width="188" height="334"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -55,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-Gb-gDf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMy-Gb-gDf">
                                 <rect key="frame" x="313" y="28" width="42" height="42"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="close_grey">
@@ -65,9 +69,44 @@
                                     <action selector="didPressClose:" destination="MfW-sm-Pr9" eventType="touchUpInside" id="930-Io-IcP"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-Bn-3Ts">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="boatRankCell" id="2Lb-NP-UMc" customClass="BoatRankCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Lb-NP-UMc" id="m0U-SM-9BC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-qh-ZeP" userLabel="btnOrder" customClass="ToggleButton" customModule="kyc" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="7" width="29" height="29"/>
+                                                    <state key="normal" image="plus">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="orderTap:" destination="2Lb-NP-UMc" eventType="touchUpInside" id="Apy-d1-WZJ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="U3X-qh-ZeP" secondAttribute="centerY" id="3gD-ik-MoW"/>
+                                                <constraint firstItem="U3X-qh-ZeP" firstAttribute="leading" secondItem="m0U-SM-9BC" secondAttribute="leading" constant="20" id="l2g-TI-RtI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnOrder" destination="U3X-qh-ZeP" id="X7C-Ku-BNO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Sfe-Kc-gQC" firstAttribute="top" secondItem="tc3-Bn-3Ts" secondAttribute="bottom" id="KE6-td-3mn"/>
+                            <constraint firstAttribute="trailing" secondItem="tc3-Bn-3Ts" secondAttribute="trailing" id="O6E-mD-gvU"/>
+                            <constraint firstItem="tc3-Bn-3Ts" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" id="X6r-GW-lkF"/>
+                            <constraint firstItem="tc3-Bn-3Ts" firstAttribute="leading" secondItem="qbF-s6-CgL" secondAttribute="leading" id="dgN-Cx-c1u"/>
                             <constraint firstItem="tMy-Gb-gDf" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" constant="8" symbolic="YES" id="ecZ-rs-9wz"/>
                             <constraint firstAttribute="trailing" secondItem="tMy-Gb-gDf" secondAttribute="trailing" constant="20" symbolic="YES" id="i0x-Lc-7XM"/>
                         </constraints>
@@ -80,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXg-Fp-oYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89.5" y="-408.5"/>
+            <point key="canvasLocation" x="-101.5" y="-404.5"/>
         </scene>
         <!--Boats Tab View Controller-->
         <scene sceneID="2Rg-n4-vu4">
@@ -105,5 +144,6 @@
     </scenes>
     <resources>
         <image name="close_grey" width="22" height="22"/>
+        <image name="plus" width="29" height="29"/>
     </resources>
 </document>

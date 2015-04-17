@@ -3,8 +3,8 @@ import UIKit
 
 class DayPrefCell: UITableViewCell {
     
-    @IBOutlet weak var btnSurfSki: ToggleButton!
-    @IBOutlet weak var btnKayak: ToggleButton!
+    @IBOutlet weak var btnSurfSki: DayPrefToggleButton!
+    @IBOutlet weak var btnKayak: DayPrefToggleButton!
     @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
@@ -12,11 +12,11 @@ class DayPrefCell: UITableViewCell {
         // Initialization code
     }
     
-    @IBAction func surfTap(sender: ToggleButton) {
+    @IBAction func surfTap(sender: DayPrefToggleButton) {
         println("surf tapped \(sender.currentValue)")
     }
     
-    @IBAction func kayakTap(sender: ToggleButton) {
+    @IBAction func kayakTap(sender: DayPrefToggleButton) {
         
         println("kayak tapped \(sender.currentValue)")
     }
