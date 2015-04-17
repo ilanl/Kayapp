@@ -19,6 +19,8 @@ public class PreferenceParserTests : XCTestCase {
         XCTAssertNotNil(preferenceJson.set.arrayOfKayakPrefs[0].type)
         XCTAssertNotNil(preferenceJson.set.arrayOfKayakPrefs[0].key)
         
+        XCTAssertTrue(preferenceJson.set.arrayOfKayakPrefs.last!.type! == 1, "Incorrect boat type parsed")
+        
         XCTAssertNotNil(preferenceJson.set.arrayOfTimePrefs[0].time)
         XCTAssertNotNil(preferenceJson.set.arrayOfTimePrefs[0].type)
         XCTAssertNotNil(preferenceJson.set.arrayOfTimePrefs[0].dayOfWeek)

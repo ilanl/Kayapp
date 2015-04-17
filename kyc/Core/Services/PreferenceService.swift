@@ -82,6 +82,8 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         for b in preferences.set.arrayOfKayakPrefs
         {
+            println("boat: \(b.name!) \(b.type!)")
+            
             boatsDaos.append(BoatDao(name: b.name!, type: b.type!))
             if b.weight != nil && b.weight! > 0
             {

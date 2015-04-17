@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GuP-bc-PRt">
-                                <rect key="frame" x="323" y="28" width="42" height="42"/>
+                                <rect key="frame" x="313" y="28" width="42" height="42"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="close_grey">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,14 +27,70 @@
                                     <action selector="didPressClose:" destination="ClT-pB-6Ml" eventType="touchUpInside" id="6Vy-hm-wAp"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-Am-pBa">
-                                <rect key="frame" x="92" y="168" width="188" height="334"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-Am-pBa">
+                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="boatRankCell" id="XMz-oJ-NZi" customClass="BoatRankCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="312" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XMz-oJ-NZi" id="gBv-U6-Hle">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyh-AQ-Wv8" userLabel="btnOrder" customClass="BoatRankToggleButton" customModule="kyc" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="7" width="29" height="29"/>
+                                                    <state key="normal" image="plus">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="orderTap:" destination="XMz-oJ-NZi" eventType="touchUpInside" id="Gb0-60-Sc1"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSP-HI-xDg" userLabel="lblName">
+                                                    <rect key="frame" x="100" y="11" width="217" height="21"/>
+                                                    <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Jyh-AQ-Wv8" firstAttribute="leading" secondItem="gBv-U6-Hle" secondAttribute="leading" constant="20" id="Ett-dn-bLl"/>
+                                                <constraint firstAttribute="centerY" secondItem="Jyh-AQ-Wv8" secondAttribute="centerY" id="M2j-PA-tX3"/>
+                                                <constraint firstAttribute="centerY" secondItem="uSP-HI-xDg" secondAttribute="centerY" id="RnK-TP-3ex"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="uSP-HI-xDg" secondAttribute="trailing" constant="50" id="byH-eK-JTv"/>
+                                                <constraint firstItem="uSP-HI-xDg" firstAttribute="leading" secondItem="gBv-U6-Hle" secondAttribute="leading" constant="100" id="wMI-Wb-TGu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnOrder" destination="Jyh-AQ-Wv8" id="swq-qS-8m8"/>
+                                            <outlet property="lblName" destination="uSP-HI-xDg" id="Z8e-Bq-qBA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ClT-pB-6Ml" id="2Ax-aK-hfN"/>
+                                    <outlet property="delegate" destination="ClT-pB-6Ml" id="gJ7-wL-0No"/>
+                                </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surf Ski" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcB-EN-nCA" userLabel="lblTitle">
+                                <rect key="frame" x="56" y="38" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="o9V-um-Oqo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.94580419580419584" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="GuP-bc-PRt" secondAttribute="trailing" constant="10" id="D5a-kS-Pux"/>
+                            <constraint firstItem="D3v-yu-jgQ" firstAttribute="top" secondItem="xeR-Am-pBa" secondAttribute="bottom" id="5S9-d1-RuL"/>
+                            <constraint firstItem="GuP-bc-PRt" firstAttribute="centerY" secondItem="FcB-EN-nCA" secondAttribute="centerY" constant="0.5" id="AGK-ty-cfa"/>
+                            <constraint firstAttribute="trailing" secondItem="GuP-bc-PRt" secondAttribute="trailing" constant="20" symbolic="YES" id="D5a-kS-Pux"/>
+                            <constraint firstAttribute="trailing" secondItem="xeR-Am-pBa" secondAttribute="trailing" id="GVT-xZ-1fd"/>
+                            <constraint firstItem="xeR-Am-pBa" firstAttribute="leading" secondItem="sPW-5R-BmU" secondAttribute="leading" id="UEC-cD-Bbm"/>
+                            <constraint firstItem="FcB-EN-nCA" firstAttribute="leading" secondItem="sPW-5R-BmU" secondAttribute="leadingMargin" constant="40" id="aD4-RR-APZ"/>
+                            <constraint firstItem="xeR-Am-pBa" firstAttribute="top" secondItem="FcB-EN-nCA" secondAttribute="bottom" constant="25" id="b6X-S2-cB1"/>
                             <constraint firstItem="GuP-bc-PRt" firstAttribute="top" secondItem="cQW-uO-73K" secondAttribute="bottom" constant="8" symbolic="YES" id="f81-tT-t1T"/>
                         </constraints>
                     </view>
@@ -67,10 +123,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="didPressClose:" destination="MfW-sm-Pr9" eventType="touchUpInside" id="930-Io-IcP"/>
+                                    <action selector="didPressClose:" destination="MfW-sm-Pr9" eventType="touchUpInside" id="uR0-Ik-tOi"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-Bn-3Ts">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-Bn-3Ts">
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -141,8 +197,8 @@
                     <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="DIe-Yr-kR4"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="closeButton" destination="tMy-Gb-gDf" id="Yd6-ao-3a7"/>
-                        <outlet property="lblTitle" destination="PG9-WG-ESo" id="G84-qF-kWR"/>
+                        <outlet property="closeButton" destination="tMy-Gb-gDf" id="15T-An-lm3"/>
+                        <outlet property="lblTitle" destination="PG9-WG-ESo" id="uND-P5-gOq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXg-Fp-oYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
