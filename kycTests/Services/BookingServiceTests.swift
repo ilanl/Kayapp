@@ -17,10 +17,12 @@ public class BookingServiceTests : XCTestCase {
     public func test_booking_service_live() {
         
         let expectation = expectationWithDescription("expecting data")
-        
+        var bookingsDone : Bool = false
         self.target.getBookings(onSuccess: { (bookings) -> Void in
             
             expectation.fulfill()
+            
+            bookingsDone = true
             
             }, onError: { (message) -> Void in
                 //
@@ -28,9 +30,7 @@ public class BookingServiceTests : XCTestCase {
         
         waitForExpectationsWithTimeout(5.0, handler:nil)
         
-        var booking = self.bookingRepository.get().first
-        
-        XCTAssertTrue(booking != nil, "booking is null")
+        XCTAssertTrue(bookingsDone, "booking is null")
     }
     
     public class UserRepositoryDummy: UserRepository{
