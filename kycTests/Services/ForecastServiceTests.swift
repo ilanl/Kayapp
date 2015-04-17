@@ -6,10 +6,11 @@ public class ForecastServiceTests : XCTestCase {
     
     var target : ForecastService!
     var repositoryDummy = ForecastRepositoryDummy()
+    var configReaderDummy = ConfigReaderDummy()
     
     public override func setUp() {
         
-        self.target = ForecastService(forecastRepository:self.repositoryDummy)
+        self.target = ForecastService(forecastRepository:self.repositoryDummy, configReader: self.configReaderDummy)
     }
     
     public func test_forecast_service_live() {

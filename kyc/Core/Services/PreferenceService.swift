@@ -14,18 +14,20 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
     var dayPrefsRepository:DayPrefsRepository?
     var userRepository:UserRepository?
     var settingRepository:SettingRepository?
+    var configReader:ConfigReader?
     
-    public init(boatsRepository:BoatsRepository,boatPrefsRepository:BoatPrefsRepository,dayPrefsRepository:DayPrefsRepository,userRepository:UserRepository, settingRepository:SettingRepository) {
+    public init(boatsRepository:BoatsRepository,boatPrefsRepository:BoatPrefsRepository,dayPrefsRepository:DayPrefsRepository,userRepository:UserRepository, settingRepository:SettingRepository,configReader:ConfigReader) {
         self.boatsRepository = boatsRepository
         self.boatPrefsRepository = boatPrefsRepository
         self.userRepository = userRepository
         self.settingRepository = settingRepository
         self.dayPrefsRepository = dayPrefsRepository
+        self.configReader = configReader
     }
     
     public func savePreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
     {
-        let url = "http://breezback.com/IKayak/preferences.ashx"
+        let url = self.configReader!.savePreferenceUrl
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
@@ -52,7 +54,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
     
     public func getPreferences(successBlock: (([BoatDao]?,[BoatPrefDao]?,[DayPrefDao]?,SettingDao?) -> Void)?, onError errorBlock: ((String) -> Void)?)
     {
-        let url = "http://breezback.com/IKayak/preferences.ashx"
+        let url = self.configReader!.getPreferenceUrl
         
         let userDao:UserDao? = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){

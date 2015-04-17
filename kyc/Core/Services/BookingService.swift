@@ -9,15 +9,17 @@ public class BookingService: NSObject,BookingServiceProtocol {
     
     var bookingRepository:BookingRepository?
     var userRepository:UserRepository?
+    var configReader:ConfigReader?
     
-    public init(bookingRepository:BookingRepository,userRepository:UserRepository) {
+    public init(bookingRepository:BookingRepository,userRepository:UserRepository,configReader:ConfigReader) {
         self.bookingRepository = bookingRepository
         self.userRepository = userRepository
+        self.configReader = configReader
     }
     
     public func getBookings(onSuccess successBlock: (([BookingDao]?) -> Void)?, onError errorBlock: ((String) -> Void)?)
     {
-        let url = "http://breezback.com/IKayak/bookings.ashx"
+        let url = configReader!.getBookingUrl
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){

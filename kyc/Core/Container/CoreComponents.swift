@@ -2,7 +2,14 @@ import Foundation
 
 public class CoreComponents: TyphoonAssembly {
     
-
+    //MARK: - Configuration
+    
+    public dynamic func configReaderFactory() -> AnyObject {
+        return TyphoonDefinition.withClass(ConfigReader.self){(definition) in
+            definition.scope = TyphoonScope.Singleton
+        }
+    }
+    
     //MARK: - Repositories
     
     public dynamic func settingRepositoryFactory() -> AnyObject {
@@ -52,9 +59,10 @@ public class CoreComponents: TyphoonAssembly {
         
         return TyphoonDefinition.withClass(ForecastService.self) {
             (definition) in
-            definition.useInitializer("initWithForecastRepository:") {
+            definition.useInitializer("initWithForecastRepository:configReader:") {
                 (initializer) in
                 initializer.injectParameterWith(self.forecastRepositoryFactory())
+                initializer.injectParameterWith(self.configReaderFactory())
             }
         }
     }
@@ -62,13 +70,14 @@ public class CoreComponents: TyphoonAssembly {
     public dynamic func preferenceServiceFactory() -> AnyObject {
         return TyphoonDefinition.withClass(PreferenceService.self){
             (definition) in
-            definition.useInitializer("initWithBoatsRepository:boatPrefsRepository:dayPrefsRepository:userRepository:settingRepository:") {
+            definition.useInitializer("initWithBoatsRepository:boatPrefsRepository:dayPrefsRepository:userRepository:settingRepository:configReader:") {
                 (initializer) in
                 initializer.injectParameterWith(self.boatsRepositoryFactory())
                 initializer.injectParameterWith(self.boatPrefsRepositoryFactory())
                 initializer.injectParameterWith(self.dayPrefsRepositoryFactory())
                 initializer.injectParameterWith(self.userRepositoryFactory())
                 initializer.injectParameterWith(self.settingRepositoryFactory())
+                initializer.injectParameterWith(self.configReaderFactory())
             }
         }
     }
@@ -76,10 +85,11 @@ public class CoreComponents: TyphoonAssembly {
     public dynamic func bookingServiceFactory() -> AnyObject {
         return TyphoonDefinition.withClass(BookingService.self){
             (definition) in
-            definition.useInitializer("initWithBookingRepository:userRepository:") {
+            definition.useInitializer("initWithBookingRepository:userRepository:configReader:") {
                 (initializer) in
                 initializer.injectParameterWith(self.bookingRepositoryFactory())
                 initializer.injectParameterWith(self.userRepositoryFactory())
+                initializer.injectParameterWith(self.configReaderFactory())
             }
         }
     }

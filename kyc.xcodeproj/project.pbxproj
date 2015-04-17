@@ -41,6 +41,10 @@
 		D280BD6B1ACEC5430011D4E6 /* ForecastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */; };
 		D280BD6D1ACEC5510011D4E6 /* PreferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */; };
 		D280BD6F1ACEC84A0011D4E6 /* PreferenceParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */; };
+		D284D2641AE144AC00878562 /* ConfigReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D284D2631AE144AC00878562 /* ConfigReader.swift */; };
+		D284D2661AE1492000878562 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284D2651AE1492000878562 /* config.plist */; };
+		D284D2681AE14BD100878562 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = D284D2671AE14BD100878562 /* config.plist */; };
+		D284D26B1AE14C4300878562 /* ConfigReaderDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D284D26A1AE14C4300878562 /* ConfigReaderDummy.swift */; };
 		D285ADAE1AD010EB00E12663 /* BookingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */; };
 		D291D34C1AD07D2900666F88 /* ForecastAndBookingMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D291D34B1AD07D2900666F88 /* ForecastAndBookingMatcher.swift */; };
 		D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2985A521ABD8AAF0008EFCB /* Functions.swift */; };
@@ -148,6 +152,10 @@
 		D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParser.swift; sourceTree = "<group>"; };
 		D280BD6C1ACEC5510011D4E6 /* PreferenceParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParser.swift; sourceTree = "<group>"; };
 		D280BD6E1ACEC84A0011D4E6 /* PreferenceParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceParserTests.swift; sourceTree = "<group>"; };
+		D284D2631AE144AC00878562 /* ConfigReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigReader.swift; sourceTree = "<group>"; };
+		D284D2651AE1492000878562 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		D284D2671AE14BD100878562 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		D284D26A1AE14C4300878562 /* ConfigReaderDummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigReaderDummy.swift; sourceTree = "<group>"; };
 		D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingServiceTests.swift; sourceTree = "<group>"; };
 		D291D34B1AD07D2900666F88 /* ForecastAndBookingMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastAndBookingMatcher.swift; sourceTree = "<group>"; };
 		D2985A521ABD8AAF0008EFCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -331,6 +339,22 @@
 			path = Parsers;
 			sourceTree = "<group>";
 		};
+		D284D2621AE144A000878562 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D284D2631AE144AC00878562 /* ConfigReader.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D284D2691AE14C2C00878562 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D284D26A1AE14C4300878562 /* ConfigReaderDummy.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		D2985A4E1ABD66A50008EFCB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +478,7 @@
 				D2F5CD751AB49DF50035B91A /* UI */,
 				D2F5CD591AB49A0C0035B91A /* LaunchScreen.xib */,
 				D2F5CD4E1AB49A0C0035B91A /* Supporting Files */,
+				D284D2651AE1492000878562 /* config.plist */,
 			);
 			path = kyc;
 			sourceTree = "<group>";
@@ -469,6 +494,8 @@
 		D2F5CD631AB49A0C0035B91A /* kycTests */ = {
 			isa = PBXGroup;
 			children = (
+				D284D2691AE14C2C00878562 /* Configuration */,
+				D284D2671AE14BD100878562 /* config.plist */,
 				D2C97A711AD5C5B9003C924B /* Container */,
 				D24E6B5C1AC4C73B0035FBBF /* Services */,
 				D24E6B441AC4BE130035FBBF /* Repository */,
@@ -491,6 +518,7 @@
 		D2F5CD701AB49DF50035B91A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D284D2621AE144A000878562 /* Configuration */,
 				D2A783EA1AC0C7EE00AA2777 /* Container */,
 				D24E6B591AC4C4250035FBBF /* Services */,
 				D209DFD11AC23F5500648137 /* Repository */,
@@ -688,6 +716,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D284D2661AE1492000878562 /* config.plist in Resources */,
 				D2F5CD911AB4A7AA0035B91A /* Menu.storyboard in Resources */,
 				D2F5CD561AB49A0C0035B91A /* Main.storyboard in Resources */,
 				D211C68A1AD91EE800892F9D /* Days.xcassets in Resources */,
@@ -708,6 +737,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D284D2681AE14BD100878562 /* config.plist in Resources */,
 				D280BD661ACEB5AB0011D4E6 /* preferenceData.json in Resources */,
 				D2735C0E1AD0008800AB60E0 /* bookingData.json in Resources */,
 				D24E6B601AC4D2B80035FBBF /* weatherData.json in Resources */,
@@ -828,6 +858,7 @@
 				D2FA22931AD0710500D6BE94 /* LoginViewController.swift in Sources */,
 				D2B5DA4A1AE0E6D10071C7EC /* ToggleButton.swift in Sources */,
 				D2B5DA4E1AE0F6B50071C7EC /* BoatRankToggleButton.swift in Sources */,
+				D284D2641AE144AC00878562 /* ConfigReader.swift in Sources */,
 				D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */,
 				D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */,
 				D2735C101AD000C900AB60E0 /* BookingJson.swift in Sources */,
@@ -855,6 +886,7 @@
 				D24E6B5E1AC4C7520035FBBF /* ForecastServiceTests.swift in Sources */,
 				D24E6B4C1AC4BE130035FBBF /* BoatPrefsRepositoryTests.swift in Sources */,
 				D24E6B4F1AC4BE130035FBBF /* DayPrefsRepositoryTests.swift in Sources */,
+				D284D26B1AE14C4300878562 /* ConfigReaderDummy.swift in Sources */,
 				D24E6B511AC4BE130035FBBF /* SettingRepositoryTests.swift in Sources */,
 				D24E6B501AC4BE130035FBBF /* ForecastRepositoryTests.swift in Sources */,
 				D2616B6B1ACF3E92009D62FC /* PreferenceServiceTests.swift in Sources */,

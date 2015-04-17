@@ -8,14 +8,16 @@ import Foundation
 public class ForecastService:NSObject, ForecastServiceProtocol {
     
     var forecastRepository:ForecastRepository?
+    var configReader:ConfigReader?
     
-    public init(forecastRepository:ForecastRepository) {
+    public init(forecastRepository:ForecastRepository, configReader:ConfigReader) {
         self.forecastRepository = forecastRepository
+        self.configReader = configReader
     }
     
     public func getWeather(numberOfLiveDays:Int,onSuccess successBlock: ([ForecastDao] -> Void)?, onError errorBlock: (String -> Void)?)
     {
-        let url:NSURL = NSURL(string: "http://breezback.com/IKayak/forecasts.ashx")!
+        let url:NSURL = NSURL(string: self.configReader!.getForecastUrl)!
         
         JsonClient.get(url){ (data:NSData) -> Void in
             

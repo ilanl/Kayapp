@@ -8,10 +8,11 @@ public class BookingServiceTests : XCTestCase {
     
     var bookingRepository = BookingRepositoryDummy()
     var userRepository=UserRepositoryDummy()
+    var configReader = ConfigReaderDummy()
     
     public override func setUp() {
         
-        self.target = BookingService(bookingRepository: self.bookingRepository, userRepository: self.userRepository)
+        self.target = BookingService(bookingRepository: self.bookingRepository, userRepository: self.userRepository, configReader:self.configReader)
     }
     
     public func test_booking_service_live() {

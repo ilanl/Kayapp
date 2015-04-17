@@ -11,10 +11,11 @@ public class PreferenceServiceTests : XCTestCase {
     var dayPrefsRepository = DayPrefsRepositoryDummy()
     var userRepository=UserRepositoryDummy()
     var settingRepository=SettingRepositoryDummy()
+    var configReader = ConfigReaderDummy()
     
     public override func setUp() {
         
-        self.target = PreferenceService(boatsRepository: self.boatsRepository, boatPrefsRepository: self.boatPrefsRepository, dayPrefsRepository: self.dayPrefsRepository, userRepository: self.userRepository, settingRepository: self.settingRepository)
+        self.target = PreferenceService(boatsRepository: self.boatsRepository, boatPrefsRepository: self.boatPrefsRepository, dayPrefsRepository: self.dayPrefsRepository, userRepository: self.userRepository, settingRepository: self.settingRepository, configReader: self.configReader)
     }
     
     public func test_preference_service_get() {
