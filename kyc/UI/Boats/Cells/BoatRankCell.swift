@@ -3,7 +3,8 @@ import UIKit
 
 class BoatRankCell: UITableViewCell {
     
-    @IBOutlet weak var btnOrder: ToggleButton!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var btnOrder: BoatRankToggleButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

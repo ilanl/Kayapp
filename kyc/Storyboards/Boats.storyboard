@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Surf Boats View Controller-->
@@ -70,7 +71,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tc3-Bn-3Ts">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="boatRankCell" id="2Lb-NP-UMc" customClass="BoatRankCell" customModule="kyc" customModuleProvider="target">
@@ -79,7 +80,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Lb-NP-UMc" id="m0U-SM-9BC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-qh-ZeP" userLabel="btnOrder" customClass="ToggleButton" customModule="kyc" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-qh-ZeP" userLabel="btnOrder" customClass="BoatRankToggleButton" customModule="kyc" customModuleProvider="target">
                                                     <rect key="frame" x="20" y="7" width="29" height="29"/>
                                                     <state key="normal" image="plus">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,24 +89,50 @@
                                                         <action selector="orderTap:" destination="2Lb-NP-UMc" eventType="touchUpInside" id="Apy-d1-WZJ"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-1v-uWw" userLabel="lblName">
+                                                    <rect key="frame" x="100" y="11" width="217" height="21"/>
+                                                    <fontDescription key="fontDescription" name="ArialHebrew" family="Arial Hebrew" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="U3X-qh-ZeP" secondAttribute="centerY" id="3gD-ik-MoW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wzs-1v-uWw" secondAttribute="trailing" constant="50" id="UXo-N4-9gr"/>
                                                 <constraint firstItem="U3X-qh-ZeP" firstAttribute="leading" secondItem="m0U-SM-9BC" secondAttribute="leading" constant="20" id="l2g-TI-RtI"/>
+                                                <constraint firstItem="wzs-1v-uWw" firstAttribute="leading" secondItem="m0U-SM-9BC" secondAttribute="leading" constant="100" id="xFu-1q-26G"/>
+                                                <constraint firstAttribute="centerY" secondItem="wzs-1v-uWw" secondAttribute="centerY" id="ybs-G9-0JG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="btnOrder" destination="U3X-qh-ZeP" id="X7C-Ku-BNO"/>
+                                            <outlet property="lblName" destination="wzs-1v-uWw" id="cMi-X6-gSG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MfW-sm-Pr9" id="jZL-8X-qZ5"/>
+                                    <outlet property="delegate" destination="MfW-sm-Pr9" id="zVm-Yz-up9"/>
+                                </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kayaks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PG9-WG-ESo" userLabel="lblTitle">
+                                <rect key="frame" x="36" y="38" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="wlG-if-Or2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.95979020979020979" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Sfe-Kc-gQC" firstAttribute="top" secondItem="tc3-Bn-3Ts" secondAttribute="bottom" id="KE6-td-3mn"/>
                             <constraint firstAttribute="trailing" secondItem="tc3-Bn-3Ts" secondAttribute="trailing" id="O6E-mD-gvU"/>
-                            <constraint firstItem="tc3-Bn-3Ts" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" id="X6r-GW-lkF"/>
+                            <constraint firstItem="tc3-Bn-3Ts" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" constant="50" id="WJ9-ss-MJ0"/>
+                            <constraint firstItem="tc3-Bn-3Ts" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" constant="50" id="X6r-GW-lkF"/>
+                            <constraint firstItem="PG9-WG-ESo" firstAttribute="leading" secondItem="qbF-s6-CgL" secondAttribute="leadingMargin" constant="20" id="Y1t-am-M0X"/>
+                            <constraint firstItem="PG9-WG-ESo" firstAttribute="centerY" secondItem="tMy-Gb-gDf" secondAttribute="centerY" constant="-0.5" id="Y4E-hr-sLP"/>
                             <constraint firstItem="tc3-Bn-3Ts" firstAttribute="leading" secondItem="qbF-s6-CgL" secondAttribute="leading" id="dgN-Cx-c1u"/>
                             <constraint firstItem="tMy-Gb-gDf" firstAttribute="top" secondItem="VTv-u5-ZOi" secondAttribute="bottom" constant="8" symbolic="YES" id="ecZ-rs-9wz"/>
                             <constraint firstAttribute="trailing" secondItem="tMy-Gb-gDf" secondAttribute="trailing" constant="20" symbolic="YES" id="i0x-Lc-7XM"/>
@@ -115,6 +142,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="closeButton" destination="tMy-Gb-gDf" id="Yd6-ao-3a7"/>
+                        <outlet property="lblTitle" destination="PG9-WG-ESo" id="G84-qF-kWR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXg-Fp-oYZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

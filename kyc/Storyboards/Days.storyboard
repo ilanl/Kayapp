@@ -32,7 +32,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SBY-OW-tgr" userLabel="tblDayPrefs">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="dayPrefCell" id="XRZ-IF-3oe" customClass="DayPrefCell" customModule="kyc" customModuleProvider="target">
@@ -99,9 +99,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SBY-OW-tgr" firstAttribute="top" secondItem="Ljk-WB-yYz" secondAttribute="bottom" constant="20" id="5oc-6V-ugC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ljk-WB-yYz" secondAttribute="trailing" id="7tf-i3-yQQ"/>
                             <constraint firstItem="SBY-OW-tgr" firstAttribute="leading" secondItem="Sea-I0-Uc4" secondAttribute="leading" id="9qg-dn-qHe"/>
-                            <constraint firstItem="Ljk-WB-yYz" firstAttribute="trailing" secondItem="Sea-I0-Uc4" secondAttribute="trailingMargin" id="O1d-i1-nEt"/>
-                            <constraint firstItem="SBY-OW-tgr" firstAttribute="top" secondItem="Ljk-WB-yYz" secondAttribute="bottom" constant="8" id="Ows-L0-VIG"/>
+                            <constraint firstItem="EO2-HA-8PD" firstAttribute="top" secondItem="SBY-OW-tgr" secondAttribute="bottom" id="VDN-h7-sMw"/>
                             <constraint firstItem="SBY-OW-tgr" firstAttribute="trailing" secondItem="Sea-I0-Uc4" secondAttribute="trailing" id="dF7-2l-bYc"/>
                             <constraint firstItem="Ljk-WB-yYz" firstAttribute="top" secondItem="rMV-GG-24W" secondAttribute="bottom" id="l4V-MV-u2F"/>
                             <constraint firstItem="EO2-HA-8PD" firstAttribute="top" secondItem="SBY-OW-tgr" secondAttribute="bottom" id="nF9-Uh-EfG"/>

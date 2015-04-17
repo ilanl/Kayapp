@@ -7,4 +7,8 @@ class SurfBoatsViewController: RankingBoatsViewController {
     }
     
     @IBOutlet weak var closeButton: UIButton!
+    
+    override func boatFilter(boat: BoatDao)-> Bool{
+        return boat.type == 2
+    }
 }

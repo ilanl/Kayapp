@@ -62,13 +62,19 @@ class Repository<T:AnyObject where T:Equatable>{
     }
     
     func saveOne(element:T) -> Bool{
-        var existing: T? = self.arrayOfData.filter({ self.checkEquality($0, left: element) }).first
-        if existing != nil {
-            existing = element
+        
+        var foundExisting: Bool?
+        for (var i=0;i<self.arrayOfData.count;i++){
+            if self.checkEquality(self.arrayOfData[i],left:element){
+                self.arrayOfData[i] = element
+                foundExisting = true
+                break
+            }
         }
-        else{
-            self.arrayOfData.append(element)
+        if foundExisting == nil{
+           self.arrayOfData.append(element)
         }
+
         self.save(self.arrayOfData)
         return true
     }

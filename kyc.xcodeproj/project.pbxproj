@@ -53,6 +53,8 @@
 		D2B5DA451AE052740071C7EC /* BoatRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DA441AE052740071C7EC /* BoatRankCell.swift */; };
 		D2B5DA471AE0E6600071C7EC /* DayPrefSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DA461AE0E6600071C7EC /* DayPrefSection.swift */; };
 		D2B5DA4A1AE0E6D10071C7EC /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DA491AE0E6D10071C7EC /* ToggleButton.swift */; };
+		D2B5DA4C1AE0F5760071C7EC /* DayPrefToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DA4B1AE0F5760071C7EC /* DayPrefToggleButton.swift */; };
+		D2B5DA4E1AE0F6B50071C7EC /* BoatRankToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B5DA4D1AE0F6B50071C7EC /* BoatRankToggleButton.swift */; };
 		D2BD50D91AB4C9100025E03F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50D81AB4C9100025E03F /* Day.swift */; };
 		D2BD50FB1AB4DAAC0025E03F /* BookingDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */; };
 		D2BD50FD1AB4DAAD0025E03F /* BoatDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */; };
@@ -160,6 +162,8 @@
 		D2B5DA441AE052740071C7EC /* BoatRankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatRankCell.swift; sourceTree = "<group>"; };
 		D2B5DA461AE0E6600071C7EC /* DayPrefSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPrefSection.swift; sourceTree = "<group>"; };
 		D2B5DA491AE0E6D10071C7EC /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
+		D2B5DA4B1AE0F5760071C7EC /* DayPrefToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPrefToggleButton.swift; sourceTree = "<group>"; };
+		D2B5DA4D1AE0F6B50071C7EC /* BoatRankToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatRankToggleButton.swift; sourceTree = "<group>"; };
 		D2BD50D81AB4C9100025E03F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		D2BD50FA1AB4DAAC0025E03F /* BookingDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingDao.swift; sourceTree = "<group>"; };
 		D2BD50FC1AB4DAAD0025E03F /* BoatDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoatDao.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 			children = (
 				D211C6871AD910F600892F9D /* DayPrefCell.swift */,
 				D2B5DA461AE0E6600071C7EC /* DayPrefSection.swift */,
+				D2B5DA4B1AE0F5760071C7EC /* DayPrefToggleButton.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				D2B5DA441AE052740071C7EC /* BoatRankCell.swift */,
+				D2B5DA4D1AE0F6B50071C7EC /* BoatRankToggleButton.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -815,11 +821,13 @@
 				D280BD681ACEB5FB0011D4E6 /* PreferenceJson.swift in Sources */,
 				D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */,
 				D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */,
+				D2B5DA4C1AE0F5760071C7EC /* DayPrefToggleButton.swift in Sources */,
 				D2B5DA471AE0E6600071C7EC /* DayPrefSection.swift in Sources */,
 				D2BD51031AB4DAAD0025E03F /* ForecastDao.swift in Sources */,
 				D2BD51101AB4E3E30025E03F /* KayakBoatsViewController.swift in Sources */,
 				D2FA22931AD0710500D6BE94 /* LoginViewController.swift in Sources */,
 				D2B5DA4A1AE0E6D10071C7EC /* ToggleButton.swift in Sources */,
+				D2B5DA4E1AE0F6B50071C7EC /* BoatRankToggleButton.swift in Sources */,
 				D2985A991ABDF1760008EFCB /* ForecastHeaderCell.swift in Sources */,
 				D2F5CD871AB4A10D0035B91A /* MenuItem.swift in Sources */,
 				D2735C101AD000C900AB60E0 /* BookingJson.swift in Sources */,
@@ -953,6 +961,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

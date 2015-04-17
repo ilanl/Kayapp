@@ -1,6 +1,6 @@
 import Foundation
 
-public class BoatPrefDao : NSObject,NSCoding{
+public class BoatPrefDao : NSObject,NSCoding,Equatable{
     
     public private(set) var name: String
     public private(set) var order: Int

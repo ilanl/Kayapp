@@ -5,7 +5,7 @@ public enum BoatType: Int, Equatable {
     case SURFSKI = 2
 }
 
-public class BoatDao: NSObject,NSCoding{
+public class BoatDao: NSObject,NSCoding,Equatable{
     
     public var name:String?
     public var type:Int?
@@ -30,4 +30,8 @@ public class BoatDao: NSObject,NSCoding{
         coder.encodeObject(self.name, forKey: "name")
         coder.encodeObject(self.type, forKey: "type")
     }
+}
+
+public func ==(lhs: BoatDao, rhs: BoatDao) -> Bool{
+    return lhs.name == rhs.name
 }

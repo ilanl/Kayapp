@@ -2,14 +2,27 @@ import UIKit
 
 class RankingBoatsViewController: UIViewController ,UITableViewDataSource, UITableViewDelegate {
     
-    var boatPrefsArray:[BoatPrefDao]?
-    let boatPrefsRepository = coreComponents.componentForKey("boatPrefsRepositoryFactory") as! BoatPrefsRepository
+    var boatsArray:[BoatDao]?
+    let boatRepository = coreComponents.componentForKey("boatsRepositoryFactory") as! BoatsRepository
     
-    let allDays = Day.everydays()
+    func boatFilter(boat: BoatDao)-> Bool{
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.boatPrefsArray = self.boatPrefsRepository.get()
+        self.boatsArray = self.dataSource()
+    }
+    
+    func dataSource()->[BoatDao]{
+        var boatsWithType = [BoatDao]()
+        for b in self.boatRepository.get(){
+            
+            if (self.boatFilter(b)){
+                boatsWithType.append(b)
+            }
+        }
+        return boatsWithType
     }
     
     //MARK: Table methods
@@ -20,11 +33,11 @@ class RankingBoatsViewController: UIViewController ,UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
-        return 20
+        return self.boatsArray!.count
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 0
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
@@ -34,41 +47,20 @@ class RankingBoatsViewController: UIViewController ,UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-//        let daySection = indexPath.section + 1
-//        println("day: \(daySection)")
-//        
         let cell:BoatRankCell = tableView.dequeueReusableCellWithIdentifier("boatRankCell", forIndexPath: indexPath) as! BoatRankCell
-//
-//        cell.btnKayak._arrayOfValues = [(imageName : "Day-page-chosed-Kayak-button", raw : 1, order: 1),(imageName : "Day-page-unchosed-Kayak-button", raw : 0, order: 0)]
-//        
-//        cell.btnKayak.dayPrefRepository = self.dayPrefsRepository
-//        cell.btnKayak.day = daySection
-//        cell.btnKayak.time = indexPath.row
-//        
-//        cell.btnSurfSki.dayPrefRepository = self.dayPrefsRepository
-//        cell.btnSurfSki.day = daySection
-//        cell.btnSurfSki.time = indexPath.row
-//        
-//        let timeLabel = cell.timeLabel
-//        switch(indexPath.row){
-//        case 0:
-//            timeLabel.text = "Morning"
-//        case 1:
-//            timeLabel.text = "Afternoon"
-//        case 2:
-//            timeLabel.text = "Late"
-//        default:
-//            timeLabel.text = "NA"
-//        }
-//        
-//        if let foundBoatPref = self.boatPrefsArray?.filter({ $0.type == 1 && $0.order > 0 && $0.name }).first{
-//            cell.btnKayak.currentValue = 1
-//        }
-//        else{
-//            cell.btnKayak.currentValue = 0
-//        }
-//        
+        
+        let boatDao = self.boatsArray![indexPath.row]
+        let name = boatDao.name!
+        cell.lblName.text = name
+        cell.btnOrder._arrayOfValues = [(imageName : "plus", raw : 0, order: 0),(imageName : "1", raw : 1, order: 1),(imageName : "2", raw : 2, order: 2),(imageName : "3", raw : 3, order: 3)]
+        
+        self.setCell(cell,rowIndex: indexPath,name: name)
+        
         return cell
+    }
+    
+    func setCell(cell: BoatRankCell,rowIndex: NSIndexPath, name: String){
+        fatalError("not implemented")
     }
     
     func didPressCloseButton(button:UIButton){
