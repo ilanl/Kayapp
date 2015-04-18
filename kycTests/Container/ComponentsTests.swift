@@ -25,9 +25,10 @@ public class ComponentsTests : XCTestCase {
             
             }, onError: { (message) -> Void in
                 
+                expectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5.0, handler:nil)
+        waitForExpectationsWithTimeout(10.0, handler:nil)
     }
     
     public func test_transient_forecast_service() {
@@ -41,7 +42,10 @@ public class ComponentsTests : XCTestCase {
             XCTAssertTrue(true, "failed to run success block")
             expectation.fulfill()
             
-            }, onError: nil)
+            }, onError: { (message) -> Void in
+                
+                expectation.fulfill()
+        })
         
         waitForExpectationsWithTimeout(5.0, handler:nil)
     }

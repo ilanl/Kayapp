@@ -33,7 +33,7 @@ class Repository<T:AnyObject where T:Equatable>{
         
         self.arrayOfData = array
         
-        let saveData = NSKeyedArchiver.archivedDataWithRootObject(array);
+        let saveData = NSKeyedArchiver.archivedDataWithRootObject(self.arrayOfData);
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
         let documentsDirectory = paths.objectAtIndex(0) as! NSString;
         let path = documentsDirectory.stringByAppendingPathComponent(self.pList);
@@ -44,6 +44,7 @@ class Repository<T:AnyObject where T:Equatable>{
     
     func reset()->Bool{
         self.arrayOfData = Array<T>()
+        self.save(self.arrayOfData)
         return true
     }
     

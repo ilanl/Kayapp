@@ -24,7 +24,7 @@ public class ForecastServiceTests : XCTestCase {
             
         }, onError: nil)
         
-        waitForExpectationsWithTimeout(5.0, handler:nil)
+        waitForExpectationsWithTimeout(60.0, handler:nil)
         
         XCTAssertNotNil(self.repositoryDummy.inMemoryRepository[0],"did not saved")
     }
@@ -34,7 +34,7 @@ public class ForecastServiceTests : XCTestCase {
         
         override public func save(forecasts: [ForecastDao]) -> Bool {
             self.inMemoryRepository = forecasts
-            println("saving forecasts somewhere")
+            println("saving forecasts: \(self.inMemoryRepository.count)")
             return true
         }
     }

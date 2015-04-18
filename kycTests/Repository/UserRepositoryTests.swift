@@ -25,4 +25,8 @@ public class UserRepositoryTests: XCTestCase {
         XCTAssertEqual(savedUser.name,name, "Incorrect user name")
         XCTAssertEqual(savedUser.pwd,pwd, "Incorrect user pwd")
     }
+    
+    public override func tearDown() {
+        self.target.reset()
+    }
 }

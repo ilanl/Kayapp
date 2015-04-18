@@ -24,6 +24,7 @@ public class UserRepository:NSObject,UserRepositoryProtocol{
     
     public func get() -> UserDao?{
         if let user = self.repository.get().first{
+            println("user: \(user.name) \(user.pwd)")
             return user
         }
         return nil

@@ -14,7 +14,7 @@ public class BoatsRepositoryTests: XCTestCase {
         let name:String = "Kayak2"
         let type = 1
         
-        var b = BoatDao(name: name,type: type)
+        var b = BoatDao(id:"boatId",name: name,type: type)
         
         var someBoats:[BoatDao] = [b]
         let savedResult = self.target.save(someBoats)
@@ -24,7 +24,7 @@ public class BoatsRepositoryTests: XCTestCase {
         XCTAssertTrue(results.count == 1)
         
         var boat:BoatDao = results.first!
-        XCTAssertEqual(boat.boatType.rawValue, BoatType.KAYAK.rawValue,"Incorrect boat type")
+        XCTAssertEqual(boat, b,"Incorrect boat type")
         XCTAssertEqual(boat.name!, name,"Incorrect boat name")
     }
     

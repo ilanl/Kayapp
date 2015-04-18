@@ -6,6 +6,8 @@ import Foundation
     func get() -> [BoatDao]
     
     func save(boats: [BoatDao])->Bool
+    
+    func getBoatByName(boatName:String) -> BoatDao?
 }
 
 public class BoatsRepository:NSObject,BoatsRepositoryProtocol{
@@ -23,6 +25,13 @@ public class BoatsRepository:NSObject,BoatsRepositoryProtocol{
     
     public func save(boats: [BoatDao])->Bool{
         return self.repository.save(boats)
+    }
+    
+    public func getBoatByName(boatName:String) -> BoatDao?{
+        if let boat = self.get().filter({ $0.name == boatName }).first{
+            return boat
+        }
+        return nil
     }
 }
 

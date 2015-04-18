@@ -8,7 +8,8 @@ let doneLoadDataNotificationKey = "com.kyc.doneLoadDataNotificationKey"
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
+    var lastSaved:NSDate?
+
     class var instance:AppDelegate{
         get{
             return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -46,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 bookingService.getBookings(onSuccess: { bookings in
                     
+                    self.lastSaved = nil
+                    
                     NSNotificationCenter.defaultCenter().postNotificationName(doneLoadDataNotificationKey, object: self)
                     
                 }, onError: {error in
@@ -76,16 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(application: UIApplication) {
         
-        let preferenceService = coreComponents.componentForKey("preferenceServiceFactory") as! PreferenceService
-        
-        preferenceService.savePreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
-            
-            println("preference saved")
-            
-            }, onError: { (message) -> Void in
-            
-            println("handle errors here")
-        })
+        self.persistData()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -98,6 +92,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        if (self.lastSaved != nil)
+        {
+            let secsFromLastSaved = NSDate().secondsFrom(self.lastSaved!)
+            println("secs: \(secsFromLastSaved)")
+            if (secsFromLastSaved >= 10){
+                self.persistData()
+            }
+        }
+        else if (self.lastSaved == nil){
+            self.persistData()
+        }
+    }
+    
+    func persistData(){
+        
+        self.lastSaved = NSDate()
+        
+        let preferenceService = coreComponents.componentForKey("preferenceServiceFactory") as! PreferenceService
+        
+        preferenceService.savePreferences({ (boats, boatPrefs, dayPrefs, setting) -> Void in
+            
+            self.lastSaved = NSDate()
+            println("preference saved")
+            
+            }, onError: { (message) -> Void in
+                
+                println("handle errors here")
+        })
     }
 
 

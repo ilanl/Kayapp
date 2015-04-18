@@ -31,12 +31,11 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         let userDao = self.userRepository!.get()
         if userDao == nil || userDao!.isAnonymous(){
-            errorBlock!("can not fetch preferences as! anonymous")
+            errorBlock!("can not fetch preferences as anonymous")
             return
         }
         let set: AnyObject = self.read()
         let settingDao = self.settingRepository!.get()
-        
         JsonClient.post(["UserName":userDao!.name,"Password":userDao!.pwd,"Action":"1","IsFrozen": settingDao?.mode == 1 ? "1" : "" ,"Reminder":"\(settingDao!.reminder!)","DeviceToken":userDao!.deviceToken!, "Set": set], url: url){ (data:NSData) -> Void in
             
             let preferences = PreferenceParser.parseJson(data)
@@ -57,8 +56,9 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         let url = self.configReader!.getPreferenceUrl
         
         let userDao:UserDao? = self.userRepository!.get()
+        
         if userDao == nil || userDao!.isAnonymous(){
-            errorBlock!("can not fetch preferences as! anonymous")
+            errorBlock!("can not save preferences as anonymous")
             return
         }
         let deviceToken:String = (userDao!.deviceToken == nil) ? "" : userDao!.deviceToken!
@@ -84,9 +84,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         for b in preferences.set.arrayOfKayakPrefs
         {
-            println("boat: \(b.name!) \(b.type!)")
-            
-            boatsDaos.append(BoatDao(name: b.name!, type: b.type!))
+            boatsDaos.append(BoatDao(id: b.key!,name: b.name!, type: b.type!))
             if b.weight != nil && b.weight! > 0
             {
                 boatPrefsDaos.append(BoatPrefDao(name: b.name!, order: b.weight!))
@@ -113,30 +111,37 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         var setDict = [NSObject : AnyObject]()
 
         //TODO - replace with real code
+        let dayPrefsToSave = self.dayPrefsRepository!.get()
+        println("dayPrefs: found \(dayPrefsToSave.count)")
+        
         var timePrefs = [[NSObject : AnyObject]]()
-        for e in self.dayPrefsRepository!.get(){
-            var obj = [NSObject : AnyObject]()
-            obj["Time"] = 0
-            obj["DayOfWeek"] = "Sunday"
-            obj["Type"] = 2
-            timePrefs.append(obj)
+        for e in dayPrefsToSave{
+            var dayPrefDict = [NSObject : AnyObject]()
+            dayPrefDict["Time"] = e.time
+            dayPrefDict["DayOfWeek"] = Day.getDayNameByInt(e.day)
+            dayPrefDict["Type"] = e.type
+            timePrefs.append(dayPrefDict)
         }
         setDict["TimePrefs"] = timePrefs
         
+        let boatPrefsToSave = self.boatPrefsRepository!.get()
+        println("boatPrefs: found \(boatPrefsToSave.count)")
+
         var boatPrefs = [[NSObject : AnyObject]]()
-        for e in self.boatPrefsRepository!.get(){
-            var obj = [NSObject : AnyObject]()
-            obj["Key"] = "2"
-            obj["Name"] = "קיאק 02"
-            obj["Weight"] = 3
-            obj["Type"] = 2
-            boatPrefs.append(obj)
+        for e in boatPrefsToSave{
+            var boat = self.boatsRepository!.getBoatByName(e.name)!
+            var boatPrefDict = [NSObject : AnyObject]()
+            boatPrefDict["Key"] = boat.id
+            boatPrefDict["Name"] = e.name
+            boatPrefDict["Weight"] = e.order
+            boatPrefDict["Type"] = boat.type
+            boatPrefs.append(boatPrefDict)
         }
         setDict["KayakPrefs"] = boatPrefs
         
         var error:NSError?
         var data = NSJSONSerialization.dataWithJSONObject(setDict, options:NSJSONWritingOptions(0), error: &error)
-        
+        println("data json: \(data)")
         return setDict
     }
 }

@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-Am-pBa">
-                                <rect key="frame" x="0.0" y="84" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="boatRankCell" id="XMz-oJ-NZi" customClass="BoatRankCell" customModule="kyc" customModuleProvider="target">
@@ -85,12 +85,12 @@
                         <color key="backgroundColor" white="0.94580419580419584" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="D3v-yu-jgQ" firstAttribute="top" secondItem="xeR-Am-pBa" secondAttribute="bottom" id="5S9-d1-RuL"/>
+                            <constraint firstItem="xeR-Am-pBa" firstAttribute="top" secondItem="cQW-uO-73K" secondAttribute="bottom" constant="50" id="7wa-hL-v5Q"/>
                             <constraint firstItem="GuP-bc-PRt" firstAttribute="centerY" secondItem="FcB-EN-nCA" secondAttribute="centerY" constant="0.5" id="AGK-ty-cfa"/>
                             <constraint firstAttribute="trailing" secondItem="GuP-bc-PRt" secondAttribute="trailing" constant="20" symbolic="YES" id="D5a-kS-Pux"/>
                             <constraint firstAttribute="trailing" secondItem="xeR-Am-pBa" secondAttribute="trailing" id="GVT-xZ-1fd"/>
                             <constraint firstItem="xeR-Am-pBa" firstAttribute="leading" secondItem="sPW-5R-BmU" secondAttribute="leading" id="UEC-cD-Bbm"/>
                             <constraint firstItem="FcB-EN-nCA" firstAttribute="leading" secondItem="sPW-5R-BmU" secondAttribute="leadingMargin" constant="40" id="aD4-RR-APZ"/>
-                            <constraint firstItem="xeR-Am-pBa" firstAttribute="top" secondItem="FcB-EN-nCA" secondAttribute="bottom" constant="25" id="b6X-S2-cB1"/>
                             <constraint firstItem="GuP-bc-PRt" firstAttribute="top" secondItem="cQW-uO-73K" secondAttribute="bottom" constant="8" symbolic="YES" id="f81-tT-t1T"/>
                         </constraints>
                     </view>
