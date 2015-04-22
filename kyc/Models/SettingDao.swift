@@ -2,8 +2,8 @@ import Foundation
 
 public class SettingDao : NSObject,NSCoding{
     
-    public private(set) var mode: Int
-    public private(set) var reminder: Int?
+    public var mode: Int
+    public var reminder: Int?
     
     public init(mode:Int,reminder:Int?) {
         self.mode = mode

@@ -64,11 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
-    func application(application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+    func application(application: UIApplication,didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println("Got token data! \(deviceToken)")
     }
     
-    func application(application: UIApplication,didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+    func application(application: UIApplication,didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         println("Couldn’t register: \(error)")
     }
     

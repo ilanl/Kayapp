@@ -36,7 +36,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         }
         let set: AnyObject = self.read()
         let settingDao = self.settingRepository!.get()
-        JsonClient.post(["UserName":userDao!.name,"Password":userDao!.pwd,"Action":"1","IsFrozen": settingDao?.mode == 1 ? "1" : "" ,"Reminder":"\(settingDao!.reminder!)","DeviceToken":userDao!.deviceToken!, "Set": set], url: url){ (data:NSData) -> Void in
+        JsonClient.post(["UserName":userDao!.name,"Password":userDao!.pwd,"Action":"1","IsFrozen": settingDao?.mode == 1 ? "0" : "1" ,"Reminder":"\(settingDao!.reminder!)","DeviceToken":userDao!.deviceToken!, "Set": set], url: url){ (data:NSData) -> Void in
             
             let preferences = PreferenceParser.parseJson(data)
             
@@ -63,7 +63,7 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         }
         let deviceToken:String = (userDao!.deviceToken == nil) ? "" : userDao!.deviceToken!
         
-        JsonClient.post(["UserName":userDao!.name, "Password":userDao!.pwd, "DeviceToken":deviceToken], url: url){ (data:NSData) -> Void in
+        JsonClient.post(["UserName":userDao!.name, "Password":userDao!.pwd, "Action":"0", "DeviceToken":deviceToken], url: url){ (data:NSData) -> Void in
             
             let preferences = PreferenceParser.parseJson(data)
             

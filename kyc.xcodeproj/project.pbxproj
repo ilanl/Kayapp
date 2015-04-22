@@ -36,6 +36,8 @@
 		D2735C0E1AD0008800AB60E0 /* bookingData.json in Resources */ = {isa = PBXBuildFile; fileRef = D2735C0D1AD0008800AB60E0 /* bookingData.json */; };
 		D2735C101AD000C900AB60E0 /* BookingJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2735C0F1AD000C900AB60E0 /* BookingJson.swift */; };
 		D2735C121AD0066F00AB60E0 /* BookingParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2735C111AD0066F00AB60E0 /* BookingParserTests.swift */; };
+		D278B3181AE800D800DAD08A /* AutomaticBookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278B3171AE800D800DAD08A /* AutomaticBookingCell.swift */; };
+		D278B31A1AE8193800DAD08A /* AutomaticBookingFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278B3191AE8193800DAD08A /* AutomaticBookingFooterCell.swift */; };
 		D280BD661ACEB5AB0011D4E6 /* preferenceData.json in Resources */ = {isa = PBXBuildFile; fileRef = D280BD651ACEB5AB0011D4E6 /* preferenceData.json */; };
 		D280BD681ACEB5FB0011D4E6 /* PreferenceJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD671ACEB5FB0011D4E6 /* PreferenceJson.swift */; };
 		D280BD6B1ACEC5430011D4E6 /* ForecastParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */; };
@@ -147,6 +149,8 @@
 		D2735C0D1AD0008800AB60E0 /* bookingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bookingData.json; sourceTree = "<group>"; };
 		D2735C0F1AD000C900AB60E0 /* BookingJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingJson.swift; sourceTree = "<group>"; };
 		D2735C111AD0066F00AB60E0 /* BookingParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingParserTests.swift; sourceTree = "<group>"; };
+		D278B3171AE800D800DAD08A /* AutomaticBookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticBookingCell.swift; sourceTree = "<group>"; };
+		D278B3191AE8193800DAD08A /* AutomaticBookingFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticBookingFooterCell.swift; sourceTree = "<group>"; };
 		D280BD651ACEB5AB0011D4E6 /* preferenceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = preferenceData.json; sourceTree = "<group>"; };
 		D280BD671ACEB5FB0011D4E6 /* PreferenceJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceJson.swift; sourceTree = "<group>"; };
 		D280BD6A1ACEC5430011D4E6 /* ForecastParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParser.swift; sourceTree = "<group>"; };
@@ -327,6 +331,15 @@
 				D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D278B3161AE800BA00DAD08A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D278B3171AE800D800DAD08A /* AutomaticBookingCell.swift */,
+				D278B3191AE8193800DAD08A /* AutomaticBookingFooterCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D280BD691ACEC5290011D4E6 /* Parsers */ = {
@@ -627,6 +640,7 @@
 		D2F5CD7C1AB49DF50035B91A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D278B3161AE800BA00DAD08A /* Cells */,
 				D2BEEC011AB4C1D100C6CA08 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -818,6 +832,7 @@
 				D2BD51111AB4E3E30025E03F /* SurfBoatsViewController.swift in Sources */,
 				D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */,
 				D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */,
+				D278B31A1AE8193800DAD08A /* AutomaticBookingFooterCell.swift in Sources */,
 				D2C0D0361AC5715700A5BC42 /* JsonClient.swift in Sources */,
 				D2F5CD991AB4ABA30035B91A /* BoatsViewController.swift in Sources */,
 				D2F5CD841AB4A10D0035B91A /* CenterViewController.swift in Sources */,
@@ -826,6 +841,7 @@
 				D24E6B5B1AC4C4370035FBBF /* ForecastService.swift in Sources */,
 				D2BD51051AB4DAAD0025E03F /* BoatPrefDao.swift in Sources */,
 				D211C6881AD910F600892F9D /* DayPrefCell.swift in Sources */,
+				D278B3181AE800D800DAD08A /* AutomaticBookingCell.swift in Sources */,
 				D2985A531ABD8AAF0008EFCB /* Functions.swift in Sources */,
 				D2F5CD971AB4AB900035B91A /* BookingsViewController.swift in Sources */,
 				D2F5CD951AB4AB520035B91A /* DaysViewController.swift in Sources */,

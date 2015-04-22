@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,6 +17,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ywq-SN-8BD">
+                                <rect key="frame" x="0.0" y="70" width="375" height="597"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="automaticBookingSettingCell" id="rSO-vu-WxR" customClass="AutomaticBookingCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rSO-vu-WxR" id="DNt-q2-vIy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c0z-zQ-9Sb" userLabel="swAutomaticBooking">
+                                                    <rect key="frame" x="306" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="swAutomaticBooking:" destination="rSO-vu-WxR" eventType="valueChanged" id="IG5-ao-3zm"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-booking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IME-ye-DEL" userLabel="lblAutomaticBooking">
+                                                    <rect key="frame" x="28" y="12" width="200" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="hHA-NX-sEH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="c0z-zQ-9Sb" secondAttribute="centerY" id="1ef-ex-ccJ"/>
+                                                <constraint firstAttribute="centerY" secondItem="IME-ye-DEL" secondAttribute="centerY" id="TtJ-1Y-2c6"/>
+                                                <constraint firstItem="IME-ye-DEL" firstAttribute="leading" secondItem="DNt-q2-vIy" secondAttribute="leadingMargin" constant="20" id="qwC-qD-aDE"/>
+                                                <constraint firstAttribute="trailing" secondItem="c0z-zQ-9Sb" secondAttribute="trailing" constant="20" id="xKi-Nz-xjl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="lblAutomaticBooking" destination="IME-ye-DEL" id="VVi-V5-2P3"/>
+                                            <outlet property="swAutomaticBooking" destination="c0z-zQ-9Sb" id="JFg-Ca-ZvS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="automaticBookingFooterCell" rowHeight="80" id="Ce0-eq-9bd" userLabel="automaticBookingFooterCell" customClass="AutomaticBookingFooterCell" customModule="kyc" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ce0-eq-9bd" id="ldv-sy-dZZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turning off automatic will cancel all active bookings unless you don't confirm" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-Gu-F8W">
+                                                    <rect key="frame" x="20" y="11" width="335" height="58"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="0.57999999999999996" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.94580419579999997" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="o5k-Gu-F8W" firstAttribute="leading" secondItem="ldv-sy-dZZ" secondAttribute="leading" constant="20" id="2B4-Vk-cgT"/>
+                                                <constraint firstItem="o5k-Gu-F8W" firstAttribute="centerY" secondItem="ldv-sy-dZZ" secondAttribute="centerY" id="cgB-CJ-kNa"/>
+                                                <constraint firstAttribute="trailing" secondItem="o5k-Gu-F8W" secondAttribute="trailing" constant="20" id="j5e-4R-9jF"/>
+                                                <constraint firstItem="o5k-Gu-F8W" firstAttribute="top" secondItem="ldv-sy-dZZ" secondAttribute="topMargin" constant="3" id="lx0-qI-GjN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Iam-vT-WOy" id="RQm-NZ-zRL"/>
+                                    <outlet property="delegate" destination="Iam-vT-WOy" id="VQJ-9o-csd"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-1P-HFP" userLabel="btnExit">
                                 <rect key="frame" x="319" y="28" width="40" height="32"/>
                                 <constraints>
@@ -34,8 +103,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ywq-SN-8BD" secondAttribute="trailing" id="aZD-PG-Inx"/>
+                            <constraint firstItem="FTJ-BB-fw4" firstAttribute="top" secondItem="ywq-SN-8BD" secondAttribute="bottom" id="mpL-T6-9ug"/>
+                            <constraint firstItem="ywq-SN-8BD" firstAttribute="leading" secondItem="RaK-1q-CqO" secondAttribute="leading" id="pPb-bS-Ddd"/>
                             <constraint firstItem="UhF-1P-HFP" firstAttribute="trailing" secondItem="RaK-1q-CqO" secondAttribute="trailingMargin" id="qww-s4-WvL"/>
                             <constraint firstItem="UhF-1P-HFP" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="8" symbolic="YES" id="sK7-hH-gp4"/>
+                            <constraint firstItem="ywq-SN-8BD" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="50" id="xKW-Qk-Nrj"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -45,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywH-eb-mKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="404"/>
+            <point key="canvasLocation" x="411.5" y="403.5"/>
         </scene>
     </scenes>
     <resources>
