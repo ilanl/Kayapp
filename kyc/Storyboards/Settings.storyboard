@@ -100,12 +100,23 @@
                                     <action selector="didPressExit:" destination="Iam-vT-WOy" eventType="touchUpInside" id="AFO-Vv-nnW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3L-c8-wLF" userLabel="lblTitle">
+                                <rect key="frame" x="0.0" y="12" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="aNM-BW-EZ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="u3L-c8-wLF" firstAttribute="leading" secondItem="RaK-1q-CqO" secondAttribute="leadingMargin" constant="-16" id="T3C-ha-hnp"/>
                             <constraint firstAttribute="trailing" secondItem="ywq-SN-8BD" secondAttribute="trailing" id="aZD-PG-Inx"/>
                             <constraint firstItem="FTJ-BB-fw4" firstAttribute="top" secondItem="ywq-SN-8BD" secondAttribute="bottom" id="mpL-T6-9ug"/>
                             <constraint firstItem="ywq-SN-8BD" firstAttribute="leading" secondItem="RaK-1q-CqO" secondAttribute="leading" id="pPb-bS-Ddd"/>
+                            <constraint firstItem="u3L-c8-wLF" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="-8" id="ptH-Cw-Vue"/>
                             <constraint firstItem="UhF-1P-HFP" firstAttribute="trailing" secondItem="RaK-1q-CqO" secondAttribute="trailingMargin" id="qww-s4-WvL"/>
                             <constraint firstItem="UhF-1P-HFP" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="8" symbolic="YES" id="sK7-hH-gp4"/>
                             <constraint firstItem="ywq-SN-8BD" firstAttribute="top" secondItem="8Rn-r1-bey" secondAttribute="bottom" constant="50" id="xKW-Qk-Nrj"/>
@@ -118,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywH-eb-mKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411.5" y="403.5"/>
+            <point key="canvasLocation" x="380.5" y="418.5"/>
         </scene>
     </scenes>
     <resources>

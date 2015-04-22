@@ -49,7 +49,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        let forecast = self.forecastArray![indexPath.row] as! ForecastDao
+        let forecast = self.forecastArray![indexPath.row] as ForecastDao
         return forecast.booking != nil ? 120 : 60
     }
     
