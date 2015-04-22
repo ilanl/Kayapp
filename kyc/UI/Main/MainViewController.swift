@@ -22,7 +22,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     }
     
     //MARK: Table methods
-    func numberOfSectionsInTableView(tableView:UITableView!)->Int
+    func numberOfSectionsInTableView(tableView:UITableView)->Int
     {
         var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
         
@@ -49,6 +49,9 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
+        if (self.forecastArray == nil){
+            return 0
+        }
         let forecast = self.forecastArray![indexPath.row] as ForecastDao
         return forecast.booking != nil ? 120 : 60
     }

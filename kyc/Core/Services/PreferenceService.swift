@@ -112,7 +112,6 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
 
         //TODO - replace with real code
         let dayPrefsToSave = self.dayPrefsRepository!.get()
-        println("dayPrefs: found \(dayPrefsToSave.count)")
         
         var timePrefs = [[NSObject : AnyObject]]()
         for e in dayPrefsToSave{
@@ -125,7 +124,6 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         setDict["TimePrefs"] = timePrefs
         
         let boatPrefsToSave = self.boatPrefsRepository!.get()
-        println("boatPrefs: found \(boatPrefsToSave.count)")
 
         var boatPrefs = [[NSObject : AnyObject]]()
         for e in boatPrefsToSave{
@@ -141,7 +139,6 @@ public class PreferenceService:NSObject,PreferenceServiceProtocol {
         
         var error:NSError?
         var data = NSJSONSerialization.dataWithJSONObject(setDict, options:NSJSONWritingOptions(0), error: &error)
-        println("data json: \(data)")
         return setDict
     }
 }

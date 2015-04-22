@@ -32,7 +32,7 @@ public class BookingService: NSObject,BookingServiceProtocol {
             return
         }
         
-        JsonClient.post(["UserName":userDao!.name, "Password":userDao!.pwd, "Action":"0","DeviceToken":userDao!.deviceToken!], url: url){ (data:NSData) -> Void in
+        JsonClient.post(["UserName":userDao!.name, "Password":userDao!.pwd, "Action":"0","DeviceToken":userDao!.deviceToken!], url: url){ (data:NSData) -> Void in            
             
             let bookingJson = BookingParser.parseJson(data)
             

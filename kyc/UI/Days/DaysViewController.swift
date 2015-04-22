@@ -40,7 +40,6 @@ class DaysViewController: UIViewController ,UITableViewDataSource, UITableViewDe
         self.dayPrefsArray = self.dayPrefsRepository.get()
         
         let daySection = indexPath.section + 1
-        println("day: \(daySection)")
         
         let cell:DayPrefCell = tableView.dequeueReusableCellWithIdentifier("dayPrefCell", forIndexPath: indexPath) as! DayPrefCell
         

@@ -47,8 +47,6 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
                 continue
             }
             
-            Logger.log("forecast: \(forecastDao.datetime)")
-            
             //Add header
             let strForecastDay = dateFormatter.stringFromDate(forecastDao.datetime!)
             

@@ -30,9 +30,9 @@ public class ForecastService:NSObject, ForecastServiceProtocol {
             var forecastDaos = [ForecastDao]()
             for f in forecasts
             {
-                let timeinterval : NSTimeInterval = (f.date as! NSString).doubleValue
-                let temperature : Int = (f.tempC as! NSString).integerValue
-                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as! NSDate?
+                let timeinterval : NSTimeInterval = (f.date as NSString).doubleValue
+                let temperature : Int = (f.tempC as NSString).integerValue
+                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as NSDate?
                 let forecastDao = ForecastDao(date: date, weather: f.weather, temperature: temperature)
                 forecastDaos.append(forecastDao)
             }
