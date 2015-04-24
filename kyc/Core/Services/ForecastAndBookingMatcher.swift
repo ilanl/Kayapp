@@ -19,13 +19,15 @@ public class ForecastSection:NSObject{
 public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtocol{
     
     private var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
+    public private (set) var forecasts:[ForecastDao]
+    public private (set) var bookings:[BookingDao]
+    
     let dateFormatter = NSDateFormatter()
-    var forecastRepository:ForecastRepository
-    var bookingRepository:BookingRepository
     
     public init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository){
-        self.forecastRepository = forecastRepository
-        self.bookingRepository = bookingRepository
+        
+        self.forecasts = forecastRepository.get()
+        self.bookings = bookingRepository.get()
     }
     
     public func getSections() -> [ForecastSection]{
@@ -37,11 +39,11 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
     
     private func match()
     {
-        
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd MMM"
+        dateFormatter.dateFormat = "EEE dd MMM"
+        let allAvailableForecasts = self.forecasts
         
-        for forecastDao in self.forecastRepository.get(){
+        for forecastDao in allAvailableForecasts{
             
             if (forecastDao.datetime == nil){
                 continue
@@ -62,10 +64,9 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
                 
             }
             
-            for bookingDao in self.bookingRepository.get(){
+            for bookingDao in self.bookings{
                 if (self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao) == true){
                     
-                    Logger.log("booking: \(bookingDao.datetime)")
                     forecastDao.booking = bookingDao
                     break
                 }
@@ -76,7 +77,16 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
     private func checkIfForecastMatchBookingTime(forecast:ForecastDao,booking:BookingDao) -> Bool{
         let bookingTime = booking.datetime
         let interval =  booking.datetime!.minutesFrom(forecast.datetime!)
-        if (interval == 180){
+        
+        println("booking: \(booking.datetime!)")
+        println("forecast: \(forecast.datetime!)")
+        println("interval: \(interval)")
+        
+        if (interval < 0){
+            return false
+        }
+        
+        if (interval < 180){
             return true
         }
         return false

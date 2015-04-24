@@ -6,6 +6,7 @@ class ForecastWithBookingCell: UITableViewCell {
     @IBOutlet weak var waterTemp: UILabel!
     
     @IBOutlet weak var kayakNameLabel: UILabel!
+    var forecast:ForecastDao?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,6 +17,10 @@ class ForecastWithBookingCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateUI(){
+        self.tempLabel.text = "\(self.forecast!.booking!.boatName)"
     }
 
 }

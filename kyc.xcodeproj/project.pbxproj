@@ -32,6 +32,7 @@
 		D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2616B681ACF3954009D62FC /* PreferenceService.swift */; };
 		D2616B6B1ACF3E92009D62FC /* PreferenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */; };
 		D26D377A1AE84272003754B3 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26D37791AE84272003754B3 /* StringExt.swift */; };
+		D26D377D1AE8CF49003754B3 /* BookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26D377C1AE8CF49003754B3 /* BookingCell.swift */; };
 		D2735C0A1ACFFC9F00AB60E0 /* BookingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2735C091ACFFC9F00AB60E0 /* BookingService.swift */; };
 		D2735C0C1ACFFFA000AB60E0 /* BookingParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2735C0B1ACFFFA000AB60E0 /* BookingParser.swift */; };
 		D2735C0E1AD0008800AB60E0 /* bookingData.json in Resources */ = {isa = PBXBuildFile; fileRef = D2735C0D1AD0008800AB60E0 /* bookingData.json */; };
@@ -146,6 +147,7 @@
 		D2616B681ACF3954009D62FC /* PreferenceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
 		D2616B6A1ACF3E92009D62FC /* PreferenceServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceServiceTests.swift; sourceTree = "<group>"; };
 		D26D37791AE84272003754B3 /* StringExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		D26D377C1AE8CF49003754B3 /* BookingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingCell.swift; sourceTree = "<group>"; };
 		D2735C091ACFFC9F00AB60E0 /* BookingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingService.swift; sourceTree = "<group>"; };
 		D2735C0B1ACFFFA000AB60E0 /* BookingParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookingParser.swift; sourceTree = "<group>"; };
 		D2735C0D1AD0008800AB60E0 /* bookingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bookingData.json; sourceTree = "<group>"; };
@@ -333,6 +335,14 @@
 				D285ADAD1AD010EB00E12663 /* BookingServiceTests.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D26D377B1AE8CF2F003754B3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D26D377C1AE8CF49003754B3 /* BookingCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D278B3161AE800BA00DAD08A /* Cells */ = {
@@ -598,6 +608,7 @@
 		D2F5CD771AB49DF50035B91A /* Bookings */ = {
 			isa = PBXGroup;
 			children = (
+				D26D377B1AE8CF2F003754B3 /* Cells */,
 				D2F5CD961AB4AB900035B91A /* BookingsViewController.swift */,
 			);
 			path = Bookings;
@@ -834,6 +845,7 @@
 				D209DFDD1AC35FAF00648137 /* BoatsRepository.swift in Sources */,
 				D2BD51111AB4E3E30025E03F /* SurfBoatsViewController.swift in Sources */,
 				D2985A921ABDC4D30008EFCB /* DateExt.swift in Sources */,
+				D26D377D1AE8CF49003754B3 /* BookingCell.swift in Sources */,
 				D2985A971ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift in Sources */,
 				D278B31A1AE8193800DAD08A /* AutomaticBookingFooterCell.swift in Sources */,
 				D2C0D0361AC5715700A5BC42 /* JsonClient.swift in Sources */,
@@ -1033,6 +1045,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1047,6 +1060,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				INFOPLIST_FILE = kyc/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

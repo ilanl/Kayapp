@@ -27,13 +27,33 @@ public class ForecastService:NSObject, ForecastServiceProtocol {
                 errorBlock!("Could not fetch any forecasts")
                 return
             }
+            
+            let dateFormatterDMY = NSDateFormatter()
+            dateFormatterDMY.dateFormat = "dd/MM/yy"
+            
             var forecastDaos = [ForecastDao]()
             for f in forecasts
             {
-                let timeinterval : NSTimeInterval = (f.date as NSString).doubleValue
                 let temperature : Int = (f.tempC as NSString).integerValue
-                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as NSDate?
-                let forecastDao = ForecastDao(date: date, weather: f.weather, temperature: temperature)
+                let dateBiased: NSDate = NSDate(timeIntervalSince1970: (f.date as NSString).doubleValue)
+                
+                let dateStringAsDMY = dateFormatterDMY.stringFromDate(dateBiased)
+                var dateStringAsDMYHM = "\(dateStringAsDMY) \(f.hour)"
+                println("date0: \(dateStringAsDMYHM)")
+                
+                var dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yy hh:mm aa"
+                dateFormatter.timeZone = NSTimeZone(name: "ASIA - Israel (UTC + 2)")
+                let date = dateFormatter.dateFromString(dateStringAsDMYHM)
+                
+                println("date1: \(date!)")
+                let formattedDate = NSDateFormatter.localizedStringFromDate(
+                    date!,
+                    dateStyle: .FullStyle,
+                    timeStyle: .ShortStyle)
+                println("date2: \(formattedDate)")
+                
+                let forecastDao = ForecastDao(date: date!, weather: f.weather, temperature: temperature)
                 forecastDaos.append(forecastDao)
             }
             self.forecastRepository!.save(forecastDaos)

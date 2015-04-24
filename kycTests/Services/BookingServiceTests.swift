@@ -39,8 +39,8 @@ public class BookingServiceTests : XCTestCase {
         
         public override func get() -> UserDao? {
             
-            var userDao = UserDao(name: "%D7%90%D7%99%D7%9C%D7%9F%20%D7%9C", pwd: "32371")
-            userDao.deviceToken = "7851dc5ce47f31105238767b8e45614789bb46542e4b251fb7b685982dbc4e47"
+            var userDao = UserDao(name: "tester", pwd: "tester")
+            userDao.deviceToken = "some-token-test"
             return userDao
         }
     }

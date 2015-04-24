@@ -4,7 +4,8 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     var forecastArray:[ForecastDao]?
     var sectionArray:[ForecastSection]?
-    let forecastRepository = coreComponents.componentForKey("forecastRepositoryFactory") as! ForecastRepository
+    
+    let forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
     
     @IBAction func menuTapped(sender: AnyObject) {
         delegate?.toggleLeftPanel?()
@@ -13,7 +14,8 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.forecastArray = self.forecastRepository.get()
+        self.sectionArray = self.forecastAndBookingMatcher.getSections()
+        self.forecastArray = self.forecastAndBookingMatcher.forecasts
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -24,9 +26,6 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     //MARK: Table methods
     func numberOfSectionsInTableView(tableView:UITableView)->Int
     {
-        var forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
-        
-        self.sectionArray = forecastAndBookingMatcher.getSections()
         let sectionCount = self.sectionArray?.count
         
         if let sectionCount = self.sectionArray?.count
@@ -39,7 +38,6 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
     
         let totalRows = self.sectionArray![section].totalRows
-        Logger.log("table:section: \(section), count: \(totalRows)")
         return totalRows
     }
     
@@ -58,26 +56,21 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let forecast = forecastArray![indexPath.row] as! ForecastDao
+        let forecast = forecastArray![indexPath.row] as ForecastDao
         
         if (forecast.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
             
-            let tempLabel = cell.tempLabel
-            //tempLabel.text = "\(forecast.temp)"
+            cell.forecast = forecast
+            cell.updateUI()
             
-            let tempWaterLabel = cell.waterTemp
-            //tempWaterLabel.text = "\(forecast.waterTemp)"
-            
-            let kayakNameLabel = cell.kayakNameLabel
-            //kayakNameLabel.text = "\(forecast.booking!.name)"
             return cell
         }
         else{
             let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as! ForecastWithNoBookingCell
             
-            let waveHeightLabel = cell.waveHeightLabel
-            //waveHeightLabel.text = "\(forecast.waveHeight) cm"
+            cell.forecast = forecast
+            cell.updateUI()
             
             return cell
         }

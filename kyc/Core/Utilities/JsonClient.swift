@@ -7,8 +7,8 @@ public class JsonClient:NSObject{
         let dataTask = urlSession.dataTaskWithRequest(request) {
             (var data, var response, var error) in
             if (error == nil) {
-                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-                Logger.log("Body: \(strData)")
+                 var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+                Logger.log("Body: \(strData!)")
                 success(data)
             } else {
                 Logger.log("could not fetch data")
@@ -33,7 +33,7 @@ public class JsonClient:NSObject{
             
             if (error == nil) {
                 var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
-                Logger.log("Body: \(strData)")
+                Logger.log("Body: \(strData!)")
                 success(data)
             } else {
                 fatalError("could not fetch data")
