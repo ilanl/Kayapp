@@ -4,8 +4,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 
     @IBOutlet weak var tblForecastsAndBookings: UITableView!
     
-    var forecastArray:[ForecastDao]?
-    
+    var forecastCellArray:[ForecastDataCell] = []
     var sectionArray:[ForecastSection]?
     
     let forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
@@ -15,22 +14,20 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     }
     
     override func viewDidLoad() {
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadData", name: doneLoadDataNotificationKey, object: nil)
-        self.loadData()
     }
     
     func loadData(){
         
-        self.forecastArray = []
         self.sectionArray = self.forecastAndBookingMatcher.getSections()
-        self.forecastArray = self.forecastAndBookingMatcher.forecasts
+        self.forecastCellArray = self.forecastAndBookingMatcher.getForecastsWithMatchingBookings()
         self.tblForecastsAndBookings.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.showLoginIfAnoymous()
+        self.loadData()
     }
     
     //MARK: Table methods
@@ -62,20 +59,22 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
 //        }
 //        let forecast = self.forecastArray![indexPath.row]
 //        return forecast.booking != nil ? 120 : 60
-        return 90
+        return 60
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let forecast = self.forecastArray![indexPath.row]
-        
-        if (forecast.booking != nil){
+        let data:ForecastDataCell = self.forecastCellArray[indexPath.row]
+        var forecast:ForecastDao? = data.forecast
+        if (data.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
             
-            cell.forecast = forecast
-            cell.updateUI()
-            
-            return cell
+            fatalError("Good")
+//            
+//            cell.forecast = forecast
+//            cell.updateUI()
+//            
+//            return cell
         }
         else{
             let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as! ForecastWithNoBookingCell
@@ -102,6 +101,7 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
+        var f = self.forecastCellArray[indexPath.row].forecast!
         
         var tripActions = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Actions" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             

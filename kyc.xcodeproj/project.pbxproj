@@ -81,6 +81,7 @@
 		D2C0D0341AC5709D00A5BC42 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0331AC5709D00A5BC42 /* JsonParser.swift */; };
 		D2C0D0361AC5715700A5BC42 /* JsonClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0351AC5715700A5BC42 /* JsonClient.swift */; };
 		D2C0D03A1AC57E7100A5BC42 /* ForecastParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C0D0391AC57E7100A5BC42 /* ForecastParserTests.swift */; };
+		D2C6E4961AEBBF01003AEED1 /* ForecastDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C6E4951AEBBF01003AEED1 /* ForecastDataCell.swift */; };
 		D2C97A731AD5C5B9003C924B /* ComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C97A721AD5C5B9003C924B /* ComponentsTests.swift */; };
 		D2F5CD511AB49A0C0035B91A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5CD501AB49A0C0035B91A /* AppDelegate.swift */; };
 		D2F5CD561AB49A0C0035B91A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F5CD541AB49A0C0035B91A /* Main.storyboard */; };
@@ -198,6 +199,7 @@
 		D2C0D0331AC5709D00A5BC42 /* JsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		D2C0D0351AC5715700A5BC42 /* JsonClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonClient.swift; sourceTree = "<group>"; };
 		D2C0D0391AC57E7100A5BC42 /* ForecastParserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastParserTests.swift; sourceTree = "<group>"; };
+		D2C6E4951AEBBF01003AEED1 /* ForecastDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDataCell.swift; sourceTree = "<group>"; };
 		D2C97A701AD5C429003C924B /* kyc-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "kyc-Bridging-Header.h"; sourceTree = "<group>"; };
 		D2C97A721AD5C5B9003C924B /* ComponentsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsTests.swift; sourceTree = "<group>"; };
 		D2F5CD4B1AB49A0C0035B91A /* kyc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kyc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,6 +413,7 @@
 				D2985A941ABDD1970008EFCB /* ForecastWithBookingCell.swift */,
 				D2985A961ABDD36B0008EFCB /* ForecastWithNoBookingCell.swift */,
 				D2985A981ABDF1760008EFCB /* ForecastHeaderCell.swift */,
+				D2C6E4951AEBBF01003AEED1 /* ForecastDataCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -880,6 +883,7 @@
 				D2735C0C1ACFFFA000AB60E0 /* BookingParser.swift in Sources */,
 				D209DFD71AC3414F00648137 /* BookingRepository.swift in Sources */,
 				D280BD681ACEB5FB0011D4E6 /* PreferenceJson.swift in Sources */,
+				D2C6E4961AEBBF01003AEED1 /* ForecastDataCell.swift in Sources */,
 				D2985A951ABDD1970008EFCB /* ForecastWithBookingCell.swift in Sources */,
 				D2616B691ACF3954009D62FC /* PreferenceService.swift in Sources */,
 				D2B5DA4C1AE0F5760071C7EC /* DayPrefToggleButton.swift in Sources */,

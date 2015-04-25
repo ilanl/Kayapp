@@ -1,7 +1,8 @@
 import Foundation
 
 @objc public protocol ForecastAndBookingMatcherProtocol {
-    func getSections()->([ForecastSection])
+    func getSections()->[ForecastSection]
+    func getForecastsWithMatchingBookings() -> [ForecastDataCell]
 }
 
 public class ForecastSection:NSObject{
@@ -18,13 +19,8 @@ public class ForecastSection:NSObject{
 
 public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtocol{
     
-    private var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
-    
     public var forecastRepository:ForecastRepository
     public var bookingRepository:BookingRepository
-    
-    public private (set) var forecasts:[ForecastDao] = []
-    
     let dateFormatter = NSDateFormatter()
     
     public init(forecastRepository:ForecastRepository, bookingRepository:BookingRepository){
@@ -33,59 +29,67 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
         self.bookingRepository = bookingRepository
     }
     
-    public func getSections() -> [ForecastSection]{
+    public func getForecastsWithMatchingBookings() -> [ForecastDataCell]{
         
-        self.forecasts = []
-        self.match()
-        return self.forecastSectionArray.map({ ForecastSection(title: $0.title, date: $0.date, totalRows: $0.totalRows) })
+        var results: [ForecastDataCell] = []
+        for forecastDao:ForecastDao in self.forecastRepository.get(){
+            
+            var data: ForecastDataCell = ForecastDataCell()
+            data.forecast = forecastDao
+            for bookingDao in self.bookingRepository.get(){
+                if let attachedBooking = self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao){
+                    data.booking = bookingDao
+                    break
+                }
+            }
+            results.append(data)
+        }
+        return results
     }
     
-    //MARK: Private methods
-    
-    private func match()
+    public func getSections() -> [ForecastSection]
     {
+        var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEE dd MMM"
         
-        for forecastDao:ForecastDao in forecastRepository.get(){
-            
-            if (forecastDao.datetime == nil){
-                continue
-            }
+        for forecastDao:ForecastDao in self.forecastRepository.get(){
             
             //Add header
             let strForecastDay = dateFormatter.stringFromDate(forecastDao.datetime!)
             
             let sectionTuple = (title:"\(strForecastDay)",date:forecastDao.datetime!, totalRows:1)
             
-            if (self.forecastSectionArray.last?.title != sectionTuple.title){
-                self.forecastSectionArray.append(sectionTuple)
+            if (forecastSectionArray.count == 0 || forecastSectionArray.last?.title != sectionTuple.title){
+                forecastSectionArray.append(sectionTuple)
             }
             else{
-                var counter:Int = self.forecastSectionArray.last!.totalRows
-                var tuple = self.forecastSectionArray.last!
-                self.forecastSectionArray[self.forecastSectionArray.count-1] = (title:"\(strForecastDay)",date:forecastDao.datetime!, totalRows:++counter)
+                var counter:Int = forecastSectionArray.last!.totalRows
+                var tuple = forecastSectionArray.last!
+                forecastSectionArray[forecastSectionArray.count-1] = (title:"\(strForecastDay)",date:forecastDao.datetime!, totalRows:++counter)
                 
             }
-            var f = forecastDao.copy() as! ForecastDao
-            for bookingDao in bookingRepository.get(){
-                if (self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao) == true){
-                    
-                    println("attaching booking dao")
-                    f.attachBooking(bookingDao.copy() as! BookingDao)
-                }
-            }
-            self.forecasts.append(f)
         }
+        return forecastSectionArray.map({ ForecastSection(title: $0.title, date: $0.date, totalRows: $0.totalRows) })
     }
     
-    private func checkIfForecastMatchBookingTime(forecast:ForecastDao,booking:BookingDao) -> Bool{
-        let bookingTime = booking.datetime
+    private func checkIfForecastMatchBookingTime(forecast:ForecastDao,booking:BookingDao)-> BookingDao?{
+        
+        if (booking.datetime == nil)
+        {
+            fatalError("booking must have a time")
+        }
+        
+        if (forecast.datetime == nil)
+        {
+            fatalError("forecast must have a time")
+        }
+        
         let interval =  abs(booking.datetime!.minutesFrom(forecast.datetime!))
         
-        if (interval < 40){
-            return true
+        if (interval >= 0 && interval <= 70){
+            return booking
         }
-        return false
+        return nil
     }
 }

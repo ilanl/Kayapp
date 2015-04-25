@@ -8,8 +8,6 @@ class DayPrefToggleButton:ToggleButton{
     
     func updateData() {
         self.dayPrefRepository?.saveOne(DayPrefDao(day: self.day!, time: self.time!, type: self.currentValue!))
-        
-        println("cell: \(self.currentValue)")
     }
     
     required init(coder aDecoder: NSCoder) {

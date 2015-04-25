@@ -1,6 +1,6 @@
 import Foundation
 
-public class BookingDao: NSObject,NSCoding,NSCopying{
+public class BookingDao: NSObject,NSCoding{
     
     public private(set) var datetime:NSDate?
     public var id:Int?
@@ -10,10 +10,6 @@ public class BookingDao: NSObject,NSCoding,NSCopying{
     public var state:Int?
     public var time:String?
     public var day:String?
-    
-    public func copyWithZone(zone: NSZone) -> AnyObject{
-        return BookingDao(date: self.datetime, id: self.id, boatId: self.boatId, boatName: self.boatName, tripId: self.tripId, state: self.state, time: self.time, day: self.day)
-    }
     
     public init(date:NSDate?,id:Int?,boatId:Int?, boatName:String?,tripId:Int?,state:Int?,time:String?,day:String?) {
         self.datetime = date
@@ -27,6 +23,7 @@ public class BookingDao: NSObject,NSCoding,NSCopying{
     }
     
     public required init(coder: NSCoder) {
+        super.init()
         self.datetime = coder.decodeObjectForKey("date") as? NSDate
         self.id = coder.decodeObjectForKey("id") as? Int
         self.boatId = coder.decodeObjectForKey("boatId") as? Int
@@ -35,7 +32,6 @@ public class BookingDao: NSObject,NSCoding,NSCopying{
         self.state = coder.decodeObjectForKey("state") as? Int
         self.day = coder.decodeObjectForKey("day") as? String
         self.time = coder.decodeObjectForKey("time") as? String
-        super.init()
     }
     
     public func encodeWithCoder(coder: NSCoder) {
