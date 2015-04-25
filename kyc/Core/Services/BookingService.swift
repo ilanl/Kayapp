@@ -35,6 +35,8 @@ public class BookingService: NSObject,BookingServiceProtocol {
         JsonClient.post(["UserName":userDao!.name, "Password":userDao!.pwd, "Action":"0","DeviceToken":userDao!.deviceToken!], url: url){ (data:NSData) -> Void in            
             
             let bookingJson = BookingParser.parseJson(data)
+            let dateFormatterDMY = NSDateFormatter()
+            dateFormatterDMY.dateFormat = "dd/MM/yy"
             
             if bookingJson.status?.lowercaseString != "success" {
                 errorBlock!("could not fetch bookings")
@@ -47,15 +49,29 @@ public class BookingService: NSObject,BookingServiceProtocol {
                 }
                 
                 let timeinterval : NSTimeInterval = (f.tripDate! as NSString).doubleValue
-                let date:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as NSDate?
+                let dateBiased:NSDate? = NSDate(timeIntervalSince1970: timeinterval) as NSDate?
+                let time : String = f.time!
+                
+                let dateStringAsDMY = dateFormatterDMY.stringFromDate(dateBiased!)
+                var dateStringAsDMYHM = "\(dateStringAsDMY) \(time)"
+                
+                var dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yy HH:mm"
+                dateFormatter.timeZone = NSTimeZone(name: "ASIA - Israel (UTC + 2)")
+                dateFormatter.locale = NSLocale(localeIdentifier: "Europe/Athens")
+                let date = dateFormatter.dateFromString(dateStringAsDMYHM)
+
+                if (date == nil){
+                    fatalError("date is nil")
+                }
+                
                 let boatName : String = f.boatName!
                 let id : Int = f.id!
                 let boatId : Int = (f.boatId! as NSString).integerValue
                 let tripId : Int = (f.tripId! as NSString).integerValue
                 let day : String = f.day!
                 let state: Int = f.state!
-                let time : String = f.time!
-                let bookingDao = BookingDao(date: date, id: id, boatId: boatId, boatName: boatName, tripId: tripId, state: state, time: time, day: day)
+                let bookingDao = BookingDao(date: date!, id: id, boatId: boatId, boatName: boatName, tripId: tripId, state: state, time: time, day: day)
                 
                 bookingDaos!.append(bookingDao)
             }

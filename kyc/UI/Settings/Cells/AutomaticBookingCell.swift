@@ -17,8 +17,6 @@ class AutomaticBookingCell: UITableViewCell {
     func updateUI(){
         if let settingDao = self.settingRepository?.get(){
             
-            println("read automatic-booking mode: \(settingDao.mode)")
-            
             self.swAutomaticBooking.on = settingDao.mode == 1 ? true : false
         }
         

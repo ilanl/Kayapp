@@ -39,19 +39,16 @@ public class ForecastService:NSObject, ForecastServiceProtocol {
                 
                 let dateStringAsDMY = dateFormatterDMY.stringFromDate(dateBiased)
                 var dateStringAsDMYHM = "\(dateStringAsDMY) \(f.hour)"
-                println("date0: \(dateStringAsDMYHM)")
                 
                 var dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yy hh:mm aa"
                 dateFormatter.timeZone = NSTimeZone(name: "ASIA - Israel (UTC + 2)")
+                dateFormatter.locale = NSLocale(localeIdentifier: "Europe/Athens")
                 let date = dateFormatter.dateFromString(dateStringAsDMYHM)
                 
-                println("date1: \(date!)")
-                let formattedDate = NSDateFormatter.localizedStringFromDate(
-                    date!,
-                    dateStyle: .FullStyle,
-                    timeStyle: .ShortStyle)
-                println("date2: \(formattedDate)")
+                if (date == nil){
+                    fatalError("date is nil")
+                }
                 
                 let forecastDao = ForecastDao(date: date!, weather: f.weather, temperature: temperature)
                 forecastDaos.append(forecastDao)

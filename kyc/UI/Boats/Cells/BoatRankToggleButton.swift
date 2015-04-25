@@ -6,9 +6,7 @@ class BoatRankToggleButton:ToggleButton{
     var boatPrefsRepository:BoatPrefsRepository?
     
     func updateData() {
-        boatPrefsRepository?.saveOne(BoatPrefDao(name: self.name!, order: self.currentValue!))
-        
-        println("cell: \(self.currentValue)")
+        boatPrefsRepository?.saveOne(BoatPrefDao(name: self.name!, order: self.currentValue!))        
     }
     
     required init(coder aDecoder: NSCoder) {

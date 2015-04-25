@@ -12,7 +12,6 @@ class BoatRankCell: UITableViewCell {
     }
     
     @IBAction func orderTap(sender: ToggleButton) {
-        println("order tapped \(sender.currentValue)")
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

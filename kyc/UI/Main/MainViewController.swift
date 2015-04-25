@@ -2,7 +2,10 @@ import UIKit
 
 class MainViewController: CenterViewController,UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tblForecastsAndBookings: UITableView!
+    
     var forecastArray:[ForecastDao]?
+    
     var sectionArray:[ForecastSection]?
     
     let forecastAndBookingMatcher = coreComponents.componentForKey("forecastAndBookingMatcherFactory") as! ForecastAndBookingMatcher
@@ -12,10 +15,17 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadData", name: doneLoadDataNotificationKey, object: nil)
+        self.loadData()
+    }
+    
+    func loadData(){
+        
+        self.forecastArray = []
         self.sectionArray = self.forecastAndBookingMatcher.getSections()
         self.forecastArray = self.forecastAndBookingMatcher.forecasts
+        self.tblForecastsAndBookings.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -47,16 +57,17 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        if (self.forecastArray == nil){
-            return 0
-        }
-        let forecast = self.forecastArray![indexPath.row] as ForecastDao
-        return forecast.booking != nil ? 120 : 60
+//        if (self.forecastArray == nil){
+//            return 0
+//        }
+//        let forecast = self.forecastArray![indexPath.row]
+//        return forecast.booking != nil ? 120 : 60
+        return 90
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let forecast = forecastArray![indexPath.row] as ForecastDao
+        let forecast = self.forecastArray![indexPath.row]
         
         if (forecast.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
@@ -91,9 +102,6 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         
-        if (indexPath.row > 3){
-            return nil
-        }
         
         var tripActions = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Actions" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             

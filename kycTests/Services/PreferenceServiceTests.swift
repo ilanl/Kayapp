@@ -50,7 +50,6 @@ public class PreferenceServiceTests : XCTestCase {
             
             }, onError: { (message) -> Void in
                 //
-                
                 println("handle errors here")
         })
         

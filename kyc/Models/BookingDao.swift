@@ -1,8 +1,8 @@
 import Foundation
 
-public class BookingDao: NSObject,NSCoding{
+public class BookingDao: NSObject,NSCoding,NSCopying{
     
-    public var datetime:NSDate?
+    public private(set) var datetime:NSDate?
     public var id:Int?
     public var boatId:Int?
     public var boatName:String?
@@ -10,6 +10,10 @@ public class BookingDao: NSObject,NSCoding{
     public var state:Int?
     public var time:String?
     public var day:String?
+    
+    public func copyWithZone(zone: NSZone) -> AnyObject{
+        return BookingDao(date: self.datetime, id: self.id, boatId: self.boatId, boatName: self.boatName, tripId: self.tripId, state: self.state, time: self.time, day: self.day)
+    }
     
     public init(date:NSDate?,id:Int?,boatId:Int?, boatName:String?,tripId:Int?,state:Int?,time:String?,day:String?) {
         self.datetime = date
