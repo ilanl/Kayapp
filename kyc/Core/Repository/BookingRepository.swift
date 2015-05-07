@@ -21,8 +21,13 @@ public class BookingRepository:NSObject,BookingRepositoryProtocol{
         return true
     }
     
+    func checkPastBooking(right:BookingDao, date:NSDate) -> Bool{
+        return right.datetime!.minutesFrom(date) > 0
+    }
+
     public func get() -> [BookingDao]{
-        return self.repository.get()
+        
+        return self.repository.get().filter({ self.checkPastBooking($0, date: NSDate()) })
     }
     
     public func save(bookings: [BookingDao])->Bool{

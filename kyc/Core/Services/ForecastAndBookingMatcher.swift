@@ -35,10 +35,11 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
         for forecastDao:ForecastDao in self.forecastRepository.get(){
             
             var data: ForecastDataCell = ForecastDataCell()
-            data.forecast = forecastDao
+            data.forecast = ForecastDao(date: forecastDao.datetime, weather: forecastDao.weather, temperature: forecastDao.temperature)
             for bookingDao in self.bookingRepository.get(){
                 if let attachedBooking = self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao){
-                    data.booking = bookingDao
+                    data.booking = BookingDao(date: bookingDao.datetime
+, id: bookingDao.id, boatId: bookingDao.boatId, boatName: bookingDao.boatName, tripId: bookingDao.tripId, state: bookingDao.state, time: bookingDao.time, day: bookingDao.day)
                     break
                 }
             }

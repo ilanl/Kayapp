@@ -24,10 +24,13 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
         self.tblForecastsAndBookings.reloadData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.loadData()
+    }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.showLoginIfAnoymous()
-        self.loadData()
     }
     
     //MARK: Table methods
