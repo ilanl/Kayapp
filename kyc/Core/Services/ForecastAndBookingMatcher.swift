@@ -34,30 +34,45 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
         var results: [ForecastDataCell] = []
         for forecastDao:ForecastDao in self.forecastRepository.get(){
             
+            var appended:Bool = false
             var data: ForecastDataCell = ForecastDataCell()
             data.forecast = ForecastDao(date: forecastDao.datetime, weather: forecastDao.weather, temperature: forecastDao.temperature)
             for bookingDao in self.bookingRepository.get(){
                 if let attachedBooking = self.checkIfForecastMatchBookingTime(forecastDao,booking:bookingDao){
                     data.booking = BookingDao(date: bookingDao.datetime
 , id: bookingDao.id, boatId: bookingDao.boatId, boatName: bookingDao.boatName, tripId: bookingDao.tripId, state: bookingDao.state, time: bookingDao.time, day: bookingDao.day)
+                    
+                    data.sectionTitle = self.getSectionName(forecastDao.datetime!)
+                    
+                    results.append(data)
+                    appended = true
                     break
                 }
             }
-            results.append(data)
+            if !appended{
+                data.sectionTitle = self.getSectionName(forecastDao.datetime!)
+                results.append(data)
+            }
         }
         return results
+    }
+    
+    
+    func getSectionName(date:NSDate)->String{
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE dd MMM"
+        let strForecastDay:String = dateFormatter.stringFromDate(date)
+        return strForecastDay
     }
     
     public func getSections() -> [ForecastSection]
     {
         var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE dd MMM"
         
         for forecastDao:ForecastDao in self.forecastRepository.get(){
             
             //Add header
-            let strForecastDay = dateFormatter.stringFromDate(forecastDao.datetime!)
+            let strForecastDay = self.getSectionName(forecastDao.datetime!)
             
             let sectionTuple = (title:"\(strForecastDay)",date:forecastDao.datetime!, totalRows:1)
             

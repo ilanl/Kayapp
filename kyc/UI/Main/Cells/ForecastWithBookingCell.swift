@@ -18,9 +18,4 @@ class ForecastWithBookingCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func updateUI(){
-        self.tempLabel.text = "\(self.forecast!.booking!.boatName)"
-    }
-
 }

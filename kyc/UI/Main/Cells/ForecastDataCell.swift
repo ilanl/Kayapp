@@ -4,4 +4,5 @@ public class ForecastDataCell:NSObject{
 
     public var forecast:ForecastDao?
     public var booking:BookingDao?
+    public var sectionTitle:String?
 }

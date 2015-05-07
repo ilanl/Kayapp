@@ -20,7 +20,6 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     func loadData(){
         
         self.sectionArray = self.forecastAndBookingMatcher.getSections()
-        self.forecastCellArray = self.forecastAndBookingMatcher.getForecastsWithMatchingBookings()
         self.tblForecastsAndBookings.reloadData()
     }
     
@@ -67,23 +66,30 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let data:ForecastDataCell = self.forecastCellArray[indexPath.row]
+        self.forecastCellArray = self.forecastAndBookingMatcher.getForecastsWithMatchingBookings()
+        let section:ForecastSection = self.sectionArray![indexPath.section]
+        let data:ForecastDataCell = self.forecastCellArray.filter({ $0.sectionTitle == section.title})[indexPath.row]
+        
         var forecast:ForecastDao? = data.forecast
         if (data.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
             
-            fatalError("Good")
-//            
-//            cell.forecast = forecast
-//            cell.updateUI()
-//            
-//            return cell
+            //fatalError("Good")
+            
+            cell.forecast = data.forecast!
+            cell.tempLabel.text = "\(data.booking!.boatName)"
+            
+            return cell
         }
         else{
             let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as! ForecastWithNoBookingCell
             
-            cell.forecast = forecast
-            cell.updateUI()
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            let forecastDayTime = dateFormatter.stringFromDate(data.forecast!.datetime!)
+            
+            cell.hourLabel.text = "\(forecastDayTime)"
+            cell.waveHeightLabel.text = "\(data.forecast!.temperature!)"
             
             return cell
         }
