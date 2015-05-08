@@ -2,9 +2,11 @@ import UIKit
 
 class ForecastWithBookingCell: UITableViewCell {
 
+    @IBOutlet weak var hourLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var waterTemp: UILabel!
     
+    @IBOutlet weak var waveHeightLabel: UILabel!
     @IBOutlet weak var kayakNameLabel: UILabel!
     var forecast:ForecastDao?
     

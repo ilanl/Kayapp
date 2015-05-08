@@ -30,23 +30,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7SR-CC-39E" id="FzZ-Rv-QA6">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{TEMP_LABEL}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lA3-9t-6iY" userLabel="tempLabel">
-                                                    <rect key="frame" x="22" y="8" width="100" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="jeA-1e-aZi"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{WATER}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-GA-cJg" userLabel="waterTempLabel">
-                                                    <rect key="frame" x="200" y="8" width="100" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{KAYAK}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-H9-N2s" userLabel="kayalNameLabel">
-                                                    <rect key="frame" x="22" y="46" width="200" height="21"/>
+                                                    <rect key="frame" x="10" y="78" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="L2d-wk-daQ"/>
                                                     </constraints>
@@ -54,44 +39,82 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{WAVE_HEIGHT}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-PY-SCs" userLabel="waveHeightLabel">
+                                                    <rect key="frame" x="230" y="39" width="130" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{TEMP}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-nz-EhV" userLabel="lblTemp">
+                                                    <rect key="frame" x="230" y="17" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{WATER}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nW-lh-Uov" userLabel="waterTempLabel">
+                                                    <rect key="frame" x="300" y="17" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{HOUR}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdV-Rl-ZM3" userLabel="hourLabel">
+                                                    <rect key="frame" x="10" y="0.0" width="95" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="95" id="yx5-qJ-5mo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="KdM-GA-cJg" secondAttribute="trailing" constant="67" id="5TG-nw-6er"/>
-                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="baseline" secondItem="lA3-9t-6iY" secondAttribute="baseline" id="CuS-dZ-Im0"/>
-                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="leading" secondItem="lA3-9t-6iY" secondAttribute="trailing" constant="78" id="KKX-Kg-0eW"/>
-                                                <constraint firstItem="lA3-9t-6iY" firstAttribute="leading" secondItem="FzZ-Rv-QA6" secondAttribute="leadingMargin" constant="14" id="OgY-Zx-L2o"/>
-                                                <constraint firstItem="KdM-GA-cJg" firstAttribute="top" secondItem="FzZ-Rv-QA6" secondAttribute="topMargin" id="V0Q-tw-ekh"/>
-                                                <constraint firstItem="lA3-9t-6iY" firstAttribute="leading" secondItem="s2a-H9-N2s" secondAttribute="leading" id="dBH-U9-vIP"/>
-                                                <constraint firstItem="s2a-H9-N2s" firstAttribute="top" secondItem="lA3-9t-6iY" secondAttribute="bottom" constant="17" id="wgl-Oc-Mal"/>
+                                                <constraint firstItem="s2a-H9-N2s" firstAttribute="leading" secondItem="FzZ-Rv-QA6" secondAttribute="leadingMargin" constant="2" id="Yp9-Kk-bEc"/>
+                                                <constraint firstItem="s2a-H9-N2s" firstAttribute="top" secondItem="jdV-Rl-ZM3" secondAttribute="bottom" constant="57" id="gmn-PT-Qwl"/>
+                                                <constraint firstAttribute="bottom" secondItem="s2a-H9-N2s" secondAttribute="bottom" id="hNh-yP-9bB"/>
+                                                <constraint firstItem="s2a-H9-N2s" firstAttribute="leading" secondItem="jdV-Rl-ZM3" secondAttribute="leading" id="qod-ad-LYX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="kayakNameLabel" destination="s2a-H9-N2s" id="JX1-yt-ayV"/>
-                                            <outlet property="tempLabel" destination="lA3-9t-6iY" id="SGz-6U-PbW"/>
-                                            <outlet property="waterTemp" destination="KdM-GA-cJg" id="cty-TJ-Exi"/>
+                                            <outlet property="hourLabel" destination="jdV-Rl-ZM3" id="wXG-SS-4pa"/>
+                                            <outlet property="kayakNameLabel" destination="s2a-H9-N2s" id="oTB-2F-J6N"/>
+                                            <outlet property="tempLabel" destination="RHg-nz-EhV" id="TD1-Kc-ekX"/>
+                                            <outlet property="waterTemp" destination="9nW-lh-Uov" id="39n-Ek-Uxd"/>
+                                            <outlet property="waveHeightLabel" destination="Lba-PY-SCs" id="IAe-je-NX6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="forecastNoBookingCell" rowHeight="50" id="8Xd-xI-nfB" customClass="ForecastWithNoBookingCell" customModule="kyc" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="forecastNoBookingCell" rowHeight="100" id="8Xd-xI-nfB" customClass="ForecastWithNoBookingCell" customModule="kyc" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Xd-xI-nfB" id="7vT-EM-QkV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{WAVE_HEIGHT}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-87-OGq" userLabel="waveHeightLabel">
-                                                    <rect key="frame" x="123" y="14" width="130" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{HOUR}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLO-d6-ObO" userLabel="hourLabel">
-                                                    <rect key="frame" x="20" y="14" width="95" height="21"/>
+                                                    <rect key="frame" x="20" y="39" width="95" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="95" id="oPT-tr-uSh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{TEMP}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMd-hf-fFB" userLabel="lblTemp">
+                                                    <rect key="frame" x="230" y="14" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="{WATER}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-GA-cJg" userLabel="waterTempLabel">
+                                                    <rect key="frame" x="300" y="14" width="75" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="{WAVE_HEIGHT}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-87-OGq" userLabel="waveHeightLabel">
+                                                    <rect key="frame" x="123" y="39" width="130" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -105,7 +128,9 @@
                                         <color key="backgroundColor" red="0.99607849120000003" green="0.1176470667" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                         <connections>
                                             <outlet property="hourLabel" destination="VLO-d6-ObO" id="g88-FD-ZyU"/>
-                                            <outlet property="waveHeightLabel" destination="wYZ-87-OGq" id="61N-AK-IHI"/>
+                                            <outlet property="tempLabel" destination="VMd-hf-fFB" id="opn-M5-glo"/>
+                                            <outlet property="waterTempLabel" destination="KdM-GA-cJg" id="AEg-cI-gER"/>
+                                            <outlet property="waveHeightLabel" destination="wYZ-87-OGq" id="jXH-Zi-0dI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

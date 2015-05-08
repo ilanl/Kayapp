@@ -56,40 +56,38 @@ class MainViewController: CenterViewController,UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-//        if (self.forecastArray == nil){
-//            return 0
-//        }
-//        let forecast = self.forecastArray![indexPath.row]
-//        return forecast.booking != nil ? 120 : 60
-        return 60
+        return 100
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        self.forecastCellArray = self.forecastAndBookingMatcher.getForecastsWithMatchingBookings()
         let section:ForecastSection = self.sectionArray![indexPath.section]
-        let data:ForecastDataCell = self.forecastCellArray.filter({ $0.sectionTitle == section.title})[indexPath.row]
+        self.forecastCellArray = self.forecastAndBookingMatcher.getForecastsWithMatchingBookings(section.date)
+        let data:ForecastDataCell = self.forecastCellArray[indexPath.row]
         
         var forecast:ForecastDao? = data.forecast
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let forecastDayTime = dateFormatter.stringFromDate(data.forecast!.datetime!)
+        
         if (data.booking != nil){
             let cell: ForecastWithBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastWithBookingCell", forIndexPath: indexPath) as! ForecastWithBookingCell
             
-            //fatalError("Good")
-            
             cell.forecast = data.forecast!
-            cell.tempLabel.text = "\(data.booking!.boatName)"
             
+            cell.hourLabel.text = "\(forecastDayTime)"
+            cell.tempLabel.text = "\(data.forecast!.temperature!)"
+            cell.waterTemp.text = "11C"
+            cell.waveHeightLabel.text = "1,21"
+            cell.kayakNameLabel.text = "\(data.booking!.boatName!)"
             return cell
         }
         else{
             let cell:ForecastWithNoBookingCell = tableView.dequeueReusableCellWithIdentifier("forecastNoBookingCell", forIndexPath: indexPath) as! ForecastWithNoBookingCell
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "HH:mm"
-            let forecastDayTime = dateFormatter.stringFromDate(data.forecast!.datetime!)
-            
             cell.hourLabel.text = "\(forecastDayTime)"
-            cell.waveHeightLabel.text = "\(data.forecast!.temperature!)"
+            cell.tempLabel.text = "\(data.forecast!.temperature!)"
+            cell.waterTempLabel.text = "16C"
+            cell.waveHeightLabel.text = "1,21"
             
             return cell
         }

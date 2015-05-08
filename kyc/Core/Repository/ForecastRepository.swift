@@ -3,7 +3,7 @@ import Foundation
 @objc public protocol ForecastRepositoryProtocol {
     func reset()->Bool
     
-    func get() -> [ForecastDao]
+    func get(filter filterBlock: (ForecastDao -> Bool)?) -> [ForecastDao]
     
     func save(forecasts: [ForecastDao])->Bool
 }
@@ -16,8 +16,17 @@ public class ForecastRepository:NSObject,ForecastRepositoryProtocol{
         return true
     }
     
-    public func get() -> [ForecastDao]{
-        var arraySortable = Array<ForecastDao>(self.repository.get())
+    public func get(filter filterBlock: (ForecastDao -> Bool)?) -> [ForecastDao]{
+        
+        var arraySortable:Array<ForecastDao> = []
+        
+        if let filterCondition = filterBlock{
+            arraySortable = self.repository.get().filter(filterCondition)
+        }
+        else{
+            arraySortable = self.repository.get()
+        }
+        
         arraySortable.sort({
             let interval = $1.datetime!.timeIntervalSinceDate($0.datetime!)
             return interval > 0 })

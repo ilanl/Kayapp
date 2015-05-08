@@ -3,6 +3,9 @@ import UIKit
 
 class ForecastWithNoBookingCell: UITableViewCell {
     
+    
+    @IBOutlet weak var waterTempLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
     var forecast:ForecastDao?
     @IBOutlet weak var waveHeightLabel: UILabel!

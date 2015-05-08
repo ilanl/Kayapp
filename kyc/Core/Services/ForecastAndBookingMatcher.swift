@@ -2,7 +2,7 @@ import Foundation
 
 @objc public protocol ForecastAndBookingMatcherProtocol {
     func getSections()->[ForecastSection]
-    func getForecastsWithMatchingBookings() -> [ForecastDataCell]
+    func getForecastsWithMatchingBookings(date:NSDate) -> [ForecastDataCell]
 }
 
 public class ForecastSection:NSObject{
@@ -29,10 +29,12 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
         self.bookingRepository = bookingRepository
     }
     
-    public func getForecastsWithMatchingBookings() -> [ForecastDataCell]{
+    public func getForecastsWithMatchingBookings(date:NSDate) -> [ForecastDataCell]{
         
+        let sectionName = self.getSectionName(date)
         var results: [ForecastDataCell] = []
-        for forecastDao:ForecastDao in self.forecastRepository.get(){
+        
+        for forecastDao:ForecastDao in self.forecastRepository.get(filter: { self.getSectionName($0.datetime!) == sectionName }){
             
             var appended:Bool = false
             var data: ForecastDataCell = ForecastDataCell()
@@ -69,7 +71,7 @@ public class ForecastAndBookingMatcher:NSObject,ForecastAndBookingMatcherProtoco
     {
         var forecastSectionArray:[(title:String,date:NSDate,totalRows:Int)] = []
         
-        for forecastDao:ForecastDao in self.forecastRepository.get(){
+        for forecastDao:ForecastDao in self.forecastRepository.get(filter: nil){
             
             //Add header
             let strForecastDay = self.getSectionName(forecastDao.datetime!)
